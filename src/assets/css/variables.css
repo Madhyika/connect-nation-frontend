@@ -1,0 +1,8 @@
+:root {
+  --primary-color: #2b317f;
+  --secondary-color: #d0d5dd;
+}
+section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
