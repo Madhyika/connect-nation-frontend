@@ -1,45 +1,39 @@
 <template>
-  <header class="h-24 fixed top-0 left-0 right-0 z-100 bg-transparent">
-    <div class="container flex justify-between items-center mx-auto py-4 z-100">
-      <!-- Logo -->
-      <router-link to="/" class="w-24 relative">
+  <header class="h-24 fixed top-0 left-0 right-0 bg-transparent z-50">
+    <div class="container mx-auto flex items-center justify-between py-4">
+      <router-link to="/" class="relative w-24">
         <img
           src="../assets/img/logo/logo.png"
           alt="logo"
           class="w-full h-full object-contain scale-150 transition-all duration-300"
-          :class="{
-            'filter brightness-0 invert': !menuOpen,
-          }"
+          :class="logoClass"
         />
       </router-link>
 
-      <!-- Location Text -->
       <div
-        class="font-medium font-outfit text-base leading-[1.75rem] tracking-[0.03em] text-center w-full transition-colors duration-300"
-        :class="menuOpen ? 'text-black' : 'text-white'"
+        class="w-full text-center font-outfit font-medium text-base leading-[1.75rem] tracking-[0.03em] transition-colors duration-300"
+        :class="textClass"
       >
         Adelaide, Australia
         <br />
-        [ 07:30:12 PM ]
+        [ {{ time }} ]
       </div>
 
-      <!-- Menu Button -->
       <button
         @click="toggleMenu"
-        class="flex items-center justify-center gap-2 px-4 py-2 rounded-sm cursor-pointer z-50 transition-colors duration-300"
-        :class="menuOpen ? 'bg-[#F2F4F7]' : 'bg-white'"
+        class="z-50 flex cursor-pointer items-center justify-center gap-2 rounded-sm px-4 py-2 transition-colors duration-300"
+        :class="buttonClass"
       >
-        <span class="font-medium text-md font-inter">MENU</span>
+        <span class="font-inter font-medium text-md">MENU</span>
         <img
-          :src="menuOpen ? CrossIcon : MenuHamburger"
+          :src="menuIcon"
           alt="menu"
-          class="object-contain w-5 h-5 transition-transform duration-300"
+          class="h-5 w-5 object-contain transition-transform duration-300"
         />
       </button>
     </div>
   </header>
 
-  <!-- Fullscreen Menu -->
   <NavbarMenu
     :open="menuOpen"
     @close-menu="menuOpen = false"
@@ -48,13 +42,51 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed, onMounted, onUnmounted } from "vue";
 import NavbarMenu from "../components/NavbarMenu.vue";
 
 import MenuHamburger from "../assets/img/icons/MenuHamburger.svg";
 import CrossIcon from "../assets/img/icons/Cross.svg";
 
 const menuOpen = ref(false);
+const time = ref("");
+
+const formatter = new Intl.DateTimeFormat("en-AU", {
+  timeZone: "Australia/Adelaide",
+  hour: "2-digit",
+  minute: "2-digit",
+  second: "2-digit",
+  hour12: true,
+});
+
+let timer;
+
+const updateTime = () => {
+  time.value = formatter.format(new Date());
+};
+
+onMounted(() => {
+  updateTime();
+  timer = setInterval(updateTime, 1000);
+});
+
+onUnmounted(() => {
+  clearInterval(timer);
+});
+
+const logoClass = computed(() => ({
+  "filter brightness-0 invert": !menuOpen.value,
+}));
+
+const textClass = computed(() =>
+  menuOpen.value ? "text-black" : "text-white"
+);
+
+const buttonClass = computed(() =>
+  menuOpen.value ? "bg-[#F2F4F7]" : "bg-white"
+);
+
+const menuIcon = computed(() => (menuOpen.value ? CrossIcon : MenuHamburger));
 
 function toggleMenu() {
   menuOpen.value = !menuOpen.value;

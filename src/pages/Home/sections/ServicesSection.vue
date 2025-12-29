@@ -1,10 +1,20 @@
-<script setup lang="ts">
+<script setup>
+import { ref } from "vue";
 import ButtonPrimaryLight from "../../../components/ButtonPrimaryLight.vue";
 import SectionHeading from "../../../components/SectionHeading.vue";
 import ButtonSectionSecondaryDark from "../../../components/ButtonSectionSecondaryDark.vue";
-import { reactive } from "vue";
 
-const services = reactive([
+import PlusIcon from "../../../assets/img/icons/Plus.svg";
+import MinusIcon from "../../../assets/img/icons/Minus.svg";
+
+const services = ref([
+  {
+    name: "Website Design & Development",
+    open: false,
+    description: `Our design process focuses on understanding your business needs,
+crafting a unique brand experience, and ensuring seamless
+navigation for your visitors.`,
+  },
   {
     name: "SaaS Development",
     open: false,
@@ -37,13 +47,13 @@ const services = reactive([
   },
 ]);
 
-function toggleService(index: number) {
-  services[index].open = !services[index].open;
-}
+const toggleService = (index) => {
+  services.value[index].open = !services.value[index].open;
+};
 </script>
 
 <template>
-  <section class="">
+  <section>
     <div class="container mx-auto flex flex-col gap-16">
       <div class="grid grid-cols-2 items-start">
         <SectionHeading span1="Our" span2="Services" />
@@ -57,69 +67,54 @@ function toggleService(index: number) {
         </div>
       </div>
 
-      <div class="grid grid-cols-2 gap-8">
-        <div class="flex h-full items-end w-2/3">
-          <div class="w-full aspect-square">
+      <div class="grid grid-cols-2">
+        <div class="flex h-full w-2/3 items-end">
+          <div class="aspect-square w-full">
             <img
-              class="w-full h-full object-cover opacity-100 rotate-0"
               src="../../../assets/img/home/service.png"
               alt=""
+              class="h-full w-full object-cover"
             />
           </div>
         </div>
 
-        <!-- Text & List Section -->
-        <div class="flex flex-col gap-10">
-          <div class="flex flex-col gap-4">
-            <h2
-              class="font-outfit font-semibold text-[22px] leading-[30px] tracking-normal uppercase text-[#0C111D]"
-            >
-              Website Design & Development
-            </h2>
-            <p class="paragraph-16 paragraph-dark">
-              Our design process focuses on understanding your business needs,
-              crafting a unique brand experience, and ensuring seamless
-              navigation for your visitors.
-            </p>
-            <ButtonSectionSecondaryDark label="View Services" to="/" />
-          </div>
-
-          <!-- Services List -->
+        <div class="flex">
           <ul class="flex flex-col">
             <li
               v-for="(service, index) in services"
-              :key="index"
-              class="flex flex-col border-y border-black/20"
+              :key="service.name"
+              class="border-b border-black/20"
             >
               <button
-                class="flex justify-between items-center py-5 w-full cursor-pointer"
+                class="flex w-full items-center justify-between py-6"
                 @click="toggleService(index)"
               >
                 <h2
-                  class="font-outfit font-semibold text-[22px] leading-[30px] tracking-normal uppercase text-[#0C111D]"
+                  class="font-outfit text-[22px] font-semibold uppercase leading-[30px] text-[#0C111D]"
                 >
                   {{ service.name }}
                 </h2>
                 <img
-                  class="w-[14px] transition-transform duration-500"
-                  :class="{ 'rotate-45': service.open }"
-                  src="../../../assets/img/icons/Plus.svg"
+                  :src="service.open ? MinusIcon : PlusIcon"
                   alt=""
+                  class="w-[14px] transition-all duration-300"
                 />
               </button>
 
-              <!-- collapse -->
               <div
                 class="overflow-hidden transition-all duration-500 ease-in-out"
-                :style="
+                :class="
                   service.open
-                    ? 'max-height: 200px; opacity:1; padding: 1rem 0'
-                    : 'max-height:0; opacity:0; padding:0'
+                    ? 'max-h-[300px] pb-4 opacity-100'
+                    : 'max-h-0 pb-0 opacity-0'
                 "
               >
-                <p class="paragraph-16 paragraph-dark">
-                  {{ service.description }}
-                </p>
+                <div class="flex flex-col gap-3">
+                  <p class="paragraph-16 paragraph-dark">
+                    {{ service.description }}
+                  </p>
+                  <ButtonSectionSecondaryDark label="View Services" to="/" />
+                </div>
               </div>
             </li>
           </ul>

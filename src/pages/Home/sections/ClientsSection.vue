@@ -1,7 +1,7 @@
 <template>
   <section class="bg-[#FAFAFA]">
-    <div class="container mx-auto text-black flex flex-col items-center gap-12">
-      <div class="grid grid-cols-2 gap-6 w-full items-center">
+    <div class="container mx-auto flex flex-col items-center gap-18 text-black">
+      <div class="grid w-full grid-cols-2 items-center gap-6">
         <SectionHeading span1="Our" span2="Clients" />
         <p class="paragraph-20 paragraph-dark">
           Collaborate with the world’s top platforms and partners to deliver
@@ -9,11 +9,11 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-4 gap-5 w-full h-52">
+      <div class="grid h-52 w-full grid-cols-4 gap-5">
         <div
-          v-for="(client, index) in clients"
-          :key="index"
-          class="bg-white rounded-[5px] hover:shadow-2xl transition-shadow cursor-pointer flex justify-center items-center"
+          v-for="client in clients"
+          :key="client.alt"
+          class="flex cursor-pointer items-center justify-center rounded-[5px] bg-white transition-shadow hover:shadow-2xl"
         >
           <img :src="client.src" :alt="client.alt" class="w-36" />
         </div>

@@ -1,9 +1,8 @@
 <template>
   <footer class="bg-black py-18">
     <div class="container mx-auto flex flex-col gap-12">
-      <!-- newsletter -->
       <div
-        class="flex justify-between items-center border-b-1 border-white/50 py-8"
+        class="flex justify-between items-center border-b border-white/50 py-8"
       >
         <div
           class="font-outfit font-medium text-[32px] leading-[24px] tracking-normal text-white"
@@ -14,16 +13,15 @@
           <input
             type="email"
             placeholder="Enter your email"
-            class="w-[340px] rounded-full bg-[#FFFFFF1A] border border-white px-6 py-4 text-white bg-transparent placeholder-white/70 focus:outline-none"
+            class="w-[340px] rounded-full bg-[#FFFFFF1A] border border-white px-6 py-4 text-white placeholder-white/70 focus:outline-none"
           />
           <ButtonTertiaryLight label="Subscribe" />
         </form>
       </div>
 
       <div
-        class="grid grid-cols-1 gap-12 py-8 justify-center items-center /* center on mobile */ sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 sm:justify-between sm:items-start /* restore layout from sm: */ 2xl:gap-12"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-12 sm:justify-between sm:items-start"
       >
-        <!-- Logo Column -->
         <div
           class="col-span-1 sm:col-span-2 flex flex-col items-center sm:items-start text-center sm:text-left"
         >
@@ -40,30 +38,26 @@
           </p>
         </div>
 
-        <!-- Footer Columns -->
         <div
           v-for="(column, colIndex) in columns"
           :key="colIndex"
           class="flex flex-col gap-5 col-span-1 items-center sm:items-start text-center sm:text-left"
         >
-          <!-- Column title -->
           <div
             class="font-inter font-semibold text-[14px] uppercase leading-[20px] tracking-normal text-[#98A2B3]"
           >
             {{ column.title }}
           </div>
-
-          <!-- Column menu items -->
-          <ul class="text-white flex text-[16px] flex-col gap-4">
+          <ul class="flex flex-col gap-4 text-white text-[16px]">
             <li
               v-for="(item, index) in column.items"
               :key="index"
-              class="flex items-center gap-4 cursor-pointer text-white transition-colors duration-300 ease-in-out hover:text-[#56BEB7] group"
+              class="flex items-center gap-4 cursor-pointer transition-colors duration-300 hover:text-[#56BEB7] group"
             >
               {{ item.label }}
               <button
                 v-if="item.hasButton"
-                class="px-2 rounded-lg text-black transition-colors duration-300 ease-in-out bg-white group-hover:bg-[#56BEB7] group-hover:text-white cursor-pointer"
+                class="px-2 rounded-lg text-black bg-white group-hover:bg-[#56BEB7] group-hover:text-white transition-colors duration-300 cursor-pointer"
               >
                 {{ item.buttonText }}
               </button>
@@ -85,7 +79,6 @@
         >
           © 2024 Connect Nation. All rights reserved.
         </p>
-
         <ul class="flex items-center gap-4">
           <li>
             <a
@@ -99,7 +92,6 @@
                 stroke="currentColor"
                 stroke-width="2"
                 viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   stroke-linecap="round"
@@ -109,7 +101,6 @@
               </svg>
             </a>
           </li>
-
           <li>
             <a
               href="https://linkedin.com"
@@ -125,7 +116,6 @@
               </svg>
             </a>
           </li>
-
           <li>
             <a
               href="https://facebook.com"
@@ -149,6 +139,7 @@
 
 <script setup>
 import ButtonTertiaryLight from "../components/ButtonTertiaryLight.vue";
+
 const columns = [
   {
     title: "Quick Links",

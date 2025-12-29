@@ -1,9 +1,8 @@
 <template>
   <section class="relative overflow-hidden">
     <div class="container mx-auto grid grid-cols-2 gap-8 py-10">
-      <!-- Left column -->
       <div class="flex flex-col gap-4 justify-between">
-        <div>
+        <div class="flex flex-col gap-6">
           <SectionHeading span1="Frequently<br>" span2="Asked questions" />
           <p class="paragraph-20 paragraph-dark">
             We deliver comprehensive digital solutions designed to drive
@@ -11,13 +10,12 @@
             help brands stand out and succeed.
           </p>
         </div>
-        <div class="w-full flex gap-8 items-center">
+        <div class="w-full flex gap-8 items-center z-50">
           <ButtonPrimaryLight label="Book a Consultation" />
           <ButtonSecondaryDark label="Contact our Team" />
         </div>
       </div>
 
-      <!-- Right column: FAQ items -->
       <div class="flex flex-col gap-4">
         <div
           v-for="(faq, index) in faqs"
@@ -36,14 +34,11 @@
             </span>
           </p>
 
-          <!-- Smooth slide-down answer -->
           <div
             class="overflow-hidden transition-all duration-500 ease-in-out"
             :style="{ maxHeight: activeIndex === index ? '500px' : '0px' }"
           >
-            <p class="paragraph-16 mt-2">
-              {{ faq.answer }}
-            </p>
+            <p class="paragraph-16 mt-2">{{ faq.answer }}</p>
           </div>
         </div>
       </div>
@@ -65,7 +60,6 @@ import ButtonPrimaryLight from "../../../components/ButtonPrimaryLight.vue";
 import ButtonSecondaryDark from "../../../components/ButtonSecondaryDark.vue";
 
 const activeIndex = ref(null);
-
 const toggle = (index) => {
   activeIndex.value = activeIndex.value === index ? null : index;
 };

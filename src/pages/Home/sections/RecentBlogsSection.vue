@@ -1,7 +1,6 @@
 <template>
   <section class="bg-[#FAFAFA]">
     <div class="container mx-auto flex flex-col gap-16">
-      <!-- Heading -->
       <div class="grid grid-cols-2 items-center justify-between">
         <SectionHeading span1="Recent<br>" span2="Blog posts" />
         <div class="flex flex-col gap-8">
@@ -13,16 +12,13 @@
         </div>
       </div>
 
-      <!-- Blog cards -->
       <div class="grid grid-cols-3 gap-8">
         <div
           v-for="(blog, index) in blogs"
           :key="index"
           class="pr-2 border-r last:border-r-0 flex flex-col gap-6 border-r-[#D0D5DD]"
         >
-          <div>
-            <img :src="blog.image" :alt="blog.title" />
-          </div>
+          <img :src="blog.image" :alt="blog.title" />
           <div class="flex flex-col gap-6">
             <p
               class="text-[#41468C] font-inter font-semibold text-[14px] leading-[20px] tracking-[0.04em]"
@@ -55,7 +51,6 @@
 import SectionHeading from "../../../components/SectionHeading.vue";
 import ButtonPrimaryLight from "../../../components/ButtonPrimaryLight.vue";
 
-// Import images
 import blog1 from "../../../assets/img/blog/blog1.jpg";
 import blog2 from "../../../assets/img/blog/blog2.jpg";
 import blog3 from "../../../assets/img/blog/blog3.jpg";

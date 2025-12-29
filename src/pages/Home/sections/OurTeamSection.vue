@@ -1,7 +1,6 @@
 <template>
   <section class="container mx-auto py-10">
     <div class="flex flex-col gap-12">
-      <!-- Heading & arrows -->
       <div class="grid grid-cols-2 justify-between">
         <SectionHeading span1="What We <br>" span2="Created" />
         <div class="flex flex-col gap-10">
@@ -22,7 +21,6 @@
                   class="transition-all duration-300 ease-in-out group-hover:invert"
                 />
               </button>
-
               <button
                 @click="scrollRight"
                 class="cursor-pointer group w-[44px] h-[44px] rounded-sm bg-[#EAECF0] flex justify-center items-center hover:bg-black transition-colors duration-300 ease-in-out"
@@ -38,7 +36,6 @@
         </div>
       </div>
 
-      <!-- Carousel container -->
       <div
         ref="carousel"
         class="flex gap-3 overflow-x-auto w-full h-[450px] relative scroll-smooth snap-x"
@@ -71,7 +68,7 @@
             :src="member.image"
             alt="Team Member"
             class="absolute left-1/2 -translate-x-1/2 bottom-0 min-w-full object-cover filter grayscale transition-all duration-700 ease-in-out"
-            :class="activeIndex === index ? 'top-[10%] ' : 'top-[35%] h-full '"
+            :class="activeIndex === index ? 'top-[10%]' : 'top-[35%] h-full'"
           />
         </div>
       </div>
@@ -80,13 +77,12 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref } from "vue";
 import SectionHeading from "../../../components/SectionHeading.vue";
 
 const activeIndex = ref(2);
 const carousel = ref(null);
 
-// Gradient for active card
 const activeGradient = {
   background: `linear-gradient(to bottom, rgba(86, 190, 183, 0.9), rgba(122, 204, 199, 0.9)),
                radial-gradient(circle at top right, rgba(55, 63, 164, 0.4) 0%, transparent 40%),
@@ -94,7 +90,6 @@ const activeGradient = {
   backgroundBlendMode: "overlay",
 };
 
-// All team members
 const team = [
   {
     name: "John Doe",
@@ -148,11 +143,9 @@ const team = [
   },
 ];
 
-// Show only 6 items at a time
 const visibleTeam = ref(team.slice(0, 6));
 let startIndex = 0;
 
-// Scroll functions
 const scrollLeft = () => {
   if (startIndex > 0) {
     startIndex -= 1;

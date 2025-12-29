@@ -13,12 +13,11 @@
                   class="h-11 w-11 rounded-lg bg-[#56BEB7] p-3"
                 />
                 <span
-                  class="font-inter font-normal text-[22px] leading-[26px] tracking-[0] text-black"
+                  class="font-inter font-normal text-[22px] leading-[26px] text-black"
                 >
                   admin@connectnation.com.au
                 </span>
               </li>
-
               <li class="flex items-center gap-4">
                 <img
                   src="../../../assets/img/icons/phone.svg"
@@ -26,34 +25,28 @@
                   class="h-11 w-11 rounded-lg bg-[#56BEB7] p-3"
                 />
                 <span
-                  class="font-inter font-normal text-[22px] leading-[26px] tracking-[0] text-black"
+                  class="font-inter font-normal text-[22px] leading-[26px] text-black"
                 >
                   0451 244 441
                 </span>
               </li>
-
               <li class="flex items-center gap-4">
                 <img
                   src="../../../assets/img/icons/location.svg"
                   alt="Address"
                   class="h-11 w-11 rounded-lg bg-[#56BEB7] p-3"
                 />
-                <span
-                  class="font-inter font-normal text-[22px] leading-[26px] tracking-[0]"
-                >
+                <span class="font-inter font-normal text-[22px] leading-[26px]">
                   23 Kent Road, Macdonald Park SA 5121
                 </span>
               </li>
-
               <li class="flex items-center gap-4">
                 <img
                   src="../../../assets/img/icons/clock.svg"
                   alt="Response time"
                   class="h-11 w-11 rounded-lg bg-[#56BEB7] p-3"
                 />
-                <span
-                  class="font-inter font-normal text-[22px] leading-[26px] tracking-[0]"
-                >
+                <span class="font-inter font-normal text-[22px] leading-[26px]">
                   Response within 24 hours
                 </span>
               </li>
@@ -62,26 +55,25 @@
 
           <div class="flex flex-col gap-6">
             <h3
-              class="text-[#0C111D] font-outfit font-bold text-[48px] leading-[66px] tracking-[0]"
+              class="text-[#0C111D] font-outfit font-bold text-[48px] leading-[66px]"
             >
               Have a project in mind?
             </h3>
             <p
-              class="text-[#0C111D] font-caveat font-normal text-[40px] leading-[100%] tracking-[0]"
+              class="text-[#0C111D] font-caveat font-normal text-[40px] leading-[100%]"
             >
               Get in touch and let’s build something impactful together.
             </p>
           </div>
         </div>
 
-        <!-- RIGHT COLUMN (FORM) -->
         <div
           style="box-shadow: 0px 0px 64px -12px #10182824"
           class="bg-white/10 rounded-lg shadow-lg p-8 flex flex-col gap-12"
         >
           <div class="flex flex-col gap-3">
             <h3
-              class="font-outfit font-semibold text-[22px] leading-[100%] tracking-[-0.01em] uppercase text-[#2B317F]"
+              class="font-outfit font-semibold text-[22px] leading-[100%] uppercase text-[#2B317F]"
             >
               SEND US A MESSAGE
             </h3>
@@ -91,50 +83,46 @@
             </p>
           </div>
 
-          <form class="flex flex-col gap-8">
-            <!-- Name -->
+          <form class="flex flex-col gap-8" @submit.prevent="submitForm">
             <div class="flex flex-col gap-2">
               <label class="form-label">Name *</label>
               <input
                 v-model="form.name"
                 type="text"
                 placeholder="Your full name"
-                class="w-full h-[40px] bg-white border border-[#56BEB7] rounded-[8px] shadow-[0_1px_2px_0_#1018280D] px-[12px] py-[8px] flex items-center gap-[8px] opacity-100"
+                class="w-full h-[40px] bg-white border border-[#56BEB7] rounded-[8px] shadow-[0_1px_2px_0_#1018280D] px-[12px] py-[8px]"
                 required
               />
             </div>
 
-            <!-- Email -->
             <div class="flex flex-col gap-2">
               <label class="form-label">Email *</label>
               <input
                 v-model="form.email"
                 type="email"
                 placeholder="you@example.com"
-                class="w-full h-[40px] bg-white border border-[#56BEB7] rounded-[8px] shadow-[0_1px_2px_0_#1018280D] px-[12px] py-[8px] flex items-center gap-[8px] opacity-100"
+                class="w-full h-[40px] bg-white border border-[#56BEB7] rounded-[8px] shadow-[0_1px_2px_0_#1018280D] px-[12px] py-[8px]"
                 required
               />
             </div>
 
-            <!-- Subject -->
             <div class="flex flex-col gap-2">
               <label class="form-label">Subject</label>
               <input
                 v-model="form.subject"
                 type="text"
                 placeholder="What can we help you with?"
-                class="w-full h-[40px] bg-white border border-[#56BEB7] rounded-[8px] shadow-[0_1px_2px_0_#1018280D] px-[12px] py-[8px] flex items-center gap-[8px] opacity-100"
+                class="w-full h-[40px] bg-white border border-[#56BEB7] rounded-[8px] shadow-[0_1px_2px_0_#1018280D] px-[12px] py-[8px]"
               />
             </div>
 
-            <!-- Message -->
             <div class="flex flex-col gap-2">
               <label class="form-label">Message *</label>
               <textarea
                 v-model="form.message"
                 rows="4"
                 placeholder="Tell us about your project or ask any questions..."
-                class="w-full bg-white border border-[#56BEB7] rounded-[8px] shadow-[0_1px_2px_0_#1018280D] px-[12px] py-[8px] flex items-center gap-[8px] opacity-100 resize-none"
+                class="w-full bg-white border border-[#56BEB7] rounded-[8px] shadow-[0_1px_2px_0_#1018280D] px-[12px] py-[8px] resize-none"
                 required
               ></textarea>
             </div>
@@ -144,6 +132,7 @@
         </div>
       </div>
     </div>
+
     <div class="absolute bottom-0 left-0 right-0 h-[300px] overflow-hidden">
       <img
         src="../../../assets/img/decor/sky.png"
@@ -179,7 +168,6 @@ const form = reactive({
 });
 
 const submitForm = () => {
-  // Replace with API integration
   console.log("Form submitted:", form);
 };
 </script>
