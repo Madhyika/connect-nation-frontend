@@ -168,7 +168,7 @@ import ButtonPrimaryDark from "../../../components/buttons/ButtonPrimaryDark.vue
 import ButtonPackageDark from "../../../components/buttons/ButtonPackageDark.vue";
 import ButtonPackageLight from "../../../components/buttons/ButtonPackageLight.vue";
 import tickIcon from "../../../assets/img/icons/tick.svg";
-import crossIcon from "../../../assets/img/icons/cross.svg";
+import crossIcon from "../../../assets/img/icons/Cross.svg";
 
 const tabs = ["Content Creator Package", "Business Package", "Host Package"];
 const activeTab = ref("Content Creator Package");
