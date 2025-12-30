@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SectionHeading from "../../../components/SectionHeading.vue";
+import SectionHeading from "../../../components/headings/SectionHeading.vue";
 import PhilosophyIcon from "../../../assets/img/icons/Philosophy.svg";
 import IdeaBulbIcon from "../../../assets/img/icons/IdeaBulb.svg";
 

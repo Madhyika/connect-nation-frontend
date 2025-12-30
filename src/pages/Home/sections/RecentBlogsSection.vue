@@ -48,8 +48,8 @@
 </template>
 
 <script setup>
-import SectionHeading from "../../../components/SectionHeading.vue";
-import ButtonPrimaryLight from "../../../components/ButtonPrimaryLight.vue";
+import SectionHeading from "../../../components/headings/SectionHeading.vue";
+import ButtonPrimaryLight from "../../../components/buttons/ButtonPrimaryLight.vue";
 
 import blog1 from "../../../assets/img/blog/blog1.jpg";
 import blog2 from "../../../assets/img/blog/blog2.jpg";

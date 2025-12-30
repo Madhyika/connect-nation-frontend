@@ -1,9 +1,12 @@
 <template>
-  <button @click="navigate" class="button-secondary button-secondary-white">
+  <button
+    @click="navigate"
+    class="section-button-secondary section-button-secondary-dark w-fit"
+  >
     <span class="font-medium leading-[1] tracking-[0.02em] font-outfit">
       {{ label }}
     </span>
-    <img src="../assets/img/icons/ArrowRight.svg" alt="" />
+    <img src="../../assets/img/icons/ArrowRight.svg" alt="" />
   </button>
 </template>
 <script setup>

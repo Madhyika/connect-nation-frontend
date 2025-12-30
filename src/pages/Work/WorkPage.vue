@@ -1,9 +1,15 @@
-<template>
-  <section class="text-center mt-10">
-    <h1 class="text-4xl font-bold mb-4">Work Page</h1>
-    <p class="text-gray-600">Explore our work projects and portfolio.</p>
-  </section>
-</template>
-
 <script setup>
+import PagesBanner from "../../components/PagesBanner.vue";
+import CreatingImpactSection from "./sections/CreatingImpactSection.vue";
+import ClientStoriesSection from "../Home/sections/ClientsStoriesSection.vue";
+import FAQSection from "../Home/sections/FAQSection.vue";
+import GetInTouchSection from "../Home/sections/GetInTouchSection.vue";
 </script>
+
+<template>
+  <PagesBanner title="our works" />
+  <CreatingImpactSection />
+  <ClientStoriesSection />
+  <FAQSection />
+  <GetInTouchSection />
+</template>

@@ -138,7 +138,7 @@
 </template>
 
 <script setup>
-import ButtonTertiaryLight from "../components/ButtonTertiaryLight.vue";
+import ButtonTertiaryLight from "../components/buttons/ButtonTertiaryLight.vue";
 
 const columns = [
   {

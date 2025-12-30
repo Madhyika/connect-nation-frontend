@@ -1,8 +1,8 @@
 <script setup>
 import { ref } from "vue";
-import SectionHeading from "../../../components/SectionHeading.vue";
-import ButtonPrimaryLight from "../../../components/ButtonPrimaryLight.vue";
-import ButtonSectionSecondaryDark from "../../../components/ButtonSectionSecondaryDark.vue";
+import SectionHeading from "../../../components/headings/SectionHeading.vue";
+import ButtonPrimaryLight from "../../../components/buttons/ButtonPrimaryLight.vue";
+import ButtonSectionSecondaryDark from "../../../components/buttons/ButtonSectionSecondaryDark.vue";
 import AcheiversCollegeLogo from "../../../assets/img/logo/projects/AcheiversCollege.png";
 import AcheiversDesktop from "../../../assets/img/websites/AcheiversDesktop.png";
 import AcheiversMobile from "../../../assets/img/websites/AcheiversMobile.png";

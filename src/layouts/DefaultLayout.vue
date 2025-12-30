@@ -6,11 +6,11 @@
       <router-view />
     </main>
 
-    <Footer />
+    <FooterSection />
   </div>
 </template>
 
 <script setup>
 import Navbar from "../components/Navbar.vue";
-import Footer from "../components/Footer.vue";
+import FooterSection from "../components/Footer.vue";
 </script>

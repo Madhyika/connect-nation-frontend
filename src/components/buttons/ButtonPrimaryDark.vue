@@ -1,9 +1,7 @@
 <template>
-  <button @click="navigate" class="button-primary button-primary-light">
+  <button @click="navigate" class="button-primary button-primary-dark">
     <span>{{ label }}</span>
-    <span class="icon">
-      <img src="../assets/img/icons/ArrowRight.svg" alt="Arrow" />
-    </span>
+    <img src="../../assets/img/icons/ArrowRight.svg" alt="" />
   </button>
 </template>
 

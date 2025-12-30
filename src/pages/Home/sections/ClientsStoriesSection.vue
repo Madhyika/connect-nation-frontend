@@ -79,7 +79,7 @@
 </template>
 
 <script setup>
-import SectionHeading from "../../../components/SectionHeading.vue";
+import SectionHeading from "../../../components/headings/SectionHeading.vue";
 import { ref } from "vue";
 
 import client1 from "../../../assets/img/clientStories/client1.png";

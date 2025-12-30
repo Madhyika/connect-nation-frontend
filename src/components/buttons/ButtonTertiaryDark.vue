@@ -2,11 +2,11 @@
   <button
     :type="props.to ? 'button' : 'submit'"
     @click="props.to && navigate()"
-    class="button-tertiary button-tertiary-light"
+    class="button-tertiary button-tertiary-dark"
   >
     <span>{{ label }}</span>
     <span class="icon">
-      <img src="../assets/img/icons/ArrowRight.svg" alt="Arrow" />
+      <img src="../../assets/img/icons/ArrowRight.svg" alt="Arrow" />
     </span>
   </button>
 </template>

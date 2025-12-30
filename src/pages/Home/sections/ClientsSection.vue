@@ -27,7 +27,7 @@ import Quotient from "../../../assets/img/logo/clients/quotient.svg";
 import Segment from "../../../assets/img/logo/clients/segment.svg";
 import Galileo from "../../../assets/img/logo/clients/galileo.svg";
 import Lightbox from "../../../assets/img/logo/clients/lightbox.svg";
-import SectionHeading from "../../../components/SectionHeading.vue";
+import SectionHeading from "../../../components/headings/SectionHeading.vue";
 
 const clients = [
   { src: Quotient, alt: "Quotient" },

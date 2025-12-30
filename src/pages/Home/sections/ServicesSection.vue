@@ -1,8 +1,8 @@
 <script setup>
 import { ref } from "vue";
-import ButtonPrimaryLight from "../../../components/ButtonPrimaryLight.vue";
-import SectionHeading from "../../../components/SectionHeading.vue";
-import ButtonSectionSecondaryDark from "../../../components/ButtonSectionSecondaryDark.vue";
+import ButtonPrimaryLight from "../../../components/buttons/ButtonPrimaryLight.vue";
+import SectionHeading from "../../../components/headings/SectionHeading.vue";
+import ButtonSectionSecondaryDark from "../../../components/buttons/ButtonSectionSecondaryDark.vue";
 
 import PlusIcon from "../../../assets/img/icons/Plus.svg";
 import MinusIcon from "../../../assets/img/icons/Minus.svg";

@@ -1,10 +1,11 @@
 <template>
-  <button @click="navigate" class="button-primary button-primary-dark">
-    <span>{{ label }}</span>
-    <img src="../assets/img/icons/ArrowRight.svg" alt="" />
+  <button @click="navigate" class="button-secondary button-secondary-black w-fit">
+    <span class="font-medium leading-[1] tracking-[0.02em] font-outfit">
+      {{ label }}
+    </span>
+    <img src="../../assets/img/icons/ArrowRight.svg" alt="" />
   </button>
 </template>
-
 <script setup>
 import { useRouter } from "vue-router";
 const props = defineProps({

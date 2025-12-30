@@ -65,7 +65,7 @@
 </template>
 
 <script setup>
-import ButtonPrimaryDark from "../../../components/ButtonPrimaryDark.vue";
-import ButtonSecondaryDark from "../../../components/ButtonSecondaryDark.vue";
-import ButtonSecondaryLight from "../../../components/ButtonSecondaryLight.vue";
+import ButtonPrimaryDark from "../../../components/buttons/ButtonPrimaryDark.vue";
+import ButtonSecondaryDark from "../../../components/buttons/ButtonSecondaryDark.vue";
+import ButtonSecondaryLight from "../../../components/buttons/ButtonSecondaryLight.vue";
 </script>

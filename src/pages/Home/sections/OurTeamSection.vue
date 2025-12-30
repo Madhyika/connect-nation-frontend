@@ -78,7 +78,7 @@
 
 <script setup>
 import { ref } from "vue";
-import SectionHeading from "../../../components/SectionHeading.vue";
+import SectionHeading from "../../../components/headings/SectionHeading.vue";
 
 const activeIndex = ref(2);
 const carousel = ref(null);

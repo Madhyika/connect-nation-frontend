@@ -43,7 +43,7 @@
         </div>
       </div>
     </div>
-    <div class="absolute w-[944px] h-[1584px] top-0 left-0 right-0 bottom-0">
+    <div class="absolute -z-40 w-236 h-396 top-0 left-0 right-0 bottom-0">
       <img
         src="../../../assets/img/decor/ellipse.svg"
         class="w-full h-full"
@@ -55,9 +55,9 @@
 
 <script setup>
 import { ref } from "vue";
-import SectionHeading from "../../../components/SectionHeading.vue";
-import ButtonPrimaryLight from "../../../components/ButtonPrimaryLight.vue";
-import ButtonSecondaryDark from "../../../components/ButtonSecondaryDark.vue";
+import SectionHeading from "../../../components/headings/SectionHeading.vue";
+import ButtonPrimaryLight from "../../../components/buttons/ButtonPrimaryLight.vue";
+import ButtonSecondaryDark from "../../../components/buttons/ButtonSecondaryDark.vue";
 
 const activeIndex = ref(null);
 const toggle = (index) => {

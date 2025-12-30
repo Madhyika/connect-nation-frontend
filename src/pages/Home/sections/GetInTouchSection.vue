@@ -157,8 +157,8 @@
 
 <script setup>
 import { reactive } from "vue";
-import SectionHeading from "../../../components/SectionHeading.vue";
-import ButtonPrimaryLight from "../../../components/ButtonPrimaryLight.vue";
+import SectionHeading from "../../../components/headings/SectionHeading.vue";
+import ButtonPrimaryLight from "../../../components/buttons/ButtonPrimaryLight.vue";
 
 const form = reactive({
   name: "",

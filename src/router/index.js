@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-// Home page eager load
+import DefaultLayout from "../layouts/DefaultLayout.vue";
 import HomePage from "../pages/Home/HomePage.vue";
+import TestLayout from "../layouts/TestLayout.vue";
 
-// Other pages lazy-loaded
 const WorkPage = () => import("../pages/Work/WorkPage.vue");
-const ServicePage = () => import("../pages/Service/ServicePage.vue");
+const ServicesPage = () => import("../pages/Services/ServicesPage.vue");
 const TVHostPage = () => import("../pages/TVHost/TVHostPage.vue");
 const AboutUsPage = () => import("../pages/AboutUs/AboutUsPage.vue");
 const ContactUsPage = () => import("../pages/ContactUs/ContactUsPage.vue");
@@ -14,18 +14,54 @@ const BlogsInsightsPage = () =>
 const PackagesPage = () => import("../pages/Packages/PackagesPage.vue");
 
 const routes = [
-  { path: "/", name: "home", component: HomePage },
-  { path: "/work", name: "work", component: WorkPage },
-  { path: "/service", name: "service", component: ServicePage },
-  { path: "/tv-host", name: "tvhost", component: TVHostPage },
-  { path: "/about-us", name: "aboutus", component: AboutUsPage },
-  { path: "/contact-us", name: "contactus", component: ContactUsPage },
+  {
+    path: "/",
+    name: "home",
+    component: HomePage,
+    meta: { layout: "DefaultLayout" },
+  },
+  {
+    path: "/work",
+    name: "work",
+    component: WorkPage,
+    meta: { layout: "DefaultLayout" },
+  },
+  {
+    path: "/services",
+    name: "services",
+    component: ServicesPage,
+    meta: { layout: "DefaultLayout" },
+  },
+  {
+    path: "/tv-host",
+    name: "tvhost",
+    component: TVHostPage,
+    meta: { layout: "DefaultLayout" },
+  },
+  {
+    path: "/about-us",
+    name: "aboutus",
+    component: AboutUsPage,
+    meta: { layout: "DefaultLayout" },
+  },
+  {
+    path: "/contact-us",
+    name: "contactus",
+    component: ContactUsPage,
+    meta: { layout: "DefaultLayout" },
+  },
   {
     path: "/blogs-insights",
     name: "blogsinsights",
     component: BlogsInsightsPage,
+    meta: { layout: "DefaultLayout" },
   },
-  { path: "/packages", name: "packages", component: PackagesPage },
+  {
+    path: "/packages",
+    name: "packages",
+    component: PackagesPage,
+    meta: { layout: "DefaultLayout" },
+  },
 ];
 
 const router = createRouter({

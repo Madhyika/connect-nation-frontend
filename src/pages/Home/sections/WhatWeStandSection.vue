@@ -1,6 +1,6 @@
 <script setup>
 import { reactive } from "vue";
-import SectionHeading from "../../../components/SectionHeading.vue";
+import SectionHeading from "../../../components/headings/SectionHeading.vue";
 import WhatWeDoneImg from "../../../assets/img/home/whatwedone.jpg";
 
 const repeatedCards = reactive([
@@ -71,7 +71,7 @@ function toggleCard(index) {
         </div>
       </div>
 
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col">
         <div
           v-for="(item, index) in repeatedCards"
           :key="item.id"
@@ -86,7 +86,7 @@ function toggleCard(index) {
                 : 'border-l-0 border-l-transparent'
             "
           >
-            <div class="p-5 ">
+            <div class="p-5">
               <p
                 class="flex gap-2.5 items-center font-inter font-medium text-[15px] transition-colors duration-500"
                 :class="item.expanded ? 'text-[#56BEB7]' : 'text-black'"
@@ -104,7 +104,7 @@ function toggleCard(index) {
               :style="{ gridTemplateRows: item.expanded ? '1fr' : '0fr' }"
             >
               <div class="overflow-hidden">
-                <div class="flex w-full justify-center ">
+                <div class="flex w-full justify-center">
                   <img
                     class="w-53 h-30 object-cover"
                     :src="item.image"

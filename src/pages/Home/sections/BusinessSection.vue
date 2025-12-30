@@ -5,7 +5,7 @@
         <div
           class="grid grid-cols-2 w-full bg-[#EEF2F6] items-center rounded-xl mt-24"
         >
-          <div class="flex flex-col gap-8  px-12 z-10">
+          <div class="flex flex-col gap-8 px-12 z-10">
             <h2
               class="font-outfit font-semibold text-[36px] leading-[1.2] tracking-[0] uppercase text-[#0C111D]"
             >
@@ -49,7 +49,7 @@
 </template>
 
 <script setup>
-import ButtonPrimaryLight from "../../../components/ButtonPrimaryLight.vue";
+import ButtonPrimaryLight from "../../../components/buttons/ButtonPrimaryLight.vue";
 </script>
 <style>
 .clip-bottom {
