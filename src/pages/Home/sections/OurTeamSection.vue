@@ -90,57 +90,24 @@ const activeGradient = {
   backgroundBlendMode: "overlay",
 };
 
+import member1 from "../../../assets/img/teamMembers/member1.png";
+import member2 from "../../../assets/img/teamMembers/member2.png";
+import member3 from "../../../assets/img/teamMembers/member3.png";
+import member4 from "../../../assets/img/teamMembers/member4.png";
+import member5 from "../../../assets/img/teamMembers/member5.png";
+import member6 from "../../../assets/img/teamMembers/member6.png";
+
 const team = [
-  {
-    name: "John Doe",
-    role: "Designer",
-    image: "/src/assets/img/teamMembers/member1.png",
-  },
-  {
-    name: "Jane Smith",
-    role: "Developer",
-    image: "/src/assets/img/teamMembers/member2.png",
-  },
-  {
-    name: "Rohit Rajput",
-    role: "IT Analyst",
-    image: "/src/assets/img/teamMembers/member3.png",
-  },
-  {
-    name: "Alex Carr",
-    role: "Manager",
-    image: "/src/assets/img/teamMembers/member4.png",
-  },
-  {
-    name: "Sara Wills",
-    role: "Marketing",
-    image: "/src/assets/img/teamMembers/member5.png",
-  },
-  {
-    name: "Tom Cook",
-    role: "Strategist",
-    image: "/src/assets/img/teamMembers/member6.png",
-  },
-  {
-    name: "John Doe",
-    role: "Designer",
-    image: "/src/assets/img/teamMembers/member1.png",
-  },
-  {
-    name: "Jane Smith",
-    role: "Developer",
-    image: "/src/assets/img/teamMembers/member2.png",
-  },
-  {
-    name: "Rohit Rajput",
-    role: "IT Analyst",
-    image: "/src/assets/img/teamMembers/member3.png",
-  },
-  {
-    name: "Alex Carr",
-    role: "Manager",
-    image: "/src/assets/img/teamMembers/member4.png",
-  },
+  { name: "John Doe", role: "Designer", image: member1 },
+  { name: "Jane Smith", role: "Developer", image: member2 },
+  { name: "Rohit Rajput", role: "IT Analyst", image: member3 },
+  { name: "Alex Carr", role: "Manager", image: member4 },
+  { name: "Sara Wills", role: "Marketing", image: member5 },
+  { name: "Tom Cook", role: "Strategist", image: member6 },
+  { name: "John Doe", role: "Designer", image: member1 },
+  { name: "Jane Smith", role: "Developer", image: member2 },
+  { name: "Rohit Rajput", role: "IT Analyst", image: member3 },
+  { name: "Alex Carr", role: "Manager", image: member4 },
 ];
 
 const visibleTeam = ref(team.slice(0, 6));
