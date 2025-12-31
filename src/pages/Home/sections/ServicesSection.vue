@@ -55,7 +55,7 @@ const toggleService = (index) => {
 <template>
   <section>
     <div class="container mx-auto flex flex-col gap-16">
-      <div class="grid grid-cols-2 items-start">
+      <div class="grid gap-3 lg:gap-0 lg:grid-cols-2 items-start">
         <SectionHeading span1="Our" span2="Services" />
         <div class="flex flex-col gap-8">
           <p class="paragraph-20 paragraph-dark">
@@ -67,19 +67,19 @@ const toggleService = (index) => {
         </div>
       </div>
 
-      <div class="grid grid-cols-2">
-        <div class="flex h-full w-2/3 items-end">
-          <div class="aspect-square w-full">
+      <div class="grid xl:grid-cols-2 gap-6 xl:gap-0">
+        <div class="flex h-full w-full xl:w-[90%] items-end">
+          <div class="w-full flex justify-center items-center">
             <img
               src="../../../assets/img/home/service.png"
               alt=""
-              class="h-full w-full object-cover"
+              class="xl:h-full w-2/3 xl:w-full object-cover"
             />
           </div>
         </div>
 
         <div class="flex">
-          <ul class="flex flex-col">
+          <ul class="flex flex-col px-6">
             <li
               v-for="(service, index) in services"
               :key="service.name"
@@ -90,7 +90,7 @@ const toggleService = (index) => {
                 @click="toggleService(index)"
               >
                 <h2
-                  class="font-outfit text-[22px] font-semibold uppercase leading-[30px] text-[#0C111D]"
+                  class="font-outfit text-left text-[22px] font-semibold uppercase leading-[30px] text-[#0C111D]"
                 >
                   {{ service.name }}
                 </h2>

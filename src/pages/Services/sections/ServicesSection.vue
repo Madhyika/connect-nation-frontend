@@ -2,14 +2,11 @@
   <section class="container mx-auto flex flex-col gap-26">
     <div class="grid grid-cols-2 items-start">
       <SectionHeading span1="Our" span2="Services" />
-      <div class="flex flex-col gap-8">
-        <p class="paragraph-20 paragraph-dark font-bold">
-          We deliver comprehensive digital solutions designed to drive business
-          growth. We create impactful content and strategies that help brands
-          stand out and succeed.
-        </p>
-        <ButtonPrimaryLight label="View all Services" to="/" />
-      </div>
+      <p class="paragraph-20 paragraph-dark font-bold">
+        We deliver comprehensive digital solutions designed to drive business
+        growth. We create impactful content and strategies that help brands
+        stand out and succeed.
+      </p>
     </div>
 
     <div class="flex flex-col gap-26">
@@ -116,6 +113,5 @@ const services = [
     ],
     image: ServiceImg,
   },
-
 ];
 </script>

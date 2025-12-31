@@ -6,48 +6,21 @@
           <div class="flex flex-col gap-4">
             <SectionHeading span1="Get In" span2="Touch" />
             <ul class="mt-10 space-y-6">
-              <li class="flex items-center gap-4">
+              <li
+                v-for="(item, index) in contactItems"
+                :key="index"
+                class="flex items-center gap-4"
+              >
                 <img
-                  src="../../../assets/img/icons/mail.svg"
-                  alt="Email"
+                  :src="item.icon"
+                  :alt="item.label"
                   class="h-11 w-11 rounded-lg bg-[#56BEB7] p-3"
                 />
                 <span
-                  class="font-inter font-normal text-[22px] leading-[26px] text-black"
+                  class="font-inter font-normal text-[22px] leading-[26px]"
+                  :class="item.textColor ? item.textColor : 'text-black'"
                 >
-                  admin@connectnation.com.au
-                </span>
-              </li>
-              <li class="flex items-center gap-4">
-                <img
-                  src="../../../assets/img/icons/phone.svg"
-                  alt="Phone"
-                  class="h-11 w-11 rounded-lg bg-[#56BEB7] p-3"
-                />
-                <span
-                  class="font-inter font-normal text-[22px] leading-[26px] text-black"
-                >
-                  0451 244 441
-                </span>
-              </li>
-              <li class="flex items-center gap-4">
-                <img
-                  src="../../../assets/img/icons/location.svg"
-                  alt="Address"
-                  class="h-11 w-11 rounded-lg bg-[#56BEB7] p-3"
-                />
-                <span class="font-inter font-normal text-[22px] leading-[26px]">
-                  23 Kent Road, Macdonald Park SA 5121
-                </span>
-              </li>
-              <li class="flex items-center gap-4">
-                <img
-                  src="../../../assets/img/icons/clock.svg"
-                  alt="Response time"
-                  class="h-11 w-11 rounded-lg bg-[#56BEB7] p-3"
-                />
-                <span class="font-inter font-normal text-[22px] leading-[26px]">
-                  Response within 24 hours
+                  {{ item.value }}
                 </span>
               </li>
             </ul>
@@ -170,4 +143,30 @@ const form = reactive({
 const submitForm = () => {
   console.log("Form submitted:", form);
 };
+import MailIcon from "../../../assets/img/icons/mail.svg";
+import PhoneIcon from "../../../assets/img/icons/phone.svg";
+import LocationIcon from "../../../assets/img/icons/location.svg";
+import ClockIcon from "../../../assets/img/icons/clock.svg";
+const contactItems = [
+  {
+    icon: MailIcon,
+    label: "Email",
+    value: "admin@connectnation.com.au",
+  },
+  {
+    icon: PhoneIcon,
+    label: "Phone",
+    value: "0451 244 441",
+  },
+  {
+    icon: LocationIcon,
+    label: "Address",
+    value: "23 Kent Road, Macdonald Park SA 5121",
+  },
+  {
+    icon: ClockIcon,
+    label: "Response time",
+    value: "Response within 24 hours",
+  },
+];
 </script>

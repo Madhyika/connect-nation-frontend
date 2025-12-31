@@ -1,7 +1,7 @@
 <template>
   <div class="relative min-h-screen w-full">
     <img
-      :src="imageSrc"
+      :src="computedImageSrc"
       :alt="altText"
       class="absolute inset-0 h-full w-full object-cover"
     />
@@ -22,10 +22,13 @@
 </template>
 
 <script setup>
-defineProps({
+import { ref, watchEffect } from "vue";
+import BannerImage from "../assets/img/other/Banner2.png";
+
+const props = defineProps({
   imageSrc: {
     type: String,
-    default: BannerImage,
+    default: "",
   },
   title: {
     type: String,
@@ -36,7 +39,22 @@ defineProps({
     default: "Banner Image",
   },
 });
-import BannerImage from "../assets/img/other/Banner2.png";
+const computedImageSrc = ref(BannerImage);
+
+watchEffect(async () => {
+  if (props.imageSrc) {
+    try {
+      const image = await import(`../assets/img/other/${props.imageSrc}`);
+      computedImageSrc.value = image.default;
+    } catch (e) {
+      computedImageSrc.value = props.imageSrc.startsWith("http")
+        ? props.imageSrc
+        : DefaultBanner;
+    }
+  } else {
+    computedImageSrc.value = DefaultBanner;
+  }
+});
 </script>
 
 <style scoped></style>

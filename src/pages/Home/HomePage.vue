@@ -15,13 +15,12 @@
 </template>
 
 <script setup>
-import { Static } from "vue";
 import BannerSection from "./sections/BannerSection.vue";
 import BusinessSection from "./sections/BusinessSection.vue";
 import ClientsSection from "./sections/ClientsSection.vue";
 import MarketingSection from "./sections/MarketingSection.vue";
 import ServicesSection from "./sections/ServicesSection.vue";
-import WhatWeCreatedSection from "./sections/WhatWeCreatedSection.vue";
+import WhatWeCreatedSection from "./sections/WhatWeCreatedSection copy.vue";
 import WhatWeStandSection from "./sections/WhatWeStandSection.vue";
 import StorySection from "./sections/StorySection.vue";
 import ClientsStoriesSection from "./sections/ClientsStoriesSection.vue";

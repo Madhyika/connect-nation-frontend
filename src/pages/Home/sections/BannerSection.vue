@@ -11,23 +11,29 @@
     <div
       class="container relative mx-auto flex min-h-screen flex-wrap content-end"
     >
-      <div class="flex w-full gap-32 py-32">
-        <div class="flex flex-col justify-end gap-5 text-white">
-          <span
-            class="font-outfit text-[54px] font-medium leading-[60px] tracking-[-0.02em]"
-          >
-            Adelaide’s Trusted Web & SEO Services for Business Growth
-          </span>
+      <div
+        class="flex flex-col lg:flex-row w-full justify-end lg:justify-between items-center lg:py-32 "
+      >
+        <div
+          class="container mx-auto flex flex-col justify-center lg:justify-between gap-5 sm:gap-6 md:gap-7 lf:gap-8 text-white "
+        >
+          <div class="flex flex-col gap-5 md:gap-8 px-6 sm:px-0">
+            <span
+              class="font-outfit font-medium tracking-[-0.02em] text-[32px] leading-[40px] sm:text-[40px] sm:leading-[48px] lg:text-[54px] lg:leading-[60px]"
+            >
+              Adelaide’s Trusted Web & SEO Services for Business Growth
+            </span>
 
-          <span
-            class="font-inter text-[18px] font-light leading-[28px] tracking-[0.02em]"
-          >
-            Connect Nation powers Adelaide business growth expert ads, videos,
-            photography, web design, site management, SEO, and full-funnel
-            marketing
-          </span>
+            <span
+              class="font-inter font-light tracking-[0.02em] text-[14px] leading-[22px] sm:text-[16px] sm:leading-[25px] lg:text-[18px] lg:leading-[28px]"
+            >
+              Connect Nation powers Adelaide business growth expert ads, videos,
+              photography, web design, site management, SEO, and full-funnel
+              marketing
+            </span>
+          </div>
 
-          <div class="flex items-center gap-12">
+          <div class="flex flex-col sm:flex-row items-center gap-6 sm:gap-12">
             <ButtonPrimaryDark label="Get Started" to="/" />
             <ButtonSecondaryLight label="Learn More About Company" to="/" />
           </div>
@@ -41,7 +47,7 @@
               <img
                 src="../../../assets/img/logo/logo.png"
                 alt=""
-                class="h-full w-12 scale-150"
+                class="h-full max-w-12 scale-150"
               />
               <img
                 src="../../../assets/img/icons/DotsHorizontal.svg"

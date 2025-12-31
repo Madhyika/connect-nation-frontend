@@ -21,13 +21,14 @@
       </div>
 
       <div class="flex flex-col gap-4">
-        <div>
+        <transition name="fade" mode="out-in">
           <img
+            :key="selectedClient.image"
             class="w-[395px] h-[421px] rounded-[8px] object-cover"
             :src="selectedClient.image"
             alt=""
           />
-        </div>
+        </transition>
 
         <div class="grid grid-cols-4 gap-4 justify-items-center">
           <img
@@ -35,44 +36,52 @@
             :key="index"
             :src="client.image"
             @click="selectedClient = client"
-            class="w-[91px] h-[91px] object-cover cursor-pointer transition-all duration-300"
+            class="w-[91px] h-[91px] filter object-cover cursor-pointer transition-all duration-300 hover:filter-none"
             :class="{
-              'rounded-full scale-105': selectedClient.image === client.image,
-              'rounded-none opacity-70': selectedClient.image !== client.image,
+              'rounded-full scale-105 ': selectedClient.image === client.image,
+              'rounded-none opacity-70 filter grayscale':
+                selectedClient.image !== client.image,
             }"
             alt=""
           />
         </div>
       </div>
 
-      <div class="flex flex-col gap-24">
-        <div class="flex flex-col gap-8">
-          <div class="flex justify-between items-center">
-            <img class="w-[44px]" :src="selectedClient.logo" alt="" />
-            <ul class="flex gap-1">
-              <li v-for="n in selectedClient.rating" :key="n">
-                <img src="../../../assets/img/icons/Star.svg" alt="" />
-              </li>
-            </ul>
+      <div class="flex flex-col h-full gap-24">
+        <transition name="fade" mode="out-in">
+          <div
+            class="flex flex-col h-[70%] justify-between"
+            :key="selectedClient.feedback"
+          >
+            <div class="flex flex-col gap-8">
+              <div class="flex justify-between items-center">
+                <img class="w-[44px]" :src="selectedClient.logo" alt="" />
+                <ul class="flex gap-1">
+                  <li v-for="n in selectedClient.rating" :key="n">
+                    <img src="../../../assets/img/icons/Star.svg" alt="" />
+                  </li>
+                </ul>
+              </div>
+              <p
+                class="font-inter font-medium italic text-[18px] leading-[30px] tracking-[0.03em] text-black"
+              >
+                {{ selectedClient.feedback }}
+              </p>
+            </div>
+            <div class="flex flex-col gap-4">
+              <h1
+                class="font-outfit font-medium text-[28px] leading-[100%] tracking-[0.03em] text-black"
+              >
+                {{ selectedClient.name }}
+              </h1>
+              <p
+                class="font-inter font-medium text-[20px] leading-[100%] tracking-[0.03em] text-white"
+              >
+                {{ selectedClient.position }}
+              </p>
+            </div>
           </div>
-          <p
-            class="font-inter font-medium italic text-[18px] leading-[30px] tracking-[0.03em] text-black"
-          >
-            {{ selectedClient.feedback }}
-          </p>
-        </div>
-        <div class="flex flex-col gap-4">
-          <h1
-            class="font-outfit font-medium text-[28px] leading-[100%] tracking-[0.03em] text-black"
-          >
-            {{ selectedClient.name }}
-          </h1>
-          <p
-            class="font-inter font-medium text-[20px] leading-[100%] tracking-[0.03em] text-white"
-          >
-            {{ selectedClient.position }}
-          </p>
-        </div>
+        </transition>
       </div>
     </div>
   </section>
@@ -127,3 +136,17 @@ const clients = [
 
 const selectedClient = ref(clients[0]);
 </script>
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
+}
+</style>

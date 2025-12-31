@@ -11,7 +11,7 @@
       </router-link>
 
       <div
-        class="w-full text-center font-outfit font-medium text-base leading-[1.75rem] tracking-[0.03em] transition-colors duration-300"
+        class="hidden md:block w-full text-center font-outfit font-medium text-base leading-[1.75rem] tracking-[0.03em] transition-colors duration-300"
         :class="textClass"
       >
         Adelaide, Australia

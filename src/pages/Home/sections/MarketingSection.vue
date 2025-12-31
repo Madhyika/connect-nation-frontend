@@ -31,7 +31,9 @@ const infoCards = [
 <template>
   <section class="relative overflow-hidden bg-[#FAFAFA]">
     <div class="container mx-auto">
-      <div class="flex h-full w-1/2 flex-col items-start justify-start gap-26">
+      <div
+        class="flex h-full xl:w-1/2 flex-col items-center justify-center md:items-start md:justify-start gap-26"
+      >
         <div class="flex w-full flex-col gap-5">
           <SectionHeading
             span1="Driving Growth Through <br>"
@@ -43,7 +45,9 @@ const infoCards = [
           </p>
         </div>
 
-        <div class="grid grid-cols-2 grid-rows-2 gap-5">
+        <div
+          class="grid grid-cols-1 grid-rows-4 md:grid-cols-2 md:grid-rows-2 gap-5"
+        >
           <div
             v-for="item in stats"
             :key="item.title"
