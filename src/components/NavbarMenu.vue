@@ -4,7 +4,7 @@
     :class="wrapperClass"
   >
     <div
-      class="container mx-auto flex h-full flex-col items-center justify-end gap-20 md:gap-36 py-10 md:py-16"
+      class="container mx-auto flex h-full flex-col items-center justify-end gap-12  py-10 md:py-16"
     >
       <div class="relative flex w-full items-center justify-center">
         <div
@@ -21,7 +21,7 @@
           </transition>
         </div>
 
-        <nav class="flex flex-col justify-center gap-6 md:gap-10">
+        <nav class="flex flex-col justify-center gap-2 md:gap-6">
           <router-link
             v-for="item in menuItems"
             :key="item.to"
