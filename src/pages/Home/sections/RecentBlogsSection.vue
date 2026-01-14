@@ -8,12 +8,17 @@
             A passionate group of creative minds, technical experts, and
             marketing specialists driving success for our clients.
           </p>
-          <ButtonPrimaryLight label="Explore more" to="/" />
+          <ButtonPrimaryLight label="Explore more" to="/blogs-insights" />
         </div>
       </div>
 
       <div class="grid grid-cols-3 gap-8">
-        <div
+        <BlogCard
+          v-for="(blog, index) in blogs.slice(0, 3)"
+          :key="index"
+          :blog="blog"
+        />
+        <!-- <div
           v-for="(blog, index) in blogs"
           :key="index"
           class="pr-2 border-r last:border-r-0 flex flex-col gap-6 border-r-[#D0D5DD]"
@@ -41,7 +46,7 @@
               {{ blog.description }}
             </p>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -51,34 +56,36 @@
 import SectionHeading from "../../../components/headings/SectionHeading.vue";
 import ButtonPrimaryLight from "../../../components/buttons/ButtonPrimaryLight.vue";
 
-import blog1 from "../../../assets/img/blog/blog1.jpg";
-import blog2 from "../../../assets/img/blog/blog2.jpg";
-import blog3 from "../../../assets/img/blog/blog3.jpg";
+// import blog1 from "../../../assets/img/blog/blog1.jpg";
+// import blog2 from "../../../assets/img/blog/blog2.jpg";
+// import blog3 from "../../../assets/img/blog/blog3.jpg";
+import BlogCard from "../../BlogsInsights/sections/BlogCard.vue";
+import { blogs } from "../../../../stores/blog";
 
-const blogs = [
-  {
-    image: blog1,
-    author: "Natali Craig",
-    date: "14 Jan 2022",
-    title: "How collaboration makes us better designers",
-    description:
-      "Collaboration can make our teams stronger, and our individual designs better.",
-  },
-  {
-    image: blog2,
-    author: "John Doe",
-    date: "20 Feb 2022",
-    title: "Design trends to watch this year",
-    description:
-      "Stay ahead with the latest design trends that are shaping the industry.",
-  },
-  {
-    image: blog3,
-    author: "Jane Smith",
-    date: "05 Mar 2022",
-    title: "Building a successful creative team",
-    description:
-      "Learn how to foster collaboration and innovation within your team.",
-  },
-];
+// const blogs = [
+//   {
+//     image: blog1,
+//     author: "Natali Craig",
+//     date: "14 Jan 2022",
+//     title: "How collaboration makes us better designers",
+//     description:
+//       "Collaboration can make our teams stronger, and our individual designs better.",
+//   },
+//   {
+//     image: blog2,
+//     author: "John Doe",
+//     date: "20 Feb 2022",
+//     title: "Design trends to watch this year",
+//     description:
+//       "Stay ahead with the latest design trends that are shaping the industry.",
+//   },
+//   {
+//     image: blog3,
+//     author: "Jane Smith",
+//     date: "05 Mar 2022",
+//     title: "Building a successful creative team",
+//     description:
+//       "Learn how to foster collaboration and innovation within your team.",
+//   },
+// ];
 </script>

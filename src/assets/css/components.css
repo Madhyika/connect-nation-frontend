@@ -138,6 +138,76 @@
   width: 2px;
 }
 
+.button-secondary-hover-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 22px;
+  font-weight: 500;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+/* text-decoration */
+/* TITLE */
+.button-secondary-hover-line .button-title {
+  position: relative;
+  text-align: left;
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: 0;
+}
+
+/* underline hidden by default */
+.button-secondary-hover-line .button-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+/* arrow */
+.button-secondary-hover-line img {
+  transition: transform 0.3s ease;
+}
+
+/* ===== ACTIVE (from card hover) ===== */
+.button-secondary-hover-line.is-active {
+  gap: 6px;
+}
+
+.button-secondary-hover-line.is-active .button-title::after {
+  width: 100%;
+}
+
+.button-secondary-hover-line.is-active img {
+  transform: rotate(45deg);
+}
+
+/* color */
+.button-secondary-black {
+  color: black;
+}
+
+.button-secondary-black img {
+  filter: invert(1);
+}
+
+.blog-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.12);
+}
+
 /* Variants */
 .button-secondary-white {
   color: white;

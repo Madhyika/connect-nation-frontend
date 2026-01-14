@@ -2,12 +2,11 @@
   <section class="container mx-auto py-10">
     <div class="flex flex-col gap-12">
       <div class="grid grid-cols-2 justify-between">
-        <SectionHeading span1="What We <br>" span2="Created" />
+        <SectionHeading span1="Meet <br>" span2="Our Team" />
         <div class="flex flex-col gap-10">
           <p class="paragraph-20 paragraph-dark">
-            We bring ideas to life through video, design, websites, and
-            marketing campaigns and also the projects we've crafted to help
-            businesses grow through creative content and smart strategy.
+            A passionate group of creative minds, technical experts, and
+            marketing specialists driving success for our clients.
           </p>
           <div class="w-full h-full flex justify-end items-center">
             <div class="flex gap-5">

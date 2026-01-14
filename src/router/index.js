@@ -12,6 +12,7 @@ const ContactUsPage = () => import("../pages/ContactUs/ContactUsPage.vue");
 const BlogsInsightsPage = () =>
   import("../pages/BlogsInsights/BlogsInsightsPage.vue");
 const PackagesPage = () => import("../pages/Packages/PackagesPage.vue");
+const BlogDetailPage = () => import("../pages/BlogsInsights/[slug].vue");
 
 const routes = [
   {
@@ -56,6 +57,13 @@ const routes = [
     component: BlogsInsightsPage,
     meta: { layout: "DefaultLayout" },
   },
+  {
+    path: "/blog-insights/:slug",
+    name: "blog-detail",
+    component: BlogDetailPage,
+    meta: { layout: "DefaultLayout" },
+  },
+
   {
     path: "/packages",
     name: "packages",

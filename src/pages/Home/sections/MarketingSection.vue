@@ -37,11 +37,12 @@ const infoCards = [
         <div class="flex w-full flex-col gap-5">
           <SectionHeading
             span1="Driving Growth Through <br>"
-            span2="Unified Marketing"
+            span2="Unified Digital Marketing"
           />
           <p class="paragraph-20 paragraph-dark pr-6">
             At Connect Nation, we combine data-driven strategy with creative
-            execution to launch brands and campaigns that make an impact.
+            execution to launch Adelaide brands and campaigns that make an
+            impact.
           </p>
         </div>
 

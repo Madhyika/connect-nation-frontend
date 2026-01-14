@@ -7,9 +7,9 @@ import SectionHeading from "../../../components/headings/SectionHeading.vue";
     <div class="grid grid-cols-2 gap-32">
       <SectionHeading span1="The Story Behind<br>" span2="Connect Nation" />
       <p class="paragraph-20 paragraph-dark">
-        Connect Nation began with only one purpose which help Australian
+        Connect Nation began with one purpose: helping Adelaide and Australian
         businesses stand out in a fast-changing digital world through creative
-        content and smart marketing strategies.
+        content and smart marketing solutions.
       </p>
     </div>
 
@@ -37,8 +37,8 @@ import SectionHeading from "../../../components/headings/SectionHeading.vue";
           <p
             class="font-inter font-light text-[20px] leading-[30px] tracking-[0.02em] text-[#475467]"
           >
-            Connect Nation grew from a small local startup into a trusted
-            partner for brands across Australia.
+            Connect Nation grew from an Adelaide startup into a trusted digital
+            partner for Australian brands.
           </p>
         </div>
 

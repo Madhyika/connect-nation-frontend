@@ -5,9 +5,8 @@
         <div class="flex flex-col gap-6">
           <SectionHeading span1="Frequently<br>" span2="Asked questions" />
           <p class="paragraph-20 paragraph-dark">
-            We deliver comprehensive digital solutions designed to drive
-            business growth. We create impactful content and strategies that
-            help brands stand out and succeed.
+            Get quick answers about working with us and our approach to digital
+            solutions.
           </p>
         </div>
         <div class="w-full flex gap-8 items-center z-50">
@@ -18,6 +17,7 @@
 
       <div class="flex flex-col gap-4">
         <div
+          v-if="props.faqs"
           v-for="(faq, index) in faqs"
           :key="index"
           class="flex flex-col gap-3 border-b border-gray-200 pb-3 cursor-pointer"
@@ -64,66 +64,7 @@ const toggle = (index) => {
   activeIndex.value = activeIndex.value === index ? null : index;
 };
 
-const faqs = [
-  {
-    question: "What video formats do you accept for editing?",
-    number: "01",
-    answer:
-      "We accept all major video formats including MP4, MOV, AVI, MKV, and more. Files can be up to 5GB per upload. If you have larger files, please contact us for alternative upload methods.",
-  },
-  {
-    question: "Can I request revisions after delivery?",
-    number: "02",
-    answer:
-      "Yes! We offer a set number of revisions depending on the project type. Specific details will be discussed during your project briefing.",
-  },
-  {
-    question: "Do you provide source files?",
-    number: "03",
-    answer:
-      "We can provide source files upon request. Some project types may have additional fees for source file delivery.",
-  },
-  {
-    question: "What is your typical turnaround time?",
-    number: "04",
-    answer:
-      "Turnaround times vary based on project complexity, but most projects are delivered within 3-7 business days.",
-  },
-  {
-    question: "How do I submit my project requirements?",
-    number: "05",
-    answer:
-      "You can submit your requirements via our contact form, email, or by scheduling a consultation with our team.",
-  },
-  {
-    question: "Do you offer ongoing support?",
-    number: "06",
-    answer:
-      "Yes! We offer ongoing support packages for clients who need regular updates, maintenance, or assistance with new content.",
-  },
-  {
-    question: "Do you provide project estimates?",
-    number: "07",
-    answer:
-      "Absolutely! After reviewing your project requirements, we provide a detailed estimate including timelines and costs.",
-  },
-  {
-    question: "Can I cancel a project once it starts?",
-    number: "08",
-    answer:
-      "Projects can be canceled, but depending on the stage, partial fees may apply. This will be clearly explained in our agreement.",
-  },
-  {
-    question: "Do you offer discounts for bulk projects?",
-    number: "09",
-    answer:
-      "Yes! We offer discounts for clients who have multiple projects or ongoing contracts. Contact us for custom pricing.",
-  },
-  {
-    question: "How do you ensure quality in your projects?",
-    number: "10",
-    answer:
-      "Our team follows strict quality assurance processes, including reviews, revisions, and testing to ensure top-notch results.",
-  },
-];
+const props = defineProps({
+  faqs: Object,
+});
 </script>

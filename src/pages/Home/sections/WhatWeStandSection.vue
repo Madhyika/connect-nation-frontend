@@ -9,7 +9,7 @@ const repeatedCards = reactive([
     title: "Excellence",
     expanded: false,
     description:
-      "We deliver nothing but the highest quality work that exceeds expectations.",
+      "Delivering top-quality digital work that exceeds expectations for Adelaide businesses.",
     image: WhatWeDoneImg,
   },
   {
@@ -17,7 +17,7 @@ const repeatedCards = reactive([
     title: "Results-Driven",
     expanded: false,
     description:
-      "We deliver nothing but the highest quality work that exceeds expectations.",
+      "Smart strategies and real results that grow your Adelaide business effectively.",
     image: WhatWeDoneImg,
   },
   {
@@ -25,7 +25,7 @@ const repeatedCards = reactive([
     title: "Client-Focused",
     expanded: false,
     description:
-      "We prioritize client needs and deliver solutions that create real value.",
+      "Working closely with Adelaide businesses, understanding your goals and delivering custom solutions.",
     image: WhatWeDoneImg,
   },
   {
@@ -33,7 +33,7 @@ const repeatedCards = reactive([
     title: "Local Expertise",
     expanded: false,
     description:
-      "We understand the local market and craft strategies that resonate.",
+      "Deep knowledge of Adelaide and South Australian markets, connecting local businesses with customers.",
     image: WhatWeDoneImg,
   },
 ]);
@@ -52,9 +52,8 @@ function toggleCard(index) {
         <div class="flex flex-col gap-8.5">
           <SectionHeading span1="What We" span2="Stand" />
           <p class="paragraph-20 paragraph-dark">
-            We bring ideas to life through video, design, websites, and
-            marketing campaigns and also the projects we've crafted to help
-            businesses grow through creative content and smart strategy.
+            A blend of creativity, strategy, and integrity that shapes every
+            Adelaide project we bring to life.
           </p>
         </div>
         <div class="relative overflow-hidden scale-120 mt-6">

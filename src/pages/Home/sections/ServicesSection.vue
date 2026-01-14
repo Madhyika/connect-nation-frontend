@@ -11,39 +11,38 @@ const services = ref([
   {
     name: "Website Design & Development",
     open: false,
-    description: `Our design process focuses on understanding your business needs,
-crafting a unique brand experience, and ensuring seamless
-navigation for your visitors.`,
+    description: `Our design process focuses on understanding business needs, crafting unique brand experiences, and ensuring seamless navigation for visitors.
+`,
   },
   {
     name: "SaaS Development",
     open: false,
     description:
-      "We provide scalable SaaS solutions tailored to your business needs, ensuring reliability and performance.",
-  },
-  {
-    name: "Web Development",
-    open: false,
-    description:
-      "Custom websites built with modern technologies for responsiveness, performance, and SEO.",
+      "Our SaaS solutions deliver scalable platforms with robust architecture, cloud-based infrastructure, and intuitive interfaces that drive growth.",
   },
   {
     name: "Mobile App Development",
     open: false,
     description:
+      "Our mobile app development creates native and cross-platform applications for iOS and Android with seamless functionality and engaging user experiences.",
+  },
+  {
+    name: "Video Editing",
+    open: false,
+    description:
       "Native and cross-platform mobile applications that deliver seamless user experiences.",
   },
   {
-    name: "UI/UX Design",
+    name: "Graphic Design",
     open: false,
     description:
-      "Designing intuitive interfaces and experiences that engage and convert users.",
+      "Our graphic design creates distinctive brand identities, marketing materials, and digital assets that communicate messages clearly and professionally.",
   },
   {
-    name: "Cloud Solutions",
+    name: "SEO Services",
     open: false,
     description:
-      "Secure and scalable cloud infrastructure solutions to support your business operations.",
+      "Our SEO services optimize websites for search engines, improve rankings, drive organic traffic, and attract qualified leads.",
   },
 ]);
 
@@ -60,8 +59,9 @@ const toggleService = (index) => {
         <div class="flex flex-col gap-8">
           <p class="paragraph-20 paragraph-dark">
             We deliver comprehensive digital solutions designed to drive
-            business growth. We create impactful content and strategies that
-            help brands stand out and succeed.
+            business growth for Adelaide and South Australian brands, creating
+            impactful content and strategies that help businesses stand out and
+            succeed.
           </p>
           <ButtonPrimaryLight label="View all Services" to="/" />
         </div>

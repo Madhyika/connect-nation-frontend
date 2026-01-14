@@ -14,7 +14,7 @@
                 <img
                   :src="item.icon"
                   :alt="item.label"
-                  class="h-11 w-11 rounded-lg bg-[#56BEB7] p-3"
+                  class="h-11 w-11 rounded-lg bg-[#000000] p-2"
                 />
                 <span
                   class="font-inter font-normal text-[22px] leading-[26px]"
@@ -50,7 +50,7 @@
             >
               SEND US A MESSAGE
             </h3>
-            <p class="paragraph-18 paragraph-dark">
+            <p class="paragraph-17">
               Got an idea or need support? Drop us a message and let’s start the
               conversation. We’d love to hear from you.
             </p>

@@ -13,7 +13,7 @@ const originalCards = [
     year: "2021",
     title: "Achievers college website 1",
     description:
-      "Collaborate with the world’s top platforms and partners to deliver results that set new standards.",
+      "Delivered comprehensive website design and development for Achievers College Adelaide, creating an intuitive educational platform with modern design and seamless functionality that enhances student engagement and program visibility.",
     logo: AcheiversCollegeLogo,
     desktopImg: AcheiversDesktop,
     mobileImg: AcheiversMobile,
@@ -73,12 +73,13 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
         <div
           class="grid gap-4 lg:gap-0 lg:grid-cols-2 items-start justify-between"
         >
-          <SectionHeading span1="What We <br>" span2="Created" />
+          <SectionHeading span1="What We've<br>" span2="Created" />
           <div class="flex flex-col gap-8">
             <p class="paragraph-20 paragraph-dark">
-              We bring ideas to life through video, design, websites, and
-              marketing campaigns and also the projects we've crafted to help
-              businesses grow through creative content and smart strategy.
+              Our portfolio demonstrates proven results across video production,
+              digital marketing campaigns, and web development projects crafted
+              to help Adelaide businesses achieve measurable growth through
+              strategic content and data-driven execution.
             </p>
             <ButtonPrimaryLight label="View all projects" to="/" />
           </div>

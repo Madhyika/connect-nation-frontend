@@ -1,6 +1,6 @@
 .section-heading {
   font-family: "Outfit", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 44px;
   line-height: 48px;
   letter-spacing: -0.01em; /* -1% */
@@ -22,10 +22,28 @@
   font-size: 20px;
 }
 .paragraph-dark {
-  color: #475467;
+  color: #667085;
 }
 .paragraph-light {
   color: #ffffff;
+}
+.paragraph-18 {
+  font-family: Inter;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 33px;
+  letter-spacing: 3%;
+  color: #182230;
+}
+.paragraph-17 {
+  font-family: Inter;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 2%;
+  color: #475467;
 }
 .paragraph-16 {
   font-family: "Inter", sans-serif;

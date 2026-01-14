@@ -4,7 +4,7 @@
     :class="wrapperClass"
   >
     <div
-      class="container mx-auto flex h-full flex-col items-center justify-end gap-12  py-10 md:py-16"
+      class="container mx-auto flex h-full flex-col items-center justify-end gap-12 py-10 md:py-16"
     >
       <div class="relative flex w-full items-center justify-center">
         <div

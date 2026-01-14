@@ -6,12 +6,14 @@
       <div class="grid w-full grid-cols-1 lg:grid-cols-2 items-center gap-6">
         <SectionHeading span1="Our" span2="Clients" />
         <p class="paragraph-20 paragraph-dark">
-          Collaborate with the world’s top platforms and partners to deliver
-          results that set new standards
+          Collaborate with Adelaide businesses and leading global platforms to
+          deliver results that set new standards
         </p>
       </div>
 
-      <div class="grid w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 px-6 sm:px-0">
+      <div
+        class="grid w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 px-6 sm:px-0"
+      >
         <div
           v-for="client in clients"
           :key="client.alt"
