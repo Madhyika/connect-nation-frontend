@@ -67,6 +67,8 @@ import mobile from "../../../assets/img/home/service/mobile.png";
 import video from "../../../assets/img/home/service/videoediting.png";
 import graphic from "../../../assets/img/home/service/graphic.png";
 import seo from "../../../assets/img/home/service/seo.png";
+import digital from "../../../assets/img/home/service/digital.png";
+import content from "../../../assets/img/home/service/content.png";
 
 const services = [
   {
@@ -126,20 +128,6 @@ const services = [
     image: video,
   },
   {
-    title: "DIGITAL MARKETING",
-    description:
-      "Our digital marketing strategies combine data-driven insights with creative execution to grow your Adelaide business reach and drive measurable results.",
-    features: [
-      "Social Media Marketing",
-      "PPC Advertising",
-      "Email Marketing",
-      "Content Marketing",
-      "Marketing Analytics",
-      "Campaign Management",
-    ],
-    image: video,
-  },
-  {
     title: "GRAPHIC DESIGN",
     description:
       "Our graphic design creates distinctive brand identities, marketing materials, and digital assets that communicate messages clearly and professionally.",
@@ -150,20 +138,6 @@ const services = [
       "SOCIAL MEDIA GRAPHICS",
       "PRINT DESIGN",
       "INFOGRAPHICS",
-    ],
-    image: graphic,
-  },
-  {
-    title: "CONTENT CREATION",
-    description:
-      "Our content creation services deliver engaging written, visual, and video content that resonates with your Adelaide audience and strengthens brand authority.",
-    features: [
-      "Copywriting",
-      "Blog Content",
-      "Social Media Posts",
-      "Video Content",
-      "Photography",
-      "Content Strategy",
     ],
     image: graphic,
   },
@@ -180,6 +154,35 @@ const services = [
       "LINK BUILDING",
     ],
     image: seo,
+  },
+  {
+    title: "DIGITAL MARKETING",
+    description:
+      "Our digital marketing strategies combine data-driven insights with creative execution to grow your Adelaide business reach and drive measurable results.",
+    features: [
+      "Social Media Marketing",
+      "PPC Advertising",
+      "Email Marketing",
+      "Content Marketing",
+      "Marketing Analytics",
+      "Campaign Management",
+    ],
+    image: digital,
+  },
+
+  {
+    title: "CONTENT CREATION",
+    description:
+      "Our content creation services deliver engaging written, visual, and video content that resonates with your Adelaide audience and strengthens brand authority.",
+    features: [
+      "Copywriting",
+      "Blog Content",
+      "Social Media Posts",
+      "Video Content",
+      "Photography",
+      "Content Strategy",
+    ],
+    image: content,
   },
 ];
 </script>
