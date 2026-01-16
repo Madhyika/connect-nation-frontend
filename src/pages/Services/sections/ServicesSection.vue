@@ -4,8 +4,8 @@
       <SectionHeading span1="Our" span2="Services" />
       <p class="paragraph-20 paragraph-dark font-bold">
         We deliver comprehensive digital solutions designed to drive business
-        growth. We create impactful content and strategies that help brands
-        stand out and succeed.
+        growth for Adelaide and South Australian brands, creating impactful
+        content and strategies that help businesses stand out and succeed.
       </p>
     </div>
 
@@ -61,12 +61,18 @@
 import ButtonPrimaryLight from "../../../components/buttons/ButtonPrimaryLight.vue";
 import SectionHeading from "../../../components/headings/SectionHeading.vue";
 import ServiceImg from "../../../assets/img/home/service.png";
+import website from "../../../assets/img/home/service/website.png";
+import saas from "../../../assets/img/home/service/saas.png";
+import mobile from "../../../assets/img/home/service/mobile.png";
+import video from "../../../assets/img/home/service/videoediting.png";
+import graphic from "../../../assets/img/home/service/graphic.png";
+import seo from "../../../assets/img/home/service/seo.png";
 
 const services = [
   {
-    title: "Website Design & Development",
+    title: "WEBSITE DESIGN & DEVELOPMENT",
     description:
-      "Our design process focuses on understanding your business needs, crafting a unique brand experience, and ensuring seamless navigation for your visitors.",
+      "Our design process focuses on understanding business needs, crafting unique brand experiences, and ensuring seamless navigation for visitors.",
     features: [
       "Responsive Design",
       "UX Design",
@@ -75,43 +81,105 @@ const services = [
       "Custom Websites",
       "WordPress Development",
     ],
-    image: ServiceImg,
+    image: website,
   },
   {
     title: "SaaS Development",
     description:
-      "We provide scalable SaaS solutions tailored to your business needs, ensuring reliability and performance.",
+      "Our SaaS solutions deliver scalable platforms with robust architecture, cloud-based infrastructure, and intuitive interfaces that drive growth.",
     features: [
-      "Cloud Hosting",
-      "API Integration",
-      "Multi-Tenant Architecture",
-      "Custom Modules",
+      "CLOUD ARCHITECTURE",
+      "API DEVELOPMENT",
+      "DATABASE DESIGN",
+      "USER AUTHENTICATION",
+      "PAYMENT INTEGRATION",
+      "SCALABLE INFRASTRUCTURE",
     ],
-    image: ServiceImg,
+    image: saas,
   },
   {
     title: "Mobile App Development",
     description:
-      "Native and cross-platform mobile applications that deliver seamless user experiences.",
+      "Our mobile app development creates native and cross-platform applications for iOS and Android with seamless functionality and engaging user experiences.",
     features: [
-      "iOS & Android",
-      "React Native",
-      "UX/UI Design",
-      "Push Notifications",
+      "APP DEVELOPMENT",
+      "ANDROID APP DEVELOPMENT",
+      "CROSS-PLATFORM APPS",
+      "APP UI/UX DESIGN",
+      "APP STORE OPTIMIZATION",
+      "PUSH NOTIFICATIONS",
     ],
-    image: ServiceImg,
+    image: mobile,
   },
   {
-    title: "UI/UX Design",
+    title: "VIDEO EDITING",
     description:
-      "Designing intuitive interfaces and experiences that engage and convert users.",
+      "Our video editing services transform raw footage into compelling visual content that captivates audiences and strengthens brand messaging.",
     features: [
-      "Wireframing",
-      "Prototyping",
-      "User Testing",
-      "Interaction Design",
+      "PROMOTIONAL VIDEOS",
+      " SOCIAL MEDIA CONTENT",
+      " CORPORATE VIDEOS",
+      " COLOR GRADING",
+      " MOTION GRAPHICS",
+      " VIDEO OPTIMIZATION",
     ],
-    image: ServiceImg,
+    image: video,
+  },
+  {
+    title: "DIGITAL MARKETING",
+    description:
+      "Our digital marketing strategies combine data-driven insights with creative execution to grow your Adelaide business reach and drive measurable results.",
+    features: [
+      "Social Media Marketing",
+      "PPC Advertising",
+      "Email Marketing",
+      "Content Marketing",
+      "Marketing Analytics",
+      "Campaign Management",
+    ],
+    image: video,
+  },
+  {
+    title: "GRAPHIC DESIGN",
+    description:
+      "Our graphic design creates distinctive brand identities, marketing materials, and digital assets that communicate messages clearly and professionally.",
+    features: [
+      "LOGO DESIGN",
+      "BRAND IDENTITY",
+      "MARKETING MATERIALS",
+      "SOCIAL MEDIA GRAPHICS",
+      "PRINT DESIGN",
+      "INFOGRAPHICS",
+    ],
+    image: graphic,
+  },
+  {
+    title: "CONTENT CREATION",
+    description:
+      "Our content creation services deliver engaging written, visual, and video content that resonates with your Adelaide audience and strengthens brand authority.",
+    features: [
+      "Copywriting",
+      "Blog Content",
+      "Social Media Posts",
+      "Video Content",
+      "Photography",
+      "Content Strategy",
+    ],
+    image: graphic,
+  },
+  {
+    title: "SEO SERVICES",
+    description:
+      "Our SEO services optimize websites for search engines, improve rankings, drive organic traffic, and attract qualified leads.",
+    features: [
+      "KEYWORD RESEARCH",
+      "ON-PAGE SEO",
+      "LOCAL SEO",
+      "TECHNICAL SEO",
+      "CONTENT OPTIMIZATION",
+      "LINK BUILDING",
+    ],
+    image: seo,
   },
 ];
 </script>

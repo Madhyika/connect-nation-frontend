@@ -7,53 +7,77 @@ import ButtonSectionSecondaryDark from "../../../components/buttons/ButtonSectio
 import PlusIcon from "../../../assets/img/icons/Plus.svg";
 import MinusIcon from "../../../assets/img/icons/Minus.svg";
 
+// Add image for each service
 const services = ref([
   {
     name: "Website Design & Development",
     open: false,
-    description: `Our design process focuses on understanding business needs, crafting unique brand experiences, and ensuring seamless navigation for visitors.
-`,
+    image: "src/assets/img/home/service/website.png",
+    description:
+      "Our design process focuses on understanding business needs, crafting unique brand experiences, and ensuring seamless navigation for visitors.",
   },
   {
     name: "SaaS Development",
     open: false,
+    image: "src/assets/img/home/service/saas.png",
     description:
       "Our SaaS solutions deliver scalable platforms with robust architecture, cloud-based infrastructure, and intuitive interfaces that drive growth.",
   },
   {
     name: "Mobile App Development",
     open: false,
+    image: "src/assets/img/home/service/mobile.png",
     description:
       "Our mobile app development creates native and cross-platform applications for iOS and Android with seamless functionality and engaging user experiences.",
   },
   {
     name: "Video Editing",
     open: false,
+    image: "src/assets/img/home/service/videoediting.png",
     description:
       "Native and cross-platform mobile applications that deliver seamless user experiences.",
   },
   {
     name: "Graphic Design",
     open: false,
+    image: "src/assets/img/home/service/graphic.png",
     description:
       "Our graphic design creates distinctive brand identities, marketing materials, and digital assets that communicate messages clearly and professionally.",
   },
   {
     name: "SEO Services",
     open: false,
+    image: "src/assets/img/home/service/seo.png",
     description:
       "Our SEO services optimize websites for search engines, improve rankings, drive organic traffic, and attract qualified leads.",
   },
 ]);
 
+// Track current image
+const currentImage = ref(services.value[0].image);
+
+// Accordion toggle
 const toggleService = (index) => {
-  services.value[index].open = !services.value[index].open;
+  services.value.forEach((service, i) => {
+    if (i === index) {
+      service.open = !service.open; // toggle clicked
+      if (service.open) currentImage.value = service.image; // set image if open
+    } else {
+      service.open = false; // close others
+    }
+  });
+
+  // if none is open, reset to default image
+  if (!services.value.some((s) => s.open)) {
+    currentImage.value = "src/assets/img/home/service/website.png";
+  }
 };
 </script>
 
 <template>
   <section>
     <div class="container mx-auto flex flex-col gap-16">
+      <!-- Heading & Description -->
       <div class="grid gap-3 lg:gap-0 lg:grid-cols-2 items-start">
         <SectionHeading span1="Our" span2="Services" />
         <div class="flex flex-col gap-8">
@@ -67,17 +91,27 @@ const toggleService = (index) => {
         </div>
       </div>
 
+      <!-- Services & Image -->
       <div class="grid xl:grid-cols-2 gap-6 xl:gap-0">
-        <div class="flex h-full w-full xl:w-[90%] items-end">
+        <!-- Image -->
+        <div class="flex h-full w-full xl:w-[80%] items-end">
           <div class="w-full flex justify-center items-center">
             <img
-              src="../../../assets/img/home/service.png"
-              alt=""
-              class="xl:h-full w-2/3 xl:w-full object-cover"
+              :src="currentImage"
+              alt="Service Image"
+              class="xl:h-2/3 w-2/3 xl:w-full object-cover transition-all duration-500"
+              style="
+                width: 408px;
+                height: 377px;
+                top: 491px;
+                left: 112px;
+                border-radius: 7px;
+              "
             />
           </div>
         </div>
 
+        <!-- Services List -->
         <div class="flex">
           <ul class="flex flex-col px-6">
             <li

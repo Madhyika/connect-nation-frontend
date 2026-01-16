@@ -10,64 +10,65 @@ import GetInTouchSection from "../Home/sections/GetInTouchSection.vue";
 import PagesBanner from "../../components/PagesBanner.vue";
 const faqs = [
   {
-    question: " How much does website design cost in Adelaide?",
+    question: "What services do you offer for Adelaide businesses?",
     number: "01",
     answer:
-      " Basic websites start from $3,000, and custom business sites from $8,000. Contact us for a tailored quote.",
+      "We offer website design, mobile app development, SEO services, video editing, graphic design, SaaS development, and digital marketing for Adelaide businesses.",
   },
   {
-    question: "How long does it take to build a website?",
+    question: "How much do your services typically cost?",
     number: "02",
     answer:
-      "Standard business websites take 4-6 weeks. Rush options are available for Adelaide clients.",
+      "Pricing varies by project scope. Basic websites start from $3,000, and custom solutions start from $8,000. Contact us for a tailored Adelaide business quote.",
   },
   {
-    question: " Do you provide SEO services with website development?",
+    question: "Do you offer package deals for multiple services?",
     number: "03",
     answer:
-      "Yes, basic on-page SEO is included. Comprehensive SEO packages are available with keyword research and local optimization.",
+      "Yes, we offer bundled packages combining web design, SEO, and digital marketing services at discounted rates for Adelaide clients.",
   },
   {
-    question: "Can you help with social media marketing?",
+    question: "Can you handle both design and development in-house?",
     number: "04",
     answer:
-      "Yes, we offer complete social media services, including strategy, content creation, advertising, and analytics for Adelaide businesses.",
+      "Yes, our Adelaide team manages everything from strategy and design to development and launch, ensuring seamless project execution.",
   },
   {
-    question: "Do you offer ongoing website maintenance?",
+    question: "Do you provide ongoing support after project completion?",
     number: "05",
     answer:
-      "Yes, monthly maintenance packages include security updates, backups, content changes, and technical support.",
+      "Absolutely. We offer monthly maintenance packages that include updates, support, security, and optimization for Adelaide-based business projects.",
   },
   {
-    question: "What video formats do you accept?",
+    question: "What’s the difference between web design and web development?",
     number: "06",
     answer:
-      "We accept MP4, MOV, AVI, MKV, and all major formats. Files up to 5GB per upload.",
+      "Web design focuses on visual appearance and user experience, while web development handles the functional and technical backend of the website.",
   },
   {
-    question: "How long does video editing take?",
+    question: "Do you create custom solutions or use templates?",
     number: "07",
     answer:
-      "Standard projects take 3-5 business days. Rush service is available for urgent Adelaide client needs.",
+      "We create fully custom solutions tailored to your Adelaide brand identity and business goals—never generic templates.",
   },
   {
-    question: "Can you work with businesses outside Adelaide?",
+    question:
+      "Can you help with digital strategy beyond just building websites?",
     number: "08",
     answer:
-      "Yes, we serve clients across Australia and internationally through remote collaboration and online project delivery.",
+      "Yes, we provide comprehensive digital strategy including SEO, content marketing, social media management, and paid advertising for Adelaide businesses.",
   },
   {
-    question: " Do you provide design revisions?",
+    question: "What industries do your services cater to?",
     number: "09",
     answer:
-      "Yes, two rounds of revisions are included with all projects to ensure perfect results.",
+      "We serve Adelaide businesses across all industries, including retail, healthcare, education, hospitality, professional services, and startups.",
   },
   {
-    question: "What makes you different from DIY website builders?",
+    question: "How do I choose which services my business needs?",
     number: "10",
     answer:
-      "Custom design, professional SEO, brand consistency, ongoing support, and results-driven strategies that DIY tools can't provide.",
+      "Book a free consultation and we’ll assess your Adelaide business goals, current digital presence, and recommend the best service combination.",
   },
 ];
 </script>

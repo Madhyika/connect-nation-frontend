@@ -1,98 +1,99 @@
 <script setup>
-import { onMounted } from "vue";
+// import { onMounted } from "vue";
 import PagesBanner from "../../components/PagesBanner.vue";
 import CreatingImpactSection from "./sections/CreatingImpactSection.vue";
 import ClientStoriesSection from "../Home/sections/ClientsStoriesSection.vue";
 import FAQSection from "../Home/sections/FAQSection.vue";
 import GetInTouchSection from "../Home/sections/GetInTouchSection.vue";
 
-onMounted(() => {
-  document.title = "Our Work | Connect Nation Adelaide Projects";
+// onMounted(() => {
+//   document.title = "Our Work | Connect Nation Adelaide Projects";
 
-  const metaDescription = document.createElement("meta");
-  metaDescription.name = "description";
-  metaDescription.content =
-    "View our portfolio of Adelaide web design, mobile app development, and branding projects. See real results from our digital marketing work for South Australian businesses.";
-  document.head.appendChild(metaDescription);
+//   const metaDescription = document.createElement("meta");
+//   metaDescription.name = "description";
+//   metaDescription.content =
+//     "View our portfolio of Adelaide web design, mobile app development, and branding projects. See real results from our digital marketing work for South Australian businesses.";
+//   document.head.appendChild(metaDescription);
 
-  const metaKeywords = document.createElement("meta");
-  metaKeywords.name = "keywords";
-  metaKeywords.content =
-    "Adelaide web design portfolio, Adelaide app development projects, South Australia branding work, digital marketing portfolio Adelaide, website design examples Adelaide, mobile app portfolio, UI UX design Adelaide, Adelaide digital agency work";
-  document.head.appendChild(metaKeywords);
+//   const metaKeywords = document.createElement("meta");
+//   metaKeywords.name = "keywords";
+//   metaKeywords.content =
+//     "Adelaide web design portfolio, Adelaide app development projects, South Australia branding work, digital marketing portfolio Adelaide, website design examples Adelaide, mobile app portfolio, UI UX design Adelaide, Adelaide digital agency work";
+//   document.head.appendChild(metaKeywords);
 
-  const linkCanonical = document.createElement("link");
-  linkCanonical.rel = "canonical";
-  linkCanonical.href = "https://connectnation.com.au/work";
-  document.head.appendChild(linkCanonical);
-});
+//   const linkCanonical = document.createElement("link");
+//   linkCanonical.rel = "canonical";
+//   linkCanonical.href = "https://connectnation.com.au/work";
+//   document.head.appendChild(linkCanonical);
+// });
 
 const faqs = [
   {
-    question: " How much does website design cost in Adelaide?",
+    question:
+      "Can I see examples of websites you've built for Adelaide businesses?",
     number: "01",
     answer:
-      " Basic websites start from $3,000, and custom business sites from $8,000. Contact us for a tailored quote.",
+      " Yes, our portfolio showcases mobile apps, websites, and branding projects for Adelaide clients across various industries.",
   },
   {
-    question: "How long does it take to build a website?",
+    question: "How long does a typical project take from start to finish?",
     number: "02",
     answer:
-      "Standard business websites take 4-6 weeks. Rush options are available for Adelaide clients.",
+      "Most projects take 4-8 weeks, depending on complexity. Mobile apps typically take 8-12 weeks for full development.",
   },
   {
-    question: " Do you provide SEO services with website development?",
+    question: "Do you work with startups or only established businesses?",
     number: "03",
     answer:
-      "Yes, basic on-page SEO is included. Comprehensive SEO packages are available with keyword research and local optimization.",
+      "We work with both Adelaide startups and established businesses, tailoring solutions to match your stage and budget.",
   },
   {
-    question: "Can you help with social media marketing?",
+    question: "Can you replicate a design style I like from another website?",
     number: "04",
     answer:
-      "Yes, we offer complete social media services, including strategy, content creation, advertising, and analytics for Adelaide businesses.",
+      "We create custom designs inspired by your preferences while ensuring your Adelaide brand has a unique identity.",
   },
   {
-    question: "Do you offer ongoing website maintenance?",
+    question: " What industries do you specialize in?",
     number: "05",
     answer:
-      "Yes, monthly maintenance packages include security updates, backups, content changes, and technical support.",
+      "We serve Adelaide businesses across e-commerce, education, healthcare, fitness, food service, retail, and professional services.",
   },
   {
-    question: "What video formats do you accept?",
+    question: "Do you provide case studies showing project results?",
     number: "06",
     answer:
-      "We accept MP4, MOV, AVI, MKV, and all major formats. Files up to 5GB per upload.",
+      "Yes, we can share detailed case studies with metrics and outcomes for similar Adelaide business projects.",
   },
   {
-    question: "How long does video editing take?",
+    question: "Can you redesign my existing website or app?",
     number: "07",
     answer:
-      "Standard projects take 3-5 business days. Rush service is available for urgent Adelaide client needs.",
+      "Absolutely. We offer redesign services to modernize your digital presence while preserving what works for your Adelaide business.",
   },
   {
-    question: "Can you work with businesses outside Adelaide?",
+    question: "What's included in your branding services?",
     number: "08",
     answer:
-      "Yes, we serve clients across Australia and internationally through remote collaboration and online project delivery.",
+      "Logo design, color palette, typography, brand guidelines, and marketing materials for a consistent Adelaide brand identity.",
   },
   {
-    question: " Do you provide design revisions?",
+    question: " Do you offer payment plans for larger projects?",
     number: "09",
     answer:
-      "Yes, two rounds of revisions are included with all projects to ensure perfect results.",
+      "Yes, we offer flexible payment structures for Adelaide businesses, typically split into project milestones.",
   },
   {
-    question: "What makes you different from DIY website builders?",
+    question: " How do I get started with a new project?",
     number: "10",
     answer:
-      "Custom design, professional SEO, brand consistency, ongoing support, and results-driven strategies that DIY tools can't provide.",
+      "Book a free consultation to discuss your Adelaide business goals, timeline, and budget. We'll provide a tailored proposal.",
   },
 ];
 </script>
 
 <template>
-  <PagesBanner title="our works" />
+  <PagesBanner title="our works" imageSrc="Banner1.png" />
   <CreatingImpactSection />
   <ClientStoriesSection />
   <FAQSection :faqs="faqs" />

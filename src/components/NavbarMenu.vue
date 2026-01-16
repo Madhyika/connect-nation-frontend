@@ -84,7 +84,13 @@
 import { computed, ref } from "vue";
 import { useRoute } from "vue-router";
 import ButtonTertiaryDark from "../components/buttons/ButtonTertiaryDark.vue";
-import Img from "../assets/img/home/banner.png";
+import workImg from "/public/banner/Banner1.png";
+import servicesImg from "/public/banner/Banner2.png";
+import aboutImg from "/public/banner/AboutUsBanner.png";
+import contactImg from "/public/banner/Banner3.png";
+import blogsimg from "/public/banner/BlogBanner.png";
+import packagesImg from "/public/banner/PackageBanner.png";
+
 import XIcon from "../assets/img/icons/X.svg";
 import LinkedinIcon from "../assets/img/icons/Linkedin.svg";
 import FacebookIcon from "../assets/img/icons/fb.svg";
@@ -140,13 +146,13 @@ const wrapperClass = computed(() =>
 );
 
 const menuItems = [
-  { label: "Work", to: "/work", image: Img },
-  { label: "Services", to: "/services", image: Img },
-  { label: "Host Network", to: "/tv-host", image: Img },
-  { label: "About", to: "/about-us", image: Img },
-  { label: "Contact", to: "/contact-us", image: Img },
-  { label: "Blogs", to: "/blogs-insights", image: Img },
-  { label: "Package Plans", to: "/packages", image: Img },
+  { label: "Work", to: "/work", image: workImg },
+  { label: "Services", to: "/services", image: servicesImg },
+  // { label: "Host Network", to: "/tv-host", image: Img },
+  { label: "About", to: "/about-us", image: aboutImg },
+  { label: "Contact", to: "/contact-us", image: contactImg },
+  { label: "Blogs", to: "/blogs-insights", image: blogsimg },
+  { label: "Package Plans", to: "/packages", image: packagesImg },
 ];
 
 const activeItem = computed(() =>

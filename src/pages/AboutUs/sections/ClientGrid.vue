@@ -1,17 +1,19 @@
 <template>
   <section class="bg-[#FAFAFA]">
-    <div
-      class="container mx-auto flex flex-col items-center gap-12 lg:gap-18 text-black"
-    >
+    <div class="w-full overflow-hidden">
       <div
-        class="grid w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 px-6 sm:px-0"
+        class="flex gap-5 overflow-x-auto px-6 sm:px-0 scroll-smooth no-scrollbar lg:justify-center"
       >
         <div
           v-for="client in clients"
           :key="client.alt"
-          class="flex h-52 cursor-pointer items-center justify-center rounded-[5px] bg-white transition-shadow hover:shadow-2xl"
+          class="flex h-auto min-w-[200px] items-center justify-center rounded-[5px] bg-white transition-shadow hover:shadow-2xl"
         >
-          <img :src="client.src" :alt="client.alt" class="w-36" />
+          <img
+            :src="client.src"
+            :alt="client.alt"
+            class="w-32 object-contain py-4"
+          />
         </div>
       </div>
     </div>
@@ -19,16 +21,19 @@
 </template>
 
 <script setup>
-import Quotient from "../../../assets/img/logo/clients/quotient.svg";
-import Segment from "../../../assets/img/logo/clients/segment.svg";
-import Galileo from "../../../assets/img/logo/clients/galileo.svg";
-import Lightbox from "../../../assets/img/logo/clients/lightbox.svg";
-import SectionHeading from "../../../components/headings/SectionHeading.vue";
+import Boujee from "../../../assets/img/logo/clients/boujee.svg";
+import Achievers from "../../../assets/img/logo/clients/achievers.svg";
+import Mcquel from "../../../assets/img/logo/clients/mcquel.svg";
+import Danphe from "../../../assets/img/logo/clients/danphe.svg";
+import Royalhealth from "../../../assets/img/logo/clients/royalhealth.svg";
+import Zeroone from "../../../assets/img/logo/clients/zeroone.svg";
 
 const clients = [
-  { src: Quotient, alt: "Quotient" },
-  { src: Segment, alt: "Segment" },
-  { src: Galileo, alt: "Galileo" },
-  { src: Lightbox, alt: "Lightbox" },
+  { src: Boujee, alt: "Boujee" },
+  { src: Achievers, alt: "Achievers" },
+  { src: Mcquel, alt: "Mcquel" },
+  { src: Danphe, alt: "Danphe" },
+  { src: Royalhealth, alt: "Royalhealth" },
+  { src: Zeroone, alt: "Zeroone" },
 ];
 </script>

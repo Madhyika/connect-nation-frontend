@@ -1,7 +1,10 @@
 <script setup>
 import { reactive } from "vue";
 import SectionHeading from "../../../components/headings/SectionHeading.vue";
-import WhatWeDoneImg from "../../../assets/img/home/whatwedone.jpg";
+import ExcellenceImg from "../../../assets/img/home/WhatWeStand/excellence.png";
+import ResultsDrivenImg from "../../../assets/img/home/WhatWeStand/results.png";
+import ClientFocusedImg from "../../../assets/img/home/WhatWeStand/client.png";
+import LocalExpertiseImg from "../../../assets/img/home/WhatWeStand/local.png";
 
 const repeatedCards = reactive([
   {
@@ -10,7 +13,7 @@ const repeatedCards = reactive([
     expanded: false,
     description:
       "Delivering top-quality digital work that exceeds expectations for Adelaide businesses.",
-    image: WhatWeDoneImg,
+    image: ExcellenceImg,
   },
   {
     id: 2,
@@ -18,7 +21,7 @@ const repeatedCards = reactive([
     expanded: false,
     description:
       "Smart strategies and real results that grow your Adelaide business effectively.",
-    image: WhatWeDoneImg,
+    image: ResultsDrivenImg,
   },
   {
     id: 3,
@@ -26,7 +29,7 @@ const repeatedCards = reactive([
     expanded: false,
     description:
       "Working closely with Adelaide businesses, understanding your goals and delivering custom solutions.",
-    image: WhatWeDoneImg,
+    image: ClientFocusedImg,
   },
   {
     id: 4,
@@ -34,7 +37,7 @@ const repeatedCards = reactive([
     expanded: false,
     description:
       "Deep knowledge of Adelaide and South Australian markets, connecting local businesses with customers.",
-    image: WhatWeDoneImg,
+    image: LocalExpertiseImg,
   },
 ]);
 

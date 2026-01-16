@@ -3,9 +3,9 @@
     <div class="grid grid-cols-2 items-start">
       <SectionHeading span1="How we" span2="work?" />
       <p class="paragraph-20 paragraph-dark">
-        We deliver comprehensive digital solutions designed to drive business
-        growth. We create impactful content and strategies that help brands
-        stand out and succeed.
+        Our proven step-by-step process delivers exceptional results for
+        Adelaide businesses through discovery, strategy, design, development,
+        and ongoing support.
       </p>
     </div>
     <div class="w-full h-full">

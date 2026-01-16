@@ -3,11 +3,11 @@
     <div class="grid grid-cols-2 items-start">
       <SectionHeading span1="Creating<br>" span2="LASTING IMPACT" />
       <div class="flex flex-col gap-8">
-        <p class="paragraph-20 text-[#667085]">
-          At Compose, we elevate brands with tailored digital strategies that
-          deliver measurable results. Explore our standout projects and see how
-          we turn ideas into impactful experiences.
-        </p>
+        <div class="paragraph-20 text-[#667085]">
+          At Connect Nation, we create Adelaide brands with tailored digital
+          strategies that deliver measurable results. Explore our creative
+          projects and see how we turn ideas into powerful business solutions.
+        </div>
         <ButtonTertiaryDark label="Discuss Your Project" to="/" />
       </div>
     </div>
@@ -54,61 +54,52 @@
 
 <script setup>
 import ButtonTertiaryDark from "../../../components/buttons/ButtonTertiaryDark.vue";
-import SectionHeading from "../../../components/headings/SectionHeading.vue";
-import Project1 from "../../../assets/img/projects/project1.png";
 
-import Project2 from "../../../assets/img/projects/project2.png";
-import Project3 from "../../../assets/img/projects/project3.png";
-import Project4 from "../../../assets/img/projects/project4.png";
+import Achievers from "../../../assets/img/projects/achievers.png";
+import Boujee from "../../../assets/img/projects/boujee.png";
+import Danphe from "../../../assets/img/projects/danphe.png";
+import Royal from "../../../assets/img/projects/royal.png";
+import Mcquel from "../../../assets/img/projects/mcquel.png";
+import ZeroOne from "../../../assets/img/projects/zeroone.png";
+
+import SectionHeading from "../../../components/headings/SectionHeading.vue";
 
 const projects = [
   {
-    image: Project1,
+    image: Achievers,
+    client: "Project Name-",
+    projectName: "Achievers College",
+    services: "Website & SEO",
+  },
+  {
+    image: Danphe,
     client: "Danphe Staffing",
     projectName: "Danphe Staffing",
-    services: "Branding, Web Design, SEO Optimization",
+    services: "Website & SEO",
   },
   {
-    image: Project2,
-    client: "Project 2",
-    projectName: "Awesome Project",
-    services: "UI/UX, Branding",
+    image: Royal,
+    client: "Project Name-",
+    projectName: "Royal Healthcare",
+    services: "Branding & Website",
   },
   {
-    image: Project3,
-    client: "Project 3",
-    projectName: "Creative Agency",
-    services: "Web Design, Marketing",
+    image: Boujee,
+    client: "Project Name-",
+    projectName: "Boujee Home Loan",
+    services: "Website & Digital Strategy",
   },
   {
-    image: Project4,
-    client: "Project 4",
-    projectName: "Startup Brand",
-    services: "Branding, SEO",
+    image: Mcquel,
+    client: "Project Name-",
+    projectName: "McQuel Healthcare",
+    services: "Marketing, Website & SEO",
   },
   {
-    image: Project1,
-    client: "Project 5",
-    projectName: "E-commerce Website",
-    services: "Web Design, SEO Optimization",
-  },
-  {
-    image: Project3,
-    client: "Project 6",
-    projectName: "Corporate Branding",
-    services: "Branding, Strategy",
-  },
-  {
-    image: Project4,
-    client: "Project 7",
-    projectName: "Mobile App Design",
-    services: "UI/UX, Branding",
-  },
-  {
-    image: Project1,
-    client: "Danphe Staffing",
-    projectName: "Danphe Staffing",
-    services: "Branding, Web Design, SEO Optimization",
+    image: ZeroOne,
+    client: "Project Name-",
+    projectName: "Zero One Advisory",
+    services: "Website & Consulting",
   },
 ];
 </script>

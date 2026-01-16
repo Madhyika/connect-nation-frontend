@@ -1,84 +1,71 @@
 <template>
-  <section :style="backgroundStyle">
-    <div class="container mx-auto grid grid-cols-3 gap-12">
-      <!-- LEFT CONTENT -->
-      <div class="flex flex-col gap-4">
-        <SectionHeading
-          span1="clients<br />"
-          span2='<span style="color: #EAECF0;">Success Stories</span>'
-        />
-        <p class="paragraph-dark paragraph-20">
+  <section class="relative overflow-hidden py-24" :style="backgroundStyle">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 px-6">
+      <!-- LEFT -->
+      <SectionHeading
+        span1="clients<br />"
+        span2='<span style="color: #EAECF0;">Success Stories</span>'
+      />
+
+      <!-- RIGHT -->
+      <div class="flex flex-col gap-10">
+        <p
+          class="font-inter text-[18px] leading-[30px] text-gray-600 max-w-[520px]"
+        >
           Real feedback from Adelaide clients we've partnered with: honest
           results, genuine feedback, and lasting impact.
         </p>
-      </div>
 
-      <!-- IMAGES -->
-      <div class="flex flex-col gap-4">
-        <transition name="fade" mode="out-in">
-          <img
-            :key="selectedClient.image"
-            class="w-[395px] h-[421px] rounded-[8px] object-cover"
-            :src="selectedClient.image"
-            alt="Client"
-          />
-        </transition>
+        <!-- Testimonial Card -->
+        <div class="flex flex-col gap-8 max-w-[560px]">
+          <!-- Logo + Rating -->
+          <div class="flex items-center justify-between">
+            <img :src="active.logo" alt="Company logo" class="h-[28px]" />
 
-        <div class="grid grid-cols-4 gap-4 justify-items-center">
-          <img
-            v-for="(client, index) in clients"
-            :key="index"
-            :src="client.image"
-            @click="selectedClient = client"
-            class="w-[91px] h-[91px] object-cover cursor-pointer transition-all duration-300"
-            :class="{
-              'rounded-full scale-105': selectedClient.image === client.image,
-              'rounded-none opacity-70 grayscale':
-                selectedClient.image !== client.image,
-            }"
-            alt="Client thumbnail"
-          />
-        </div>
-      </div>
-
-      <!-- FEEDBACK -->
-      <div class="flex flex-col h-full gap-24">
-        <transition name="fade" mode="out-in">
-          <div
-            class="flex flex-col h-[70%] justify-between"
-            :key="selectedClient.feedback"
-          >
-            <div class="flex flex-col gap-8">
-              <div class="flex justify-between items-center">
-                <img class="w-[44px]" :src="selectedClient.logo" alt="Logo" />
-                <ul class="flex gap-1">
-                  <li v-for="n in selectedClient.rating" :key="n">
-                    <img src="../../../assets/img/icons/Star.svg" alt="Star" />
-                  </li>
-                </ul>
-              </div>
-
-              <p
-                class="font-inter font-medium italic text-[18px] leading-[30px] tracking-[0.03em] text-black"
-              >
-                {{ selectedClient.feedback }}
-              </p>
-            </div>
-
-            <div class="flex flex-col gap-4">
-              <h1
-                class="font-outfit font-medium text-[28px] leading-[100%] tracking-[0.03em] text-black"
-              >
-                {{ selectedClient.name }}
-              </h1>
-              <p
-                class="font-inter font-medium text-[20px] leading-[100%] tracking-[0.03em] text-white"
-              >
-                {{ selectedClient.position }}
-              </p>
+            <div class="flex gap-1">
+              <img
+                v-for="n in active.rating"
+                :key="n"
+                src="/src/assets/img/icons/GoldStar.svg"
+                class="w-[18px]"
+              />
             </div>
           </div>
-        </transition>
+
+          <!-- Feedback -->
+          <p
+            class="font-inter italic font-medium text-[20px] leading-[34px] text-gray-900"
+          >
+            “{{ active.feedback }}”
+          </p>
+
+          <!-- Author -->
+          <div class="flex flex-col gap-1">
+            <p class="font-outfit font-medium text-[20px] text-gray-900">
+              {{ active.name }}
+            </p>
+            <p class="font-inter text-[16px] text-gray-500">
+              {{ active.position }}
+            </p>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex gap-3 mt-6 justify-end">
+          <button
+            @click="prev"
+            class="w-[40px] h-[40px] rounded-md border border-gray-200 bg-[#D0D5DD] flex items-center justify-center hover:bg-gray-100 transition"
+          >
+            ‹
+          </button>
+
+          <button
+            @click="next"
+            class="w-[40px] h-[40px] rounded-md bg-black text-white flex items-center justify-center hover:opacity-90 transition"
+          >
+            ›
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -86,102 +73,53 @@
 
 <script setup>
 import { ref, computed } from "vue";
+import bgImage from "../../../assets/img/other/client-success-bg.png";
 import SectionHeading from "../../../components/headings/SectionHeading.vue";
 
-/* Images */
-import client1 from "../../../assets/img/clientStories/client1.png";
-import client2 from "../../../assets/img/clientStories/client2.png";
-import client3 from "../../../assets/img/clientStories/client3.png";
-import client4 from "../../../assets/img/clientStories/client4.png";
+import danpheLogo from "../../../assets/img/logo/clients/danphe.svg";
+import mcquelLogo from "../../../assets/img/logo/clients/mcquel.svg";
 
-import logo1 from "../../../assets/img/logo/fictionalCompany.png";
-import bgImage from "../../../assets/img/other/client-success-bg.png";
-
-/* Props */
-const props = defineProps({
-  variant: {
-    type: String,
-    default: "light", // "light" | "blue"
-  },
-});
-
-/* Background Style */
-const backgroundStyle = computed(() => {
-  if (props.variant === "blue") {
-    return {
-      background: `linear-gradient(
-        45deg,
-        rgba(57, 160, 255, 0.8) 0%,
-        rgba(143, 255, 133, 0.8) 100%
-      )`,
-    };
-  }
-
-  return {
-    background: `
-      linear-gradient(
-        45deg,
-        rgba(57, 160, 255, 0.06) 0%,
-        rgba(143, 255, 133, 0.06) 100%
-      ),
-      url(${bgImage})
-    `,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "left bottom",
-  };
-});
-
-/* Data */
-const clients = [
+const testimonials = [
   {
-    image: client1,
-    logo: logo1,
+    logo: danpheLogo,
     rating: 5,
     feedback:
-      "They took our half-formed ideas and built a visual identity that felt premium, clear, and unmistakably us.",
-    name: "Riley James",
-    position: "Design Director at Sisyphus",
+      "Great team, smooth process. Our patients love the new website. Worth every penny.",
+    name: "Suseno Ekten",
+    position: "Founder & Director",
   },
   {
-    image: client2,
-    logo: logo1,
-    rating: 4,
-    feedback: "Amazing work and exceptional collaboration.",
-    name: "Alex Morgan",
-    position: "Marketing Lead at Nova Corp",
-  },
-  {
-    image: client3,
-    logo: logo1,
+    logo: mcquelLogo,
     rating: 5,
-    feedback: "They helped us scale with creative solutions.",
-    name: "Samantha Lee",
-    position: "CEO at BrightTech",
-  },
-  {
-    image: client4,
-    logo: logo1,
-    rating: 5,
-    feedback: "Professional, fast, and highly creative.",
-    name: "Jordan Smith",
-    position: "Product Manager at Zenith",
+    feedback:
+      "They nailed it. Our new website connects nurses with jobs perfectly. Highly recommend.",
+    name: "Mitchell Matemayi",
+    position: "Business Development Officer ",
   },
 ];
 
-const selectedClient = ref(clients[0]);
-</script>
+const index = ref(0);
 
-<style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease;
+const active = computed(() => testimonials[index.value]);
+
+function next() {
+  index.value = (index.value + 1) % testimonials.length;
 }
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
+
+function prev() {
+  index.value = (index.value - 1 + testimonials.length) % testimonials.length;
 }
-.fade-enter-to,
-.fade-leave-from {
-  opacity: 1;
-}
-</style>
+
+const backgroundStyle = {
+  background: `
+    linear-gradient(
+      45deg,
+      rgba(57,160,255,0.06) 0%,
+      rgba(143,255,133,0.06) 100%
+    ),
+    url(${bgImage})
+  `,
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "left bottom",
+};
+</script>

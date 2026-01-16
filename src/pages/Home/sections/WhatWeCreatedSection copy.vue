@@ -4,39 +4,79 @@ import SectionHeading from "../../../components/headings/SectionHeading.vue";
 import ButtonPrimaryLight from "../../../components/buttons/ButtonPrimaryLight.vue";
 import ButtonSectionSecondaryDark from "../../../components/buttons/ButtonSectionSecondaryDark.vue";
 import AcheiversCollegeLogo from "../../../assets/img/logo/projects/AcheiversCollege.png";
+import BoujeeLogo from "../../../assets/img/logo/clients/boujee.svg";
+import McquelLogo from "../../../assets/img/logo/clients/mcquel.svg";
+import DanpheLogo from "../../../assets/img/logo/clients/danphe.svg";
+
 import AcheiversDesktop from "../../../assets/img/websites/AcheiversDesktop.png";
 import AcheiversMobile from "../../../assets/img/websites/AcheiversMobile.png";
+import DanpheDesktop from "../../../assets/img/websites/DanpheDesktop.png";
+import DanpheMobile from "../../../assets/img/websites/DanpheMobile.png";
+import McquelDesktop from "../../../assets/img/websites/McquelDesktop.png";
+import McquelMobile from "../../../assets/img/websites/McquelMobile.png";
+import BoujeeDesktop from "../../../assets/img/websites/BoujeeDesktop.png";
+import BoujeeMobile from "../../../assets/img/websites/BoujeeMobile.png";
 
 const originalCards = [
   {
     id: 1,
-    year: "2021",
-    title: "Achievers college website 1",
+    year: "2026",
+    title: "Achievers College | Website & SEO",
     description:
-      "Delivered comprehensive website design and development for Achievers College Adelaide, creating an intuitive educational platform with modern design and seamless functionality that enhances student engagement and program visibility.",
+      "Delivered comprehensive website design and development for Achievers College Adelaide...",
     logo: AcheiversCollegeLogo,
     desktopImg: AcheiversDesktop,
     mobileImg: AcheiversMobile,
+    gradient: {
+      background:
+        "linear-gradient(45deg, rgba(166, 192, 254, 0.3) 0%, rgba(255, 234, 246, 0.3) 100%), #ffffff",
+      boxShadow: "0px -1px 10px -2px #00000024",
+    },
   },
   {
     id: 2,
-    year: "2022",
-    title: "Achievers college website 2",
+    year: "2025",
+    title: "Danphe Staffing | Website & SEO",
     description:
-      "Our innovative approach ensures your brand stands out in a crowded digital landscape.",
-    logo: AcheiversCollegeLogo,
-    desktopImg: AcheiversDesktop,
-    mobileImg: AcheiversMobile,
+      "Developed a professional website and SEO strategy for Danphe Staffing Australia...",
+    logo: DanpheLogo,
+    desktopImg: DanpheDesktop,
+    mobileImg: DanpheMobile,
+    gradient: {
+      background:
+        "linear-gradient(0deg, rgba(186, 228, 89, 0.16) 0%, rgba(168, 237, 234, 0.16) 100%), #ffffff",
+      boxShadow: "0px -1px 10px -2px #00000024",
+    },
   },
   {
     id: 3,
-    year: "2023",
-    title: "Achievers college website 3",
+    year: "2025",
+    title: "McQuel Healthcare | Marketing & Website",
     description:
-      "Transforming vision into reality with cutting-edge technology and creative design.",
-    logo: AcheiversCollegeLogo,
-    desktopImg: AcheiversDesktop,
-    mobileImg: AcheiversMobile,
+      "Designed and executed comprehensive digital marketing and website solutions...",
+    logo: McquelLogo,
+    desktopImg: McquelDesktop,
+    mobileImg: McquelMobile,
+    gradient: {
+      background:
+        "linear-gradient(90deg, rgba(76, 131, 160, 0.16) 35.74%, rgba(246, 164, 77, 0.16) 120.56%), #ffffff",
+      boxShadow: "0px -1px 10px -2px #00000024",
+    },
+  },
+  {
+    id: 4,
+    year: "2023",
+    title: "Boujee Home Loan | Marketing & Website",
+    description:
+      "Built a comprehensive website and digital strategy for Boujee Home Loan Australia...",
+    logo: BoujeeLogo,
+    desktopImg: BoujeeDesktop,
+    mobileImg: BoujeeMobile,
+    gradient: {
+      background:
+        "linear-gradient(45deg, rgba(255, 108, 108, 0.16) 0%, rgba(221, 123, 255, 0.16) 100%), #ffffff",
+      boxShadow: "0px -1px 10px -2px #00000024",
+    },
   },
 ];
 
@@ -67,7 +107,13 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
 </script>
 
 <template>
-  <section ref="sectionRef" class="relative h-[400vh] bg-[#FAFAFA]">
+  <section
+    ref="sectionRef"
+    class="relative bg-[#FAFAFA]"
+    :style="{
+      height: `${originalCards.length * 100}vh`,
+    }"
+  >
     <div class="sticky top-0 flex flex-col justify-center overflow-hidden">
       <div class="container mx-auto flex flex-col gap-18">
         <div
@@ -105,7 +151,8 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
             }"
           >
             <div
-              class="gradient-card h-full grid grid-cols-1 md:grid-cols-2 bg-white rounded-[40px] shadow-sm border border-gray-100 overflow-hidden"
+              class="h-full grid grid-cols-1 md:grid-cols-2 rounded-[40px] border border-gray-100 overflow-hidden transition-all duration-700"
+              :style="card.gradient"
             >
               <div
                 class="relative flex items-center justify-center scale-75 lg:scale-90"

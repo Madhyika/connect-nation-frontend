@@ -66,8 +66,12 @@
           <img
             :src="member.image"
             alt="Team Member"
-            class="absolute left-1/2 -translate-x-1/2 bottom-0 min-w-full object-cover filter grayscale transition-all duration-700 ease-in-out"
-            :class="activeIndex === index ? 'top-[10%]' : 'top-[35%] h-full'"
+            class="absolute left-1/2 -translate-x-1/2 bottom-0 min-w-full object-cover transition-all duration-700 ease-in-out"
+            :class="[
+              activeIndex === index
+                ? 'top-[10%] filter grayscale-0 saturate-100'
+                : 'top-[35%] h-full filter grayscale',
+            ]"
           />
         </div>
       </div>
@@ -97,16 +101,20 @@ import member5 from "../../../assets/img/teamMembers/member5.png";
 import member6 from "../../../assets/img/teamMembers/member6.png";
 
 const team = [
-  { name: "John Doe", role: "Designer", image: member1 },
-  { name: "Jane Smith", role: "Developer", image: member2 },
+  {
+    name: "Sarin Tamang",
+    role: "Chief Executive Officer (CEO)",
+    image: member1,
+  },
+  {
+    name: "Anurag Rajkarnikar",
+    role: "Creative Content Producer",
+    image: member2,
+  },
   { name: "Rohit Rajput", role: "IT Analyst", image: member3 },
-  { name: "Alex Carr", role: "Manager", image: member4 },
-  { name: "Sara Wills", role: "Marketing", image: member5 },
-  { name: "Tom Cook", role: "Strategist", image: member6 },
-  { name: "John Doe", role: "Designer", image: member1 },
-  { name: "Jane Smith", role: "Developer", image: member2 },
-  { name: "Rohit Rajput", role: "IT Analyst", image: member3 },
-  { name: "Alex Carr", role: "Manager", image: member4 },
+  { name: "Sujan Waiba", role: "Operations Manager", image: member4 },
+  { name: "Narayan Oli", role: "Marketing Officer", image: member5 },
+  { name: "Rupesh Dahal", role: "Web Developer", image: member6 },
 ];
 
 const visibleTeam = ref(team.slice(0, 6));
