@@ -105,13 +105,20 @@ import ButtonPrimaryDark from "../../../components/buttons/ButtonPrimaryDark.vue
 import ButtonSecondaryDark from "../../../components/buttons/ButtonSecondaryDark.vue";
 import ButtonSecondaryLight from "../../../components/buttons/ButtonSecondaryLight.vue";
 
+import carousel1 from "../../../assets/img/home/carousel/carousel1.png";
+import carousel2 from "../../../assets/img/home/carousel/carousel2.png";
+import carousel3 from "../../../assets/img/home/carousel/carousel3.png";
+import carousel4 from "../../../assets/img/home/carousel/carousel4.png";
+import carousel5 from "../../../assets/img/home/carousel/carousel5.png";
+import carousel6 from "../../../assets/img/home/carousel/carousel6.png";
+
 const images = [
-  "/src/assets/img/home/carousel/carousel1.png",
-  "/src/assets/img/home/carousel/carousel2.png",
-  "/src/assets/img/home/carousel/carousel3.png",
-  "/src/assets/img/home/carousel/carousel4.png",
-  "/src/assets/img/home/carousel/carousel5.png",
-  "/src/assets/img/home/carousel/carousel6.png",
+  carousel1,
+  carousel2,
+  carousel3,
+  carousel4,
+  carousel5,
+  carousel6,
 ];
 
 const currentIndex = ref(0);

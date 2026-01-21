@@ -6,48 +6,54 @@ import ButtonSectionSecondaryDark from "../../../components/buttons/ButtonSectio
 
 import PlusIcon from "../../../assets/img/icons/Plus.svg";
 import MinusIcon from "../../../assets/img/icons/Minus.svg";
+import Website from "../../../assets/img/home/service/website.png";
+import Saas from "../../../assets/img/home/service/saas.png";
+import Mobile from "../../../assets/img/home/service/mobile.png";
+import Video from "../../../assets/img/home/service/videoediting.png";
+import Graphic from "../../../assets/img/home/service/graphic.png";
+import Seo from "../../../assets/img/home/service/seo.png";
 
 // Add image for each service
 const services = ref([
   {
     name: "Website Design & Development",
     open: false,
-    image: "src/assets/img/home/service/website.png",
+    image: Website,
     description:
       "Our design process focuses on understanding business needs, crafting unique brand experiences, and ensuring seamless navigation for visitors.",
   },
   {
     name: "SaaS Development",
     open: false,
-    image: "src/assets/img/home/service/saas.png",
+    image: Saas,
     description:
       "Our SaaS solutions deliver scalable platforms with robust architecture, cloud-based infrastructure, and intuitive interfaces that drive growth.",
   },
   {
     name: "Mobile App Development",
     open: false,
-    image: "src/assets/img/home/service/mobile.png",
+    image: Mobile,
     description:
       "Our mobile app development creates native and cross-platform applications for iOS and Android with seamless functionality and engaging user experiences.",
   },
   {
     name: "Video Editing",
     open: false,
-    image: "src/assets/img/home/service/videoediting.png",
+    image: Video,
     description:
       "Native and cross-platform mobile applications that deliver seamless user experiences.",
   },
   {
     name: "Graphic Design",
     open: false,
-    image: "src/assets/img/home/service/graphic.png",
+    image: Graphic,
     description:
       "Our graphic design creates distinctive brand identities, marketing materials, and digital assets that communicate messages clearly and professionally.",
   },
   {
     name: "SEO Services",
     open: false,
-    image: "src/assets/img/home/service/seo.png",
+    image: Seo,
     description:
       "Our SEO services optimize websites for search engines, improve rankings, drive organic traffic, and attract qualified leads.",
   },
