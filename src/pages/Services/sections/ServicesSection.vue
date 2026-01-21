@@ -1,59 +1,25 @@
 <template>
-  <section class="container mx-auto flex flex-col gap-26">
-    <div class="grid grid-cols-2 items-start">
+  <section class="container mx-auto py-32 bg-[#FAFAFA]">
+    <!-- Title (UNCHANGED) -->
+    <div
+      class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-left justify-between sticky top-32"
+    >
       <SectionHeading span1="Our" span2="Services" />
-      <p class="paragraph-20 paragraph-dark font-bold">
-        We deliver comprehensive digital solutions designed to drive business
-        growth for Adelaide and South Australian brands, creating impactful
-        content and strategies that help businesses stand out and succeed.
-      </p>
-    </div>
-
-    <div class="flex flex-col gap-26">
-      <div
-        v-for="(service, idx) in services"
-        :key="idx"
-        class="grid grid-cols-[48px_4fr_3fr_3fr] gap-12 items-start group"
-      >
-        <p
-          class="font-outfit font-semibold text-[24px] leading-none text-[#D0D5DD] group-hover:text-black transition-colors duration-300"
-        >
-          {{ String(idx + 1).padStart(2, "0") }}
+      <div class="flex flex-col gap-5 md:gap-8 pt-2 md:pt-0 lg:pt-0">
+        <p class="paragraph-20 paragraph-dark">
+          We deliver comprehensive digital solutions designed to drive business
+          growth for Adelaide and South Australian brands.
         </p>
-
-        <div class="flex flex-col gap-3">
-          <h2
-            class="font-outfit font-semibold text-[22px] leading-[30px] uppercase text-[#0C111D] cursor-pointer group-hover:underline transition-all duration-300"
-          >
-            {{ service.title }}
-          </h2>
-          <p class="paragraph-16 paragraph-dark text-justify">
-            {{ service.description }}
-          </p>
-        </div>
-
-        <ul class="grid grid-cols-1 gap-6">
-          <li
-            v-for="feature in service.features"
-            :key="feature"
-            class="flex items-center gap-3 font-inter font-semibold text-[16px] leading-none tracking-[0.04em] uppercase text-[#0C111D]"
-          >
-            <span
-              class="w-2.5 h-2.5 rounded-full bg-[#0C111D] opacity-50 shrink-0"
-            ></span>
-            <span>{{ feature }}</span>
-          </li>
-        </ul>
-
-        <div class="flex items-center justify-center">
-          <img
-            class="w-full h-94 object-cover rounded-[7px]"
-            :src="service.image"
-            alt="Service Image"
-          />
-        </div>
       </div>
     </div>
+
+    <ul class="stacking-container sticking-cards-list mt-24">
+      <li v-for="(service, idx) in services" :key="idx" class="stacking-card">
+        <div class="stacking-card-inner">
+          <ServiceCard :service="service" :index="idx" />
+        </div>
+      </li>
+    </ul>
   </section>
 </template>
 
@@ -69,6 +35,7 @@ import graphic from "../../../assets/img/home/service/graphic.png";
 import seo from "../../../assets/img/home/service/seo.png";
 import digital from "../../../assets/img/home/service/digital.png";
 import content from "../../../assets/img/home/service/content.png";
+import ServiceCard from "./ServiceCard.vue";
 
 const services = [
   {
@@ -186,3 +153,189 @@ const services = [
   },
 ];
 </script>
+
+<style lang="scss" scoped>
+:root {
+  --card-height: 200vh;
+  --card-margin: 6rem;
+  --card-top-offset: 10rem;
+  --numcards: 3;
+  --header-height: 80px;
+}
+
+.stacking-cards-container {
+  min-height: calc(var(--numcards) * var(--card-height) + 100vh);
+  position: relative;
+  background: inherit;
+}
+
+.stacking-cards-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(var(--numcards), var(--card-height));
+  gap: var(--card-margin);
+  padding-bottom: 0;
+  margin-bottom: var(--card-margin);
+}
+
+#card-1 {
+  --index: 1;
+}
+#card-2 {
+  --index: 2;
+}
+#card-3 {
+  --index: 3;
+}
+
+.stacking-card {
+  position: sticky;
+  top: var(--header-height, 40vh);
+  padding-top: calc(var(--index) * var(--card-top-offset));
+}
+
+/* Scroll-timeline animation (modern browsers) */
+@supports (animation-timeline: scroll()) {
+  @scroll-timeline cards-scroll {
+    source: auto;
+    axis: block;
+  }
+
+  .stacking-card {
+    --index0: calc(var(--index) - 1);
+    --reverse-index: calc(var(--numcards) - var(--index0));
+    --reverse-index0: calc(var(--reverse-index) - 1);
+  }
+
+  .card-content {
+    transform-origin: 50% 0%;
+    will-change: transform;
+    animation: card-scale linear forwards;
+    animation-timeline: scroll(root);
+    animation-range: calc(var(--index0) * 25vh) calc((var(--index0) + 1) * 25vh);
+  }
+
+  @keyframes card-scale {
+    0% {
+      transform: scale(1) translateY(0);
+    }
+    100% {
+      transform: scale(calc(0.95 - (0.05 * var(--reverse-index0))))
+        translateY(calc(-10px * var(--reverse-index0)));
+    }
+  }
+}
+
+/* Fallback for browsers without scroll-timeline */
+@supports not (animation-timeline: scroll()) {
+  .stacking-card:not(:first-child) {
+    margin-top: -10vh;
+  }
+  .stacking-card:nth-child(2) .card-content {
+    transform: scale(0.98) translateY(-5px);
+  }
+  .stacking-card:nth-child(3) .card-content {
+    transform: scale(0.96) translateY(-10px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  :root {
+    --card-height: 100vh;
+    --card-top-offset: 1rem;
+    --card-margin: 1rem;
+  }
+
+  .stacking-cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    grid-template-rows: unset;
+  }
+
+  .stacking-card {
+    position: static !important;
+    padding-top: 0 !important;
+  }
+
+  .card-content {
+    transform: none !important;
+    animation: none !important;
+    border-radius: 1rem;
+  }
+}
+/* Scroll container */
+.services-scroll-wrapper {
+  max-height: 85vh; /* controls visible area */
+  overflow-y: auto;
+  padding-right: 0.5rem; /* scrollbar spacing */
+}
+
+/* Card list */
+.services-scroll-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+/* Individual card */
+.service-scroll-item {
+  min-height: 80vh;
+}
+
+/* Optional: smooth scroll */
+.services-scroll-wrapper {
+  scroll-behavior: smooth;
+}
+
+/* Mobile */
+/* MOBILE RESPONSIVE OVERRIDES */
+@media (max-width: 768px) {
+  /* Reduce card height for mobile */
+  :root {
+    --card-height: auto; /* let cards expand naturally */
+    --card-top-offset: 1rem; /* minimal spacing */
+    --card-margin: 1.5rem; /* smaller gaps */
+  }
+
+  /* Stacking cards become normal vertical flow */
+  .stacking-cards-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    grid-template-rows: unset !important;
+  }
+
+  /* Cards no longer sticky */
+  .stacking-card {
+    position: relative !important;
+    top: auto !important;
+    padding-top: 0 !important;
+  }
+
+  /* Remove transforms and animations */
+  .card-content {
+    transform: none !important;
+    animation: none !important;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Center text inside ServiceCard for mobile */
+  .stacking-card-inner {
+    text-align: center;
+  }
+
+  /* Make title and description stack nicely */
+  .grid.sm\:grid-cols-1 {
+    display: flex;
+    flex-direction: column;
+    position: relative !important;
+    top: auto !important;
+  }
+}
+</style>

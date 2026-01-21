@@ -1,5 +1,9 @@
 <template>
-  <PagesBanner title="Contact Us" imageSrc="Banner3.png" />
+  <PagesBanner
+    title="Contact Us"
+    imageSrc="Banner3.png"
+    mobileImageSrc="BannerM3.png"
+  />
   <GetInTouchSection />
   <MapSection />
   <ConnectSection />

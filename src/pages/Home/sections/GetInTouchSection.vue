@@ -1,23 +1,23 @@
 <template>
   <section class="relative bg-gradient-to-b from-white to-sky-50 py-20">
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="container mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
         <div class="flex flex-col justify-between">
           <div class="flex flex-col gap-4">
-            <SectionHeading span1="Get In" span2="Touch" />
-            <ul class="mt-10 space-y-6">
+            <SectionHeading span1="Get in Touch with" span2="connect nation" />
+            <ul class="md:mt-8 space-y-4 sm:space-y-6">
               <li
                 v-for="(item, index) in contactItems"
                 :key="index"
-                class="flex items-center gap-4"
+                class="flex items-center gap-3 sm:gap-4"
               >
                 <img
                   :src="item.icon"
                   :alt="item.label"
-                  class="h-11 w-11 rounded-lg bg-[#000000] p-2"
+                  class="h-9 w-9 sm:h-11 sm:w-11 rounded-lg bg-black p-2"
                 />
                 <span
-                  class="font-inter font-normal text-[22px] leading-[26px]"
+                  class="font-inter font-normal text-[18px] sm:text-[22px] leading-[22px] sm:leading-[26px]"
                   :class="item.textColor ? item.textColor : 'text-black'"
                 >
                   {{ item.value }}
@@ -26,7 +26,7 @@
             </ul>
           </div>
 
-          <div class="flex flex-col gap-6">
+          <div class="flex flex-col gap-6 mt-10">
             <h3
               class="text-[#0C111D] font-outfit font-bold text-[48px] leading-[66px]"
             >
@@ -106,7 +106,9 @@
       </div>
     </div>
 
-    <div class="absolute bottom-0 left-0 right-0 h-[300px] overflow-hidden">
+    <div
+      class="absolute bottom-0 left-0 right-0 h-[300px] overflow-hidden hidden lg:block"
+    >
       <img
         src="../../../assets/img/decor/sky.png"
         alt=""

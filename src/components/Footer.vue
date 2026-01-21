@@ -1,68 +1,90 @@
 <template>
-  <footer class="bg-black py-18">
-    <div class="container mx-auto flex flex-col gap-12">
+  <footer class="bg-black md:py-18 py-10">
+    <div
+      class="container mx-auto max-w-screen-xl flex flex-col md:gap-12 gap-[20px]"
+    >
       <div
-        class="flex justify-between items-center border-b border-white/50 py-8"
+        class="flex flex-col md:flex-row md:justify-between md:items-center gap-8 border-b border-white/50 pb-10"
       >
         <div
-          class="font-outfit font-medium text-[32px] leading-[24px] tracking-normal text-white"
+          class="font-outfit font-medium text-[32px] leading-tight text-white text-left"
         >
-          Subscribe To Our Newsletter 🔔
+          Subscribe to our <br />
+          news later 🔔
         </div>
-        <form class="flex gap-6 justify-center items-center">
+
+        <form
+          class="flex flex-col sm:flex-row gap-4 w-full md:w-auto justify-center"
+        >
           <input
             type="email"
             placeholder="Enter your email"
-            class="w-[340px] rounded-full bg-[#FFFFFF1A] border border-white px-6 py-4 text-white placeholder-white/70 focus:outline-none"
+            class="w-full sm:w-[260px] md:w-[340px] rounded-full bg-[#FFFFFF1A] border border-white px-6 py-4 text-white placeholder-white/70 focus:outline-none"
           />
           <ButtonTertiaryLight label="Subscribe" />
         </form>
       </div>
 
-      <div
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-12 sm:justify-between sm:items-start"
-      >
+      <div class="grid grid-cols-1 md:grid-cols-[30%_70%] gap-10 md:gap-10">
+        <!-- Left column: logo + paragraph -->
         <div
-          class="col-span-1 sm:col-span-2 flex flex-col items-center sm:items-start text-center sm:text-left"
+          class="flex flex-col items-start md:items-start text-left md:text-left"
         >
-          <router-link to="/" class="w-24 relative">
+          <router-link to="/" class="w-24">
             <img
               src="../assets/img/logo/logo.png"
               alt="logo"
-              class="w-full h-full object-contain filter brightness-0 invert scale-150"
+              class="w-full object-contain filter brightness-0 invert scale-125 md:scale-150"
             />
           </router-link>
-          <p class="paragraph-16 paragraph-light text-left w-2/3 md:w-full">
+          <p class="paragraph-16 paragraph-light max-w-sm text-[#98A2B3]">
             Professional video editing and digital marketing services helping
             Australian businesses stand out and grow across all platforms.
           </p>
         </div>
 
-        <div
-          v-for="(column, colIndex) in columns"
-          :key="colIndex"
-          class="flex flex-col gap-5 col-span-1 items-center sm:items-start text-center sm:text-left"
-        >
+        <!-- Right column: nested grid of service columns -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 sm:gap-12">
           <div
-            class="font-inter font-semibold text-[14px] uppercase leading-[20px] tracking-normal text-[#98A2B3]"
+            v-for="(column, colIndex) in columns"
+            :key="colIndex"
+            class="flex flex-col gap-5 items-start"
           >
-            {{ column.title }}
-          </div>
-          <ul class="flex flex-col gap-4 text-white text-[16px]">
-            <li
-              v-for="(item, index) in column.items"
-              :key="index"
-              class="flex items-center gap-4 cursor-pointer transition-colors duration-300 hover:text-[#56BEB7] group"
+            <div
+              class="font-inter font-semibold text-[14px] uppercase leading-[20px] tracking-normal text-[#98A2B3]"
             >
-              {{ item.label }}
-              <button
-                v-if="item.hasButton"
-                class="px-2 rounded-lg text-black bg-white group-hover:bg-[#56BEB7] group-hover:text-white transition-colors duration-300 cursor-pointer"
+              {{ column.title }}
+            </div>
+            <ul class="flex flex-col gap-4 text-white text-[16px]">
+              <li
+                v-for="(item, index) in column.items"
+                :key="index"
+                class="flex items-center gap-4 cursor-pointer transition-colors duration-300 hover:text-[#56BEB7] group"
               >
-                {{ item.buttonText }}
-              </button>
-            </li>
-          </ul>
+                <router-link
+                  v-if="item.to"
+                  :to="item.to"
+                  class="transition-colors duration-300 hover:text-[#56BEB7]"
+                  :class="item.type === 'bold' ? 'see-more-text' : ''"
+                >
+                  {{ item.label }}
+                </router-link>
+                <span
+                  v-else
+                  :class="item.type === 'bold' ? 'see-more-text' : ''"
+                >
+                  {{ item.label }}
+                </span>
+
+                <button
+                  v-if="item.hasButton"
+                  class="px-2 rounded-lg text-black bg-white group-hover:bg-[#56BEB7] group-hover:text-white transition-colors duration-300 cursor-pointer"
+                >
+                  {{ item.buttonText }}
+                </button>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -73,12 +95,13 @@
         <h1 class="footer-outline-text footer-outline-text-dark">NATION</h1>
       </div>
 
-      <div class="flex justify-between items-center">
-        <p
-          class="font-inter font-normal text-[16px] leading-[24px] tracking-normal text-[#98A2B3]"
-        >
+      <div
+        class="flex flex-col sm:flex-row gap-6 justify-between items-center text-center sm:text-left"
+      >
+        <p class="font-inter text-[14px] sm:text-[16px] text-[#98A2B3]">
           © 2024 Connect Nation. All rights reserved.
         </p>
+
         <ul class="flex items-center gap-4">
           <li>
             <a
@@ -144,23 +167,24 @@ const columns = [
   {
     title: "Quick Links",
     items: [
-      { label: "Video Editing Packages" },
-      { label: "Digital Marketing" },
-      { label: "Upload Files", hasButton: true, buttonText: "New" },
-      { label: "About Us" },
-      { label: "Testimonials" },
-      { label: "FAQs" },
+      { label: "Work", to: "/work" },
+      { label: "Services", to: "/services" },
+      // { label: "Upload Files", hasButton: true, buttonText: "New" },
+      { label: "About", to: "/about-us" },
+      { label: "Contacts", to: "/contact-us" },
+      { label: "Blogs", to: "/blogs-insights" },
+      { label: "Package Plans", to: "/packages" },
     ],
   },
   {
     title: "Our Services",
     items: [
+      { label: "Website Development" },
+      { label: "SaaS Development" },
+      { label: "Mobile App Development" },
       { label: "Video Editing" },
-      { label: "Youtube Video" },
-      { label: "SEO Optimization" },
-      { label: "SMMs", hasButton: true, buttonText: "New" },
-      { label: "Brand Strategy" },
-      { label: "Billboard Advertising" },
+      { label: "Graphic Design" },
+      { label: "See more", type: "bold" },
     ],
   },
   {
@@ -170,21 +194,27 @@ const columns = [
       { label: "Sydney, NSW" },
       { label: "Perth, WA" },
       { label: "Melbourne, VIC" },
-      { label: "Brisbane, QLD", hasButton: true, buttonText: "New" },
+      { label: "Brisbane, QLD" },
       { label: "Australia Wide" },
     ],
   },
   {
-    title: "Legal",
+    title: "LEGAL",
     items: [
       { label: "Privacy Policy" },
       { label: "Terms of Service" },
-      { label: "Cookies" },
-      { label: "Licenses" },
-      { label: "Contact" },
+      { label: "Cookies Policy" },
     ],
   },
 ];
-
-
 </script>
+<style scoped>
+.see-more-text {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+</style>

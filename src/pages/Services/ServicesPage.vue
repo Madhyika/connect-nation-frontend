@@ -1,7 +1,17 @@
+<template>
+  <PagesBanner title="Our Services" />
+  <AchievementsSection />
+  <ServicesSection />
+  <!-- <HowWeWorkSection /> -->
+  <ClientStoriesSection />
+  <FAQSection :faqs="faqs" />
+  <BusinessSection />
+  <GetInTouchSection />
+</template>
 <script setup lang="ts">
 import AchievementsSection from "./sections/AchievementsSection.vue";
 import BannerSection from "../../components/PagesBanner.vue";
-import HowWeWorkSection from "./sections/HowWeWorkSection.vue";
+// import HowWeWorkSection from "./sections/HowWeWorkSection.vue";
 import ServicesSection from "./sections/ServicesSection.vue";
 import BusinessSection from "./../Home/sections/BusinessSection.vue";
 import ClientStoriesSection from "./../Home/sections/ClientsStoriesSection.vue";
@@ -72,14 +82,3 @@ const faqs = [
   },
 ];
 </script>
-
-<template>
-  <PagesBanner title="Our Services" />
-  <AchievementsSection />
-  <ServicesSection />
-  <HowWeWorkSection />
-  <BusinessSection />
-  <ClientStoriesSection />
-  <FAQSection :faqs="faqs" />
-  <GetInTouchSection />
-</template>

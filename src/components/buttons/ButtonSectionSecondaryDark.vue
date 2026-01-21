@@ -9,8 +9,10 @@
     <img src="../../assets/img/icons/ArrowRight.svg" alt="" />
   </button>
 </template>
+
 <script setup>
 import { useRouter } from "vue-router";
+
 const props = defineProps({
   label: {
     type: String,
@@ -21,9 +23,16 @@ const props = defineProps({
     default: "/",
   },
 });
+
 const router = useRouter();
 
 function navigate() {
-  router.push(props.to);
+  // Open external links in a new tab
+  if (props.to.startsWith("http")) {
+    window.open(props.to, "_blank");
+  } else {
+    // Internal route
+    router.push(props.to);
+  }
 }
 </script>

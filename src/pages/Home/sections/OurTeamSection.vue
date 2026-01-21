@@ -1,15 +1,17 @@
 <template>
-  <section class="container mx-auto py-10">
-    <div class="flex flex-col gap-12">
-      <div class="grid grid-cols-2 justify-between">
-        <SectionHeading span1="Meet <br>" span2="Our Team" />
-        <div class="flex flex-col gap-10">
+  <section class="bg-[#FAFAFA]">
+    <div class="container flex flex-col gap-5">
+      <div
+        class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center justify-between"
+      >
+        <SectionHeading span1='Meet<br class="desktop-br">' span2="Our Team" />
+        <div class="flex flex-col gap-5 md:gap-8 pt-2 md:pt-0 lg:pt-0">
           <p class="paragraph-20 paragraph-dark">
             A passionate group of creative minds, technical experts, and
             marketing specialists driving success for our clients.
           </p>
           <div class="w-full h-full flex justify-end items-center">
-            <div class="flex gap-5">
+            <div class="hidden lg:flex gap-5">
               <button
                 @click="scrollLeft"
                 class="cursor-pointer group w-[44px] h-[44px] rounded-sm bg-[#EAECF0] flex justify-center items-center hover:bg-black transition-colors duration-300 ease-in-out"
@@ -37,19 +39,19 @@
 
       <div
         ref="carousel"
-        class="flex gap-3 overflow-x-auto w-full h-[450px] relative scroll-smooth snap-x"
+        class="flex gap-3 overflow-x-auto w-full h-[450px] relative scroll-smooth snap-x snap-mandatory lg:snap-none"
       >
         <div
           v-for="(member, index) in visibleTeam"
           :key="index"
           @mouseenter="activeIndex = index"
-          class="relative overflow-hidden rounded-lg transition-all duration-700 ease-in-out cursor-pointer flex-[1] snap-start"
+          class="relative overflow-hidden rounded-lg transition-all duration-700 ease-in-out cursor-pointer flex-[1] snap-start max-lg:min-w-[85%] max-lg:snap-center"
           :class="activeIndex === index ? 'flex-[3]' : 'bg-[#F2F4F7]'"
           :style="activeIndex === index ? activeGradient : ''"
         >
           <div
-            class="p-6 flex flex-col gap-2 transition-opacity duration-500 delay-200"
-            :class="activeIndex === index ? 'opacity-100' : 'opacity-0'"
+            class="p-6 flex flex-col gap-2 transition-opacity duration-500 delay-200 opacity-100 lg:opacity-0"
+            :class="activeIndex === index ? 'lg:opacity-100' : ''"
           >
             <p
               class="font-inter font-medium text-[16px] leading-[100%] tracking-[0.05em] uppercase text-[#41468C] whitespace-nowrap"
@@ -117,22 +119,22 @@ const team = [
   { name: "Rupesh Dahal", role: "Web Developer", image: member6 },
 ];
 
-const visibleTeam = ref(team.slice(0, 6));
-let startIndex = 0;
+const visibleTeam = ref(team); // show all items, scrolling handles visibility
+
+const scrollAmount = 320; // approx card width, tweak if needed
+const isDesktop = () => window.innerWidth >= 1024;
 
 const scrollLeft = () => {
-  if (startIndex > 0) {
-    startIndex -= 1;
-    visibleTeam.value = team.slice(startIndex, startIndex + 6);
-    activeIndex.value = Math.min(activeIndex.value, 5);
-  }
+  if (!isDesktop()) return;
+
+  activeIndex.value =
+    activeIndex.value > 0 ? activeIndex.value - 1 : team.length - 1;
 };
 
 const scrollRight = () => {
-  if (startIndex + 6 < team.length) {
-    startIndex += 1;
-    visibleTeam.value = team.slice(startIndex, startIndex + 6);
-    activeIndex.value = Math.min(activeIndex.value, 5);
-  }
+  if (!isDesktop()) return;
+
+  activeIndex.value =
+    activeIndex.value < team.length - 1 ? activeIndex.value + 1 : 0;
 };
 </script>

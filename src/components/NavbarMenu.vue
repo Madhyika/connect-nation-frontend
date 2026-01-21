@@ -4,9 +4,11 @@
     :class="wrapperClass"
   >
     <div
-      class="container mx-auto flex h-full flex-col items-center justify-end gap-12 py-10 md:py-16"
+      class="container mx-auto flex h-full flex-col items-center justify-center sm:justify-end gap-6 sm:gap-4 lg:gap-12 py-6 sm:py-8 md:py-12 lg:py-16"
     >
-      <div class="relative flex w-full items-center justify-center">
+      <div
+        class="relative flex w-full items-center justify-center md:mt-0 mt-30"
+      >
         <div
           class="absolute left-0 bottom-0 hidden h-[300px] w-[400px] overflow-hidden rounded-[7px] xl:block"
         >
@@ -44,7 +46,9 @@
       <div
         class="flex w-full flex-col md:flex-row items-center md:items-start gap-10 md:gap-0 justify-between"
       >
-        <ButtonTertiaryDark label="Book a Consultation" to="/contact-us" />
+        <a href="https://cal.com/" target="_blank" rel="noopener noreferrer"
+          ><ButtonTertiaryDark label="Book a Consultation"
+        /></a>
         <div
           class="flex flex-col gap-4 text-center md:text-left font-inter text-[14px] md:text-[16px] font-medium leading-[1] text-[#98A2B3]"
         >
@@ -104,7 +108,7 @@ onMounted(() => {
 
       document.body.style.overflow = isOpen ? "hidden" : "";
     },
-    { immediate: true }
+    { immediate: true },
   );
 });
 
@@ -142,7 +146,7 @@ const hoveredItem = ref(null);
 const wrapperClass = computed(() =>
   props.open
     ? "opacity-100 translate-y-0"
-    : "opacity-0 -translate-y-full pointer-events-none"
+    : "opacity-0 -translate-y-full pointer-events-none",
 );
 
 const menuItems = [
@@ -156,7 +160,7 @@ const menuItems = [
 ];
 
 const activeItem = computed(() =>
-  menuItems.find((item) => item.to === route.path)
+  menuItems.find((item) => item.to === route.path),
 );
 
 const activeImage = computed(() => {
@@ -172,7 +176,9 @@ const isActive = (path) => route.path === path;
 <style scoped>
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
 }
 
 .fade-enter-from {

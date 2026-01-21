@@ -1,36 +1,40 @@
 <template>
   <section class="bg-[#FAFAFA]">
-    <div class="mx-auto container flex flex-col gap-14">
+    <div class="mx-auto container flex flex-col gap-5 md:gap-14">
       <div class="grid grid-cols-1 lg:grid-cols-2 items-start">
         <SectionHeading
-          span1="Perfect Package<br>
-"
+          span1='Perfect Package<br class="desktop-br">'
           span2="for Your Needs"
         />
-        <div class="flex flex-col gap-7">
+        <div class="flex flex-col gap-5 md:gap-8 pt-2 md:pt-0 lg:pt-0">
           <p class="paragraph-20 paragraph-dark">
             Whether you're an Adelaide content creator, small business, or
             startup we've got a plan for you
           </p>
-          <ButtonPrimaryDark label="View all Services" to="/" />
+          <ButtonPrimaryDark label="Get Started" to="/" />
         </div>
       </div>
 
-      <div class="flex flex-col gap-20">
-        <div class="flex justify-center items-center">
-          <div class="flex flex-col justify-center items-center gap-6">
-            <div
-              class="flex justify-center items-center w-full overflow-x-auto"
-            >
+      <div class="flex flex-col gap-[30px] md:gap-[64px]">
+        <!-- TABS -->
+        <div class="flex items-start">
+          <div class="flex flex-col items-start gap-6 w-full">
+            <div class="flex justify-start w-full overflow-x-auto">
               <button
                 v-for="tab in tabs"
                 :key="tab"
                 @click="activeTab = tab"
                 :class="[
-                  'min-w-66  cursor-pointer transition-all duration-300 font-inter text-[18px] leading-[28px] whitespace-nowrap py-5 pb-4',
+                  // MOBILE
+                  'px-4 py-3 text-[14px] leading-[20px]',
+                  'cursor-pointer whitespace-nowrap transition-all duration-300 font-inter',
+
+                  // DESKTOP (same look, still left-aligned)
+                  'md:min-w-66 md:px-6 md:py-5 md:pb-4 md:text-[18px] md:leading-[28px]',
+
                   activeTab === tab
-                    ? 'bg-[#EFF9F8] border-b-2 border-[#56BEB7] text-[#56BEB7] font-bold '
-                    : 'text-[#344054] font-medium  hover:bg-gray-100 hover:text-[#56BEB7] border-b border-[#D0D5DD]',
+                    ? 'bg-[#EFF9F8] border-b-2 border-[#56BEB7] text-[#56BEB7] font-bold'
+                    : 'text-[#344054] font-medium border-b border-[#D0D5DD] hover:bg-gray-100 hover:text-[#56BEB7]',
                 ]"
               >
                 {{ tab }}
@@ -39,7 +43,8 @@
           </div>
         </div>
 
-        <div class="grid gap-6 grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto">
+        <!-- CARDS -->
+        <div class="grid gap-6 grid-cols-1 md:grid-cols-2 max-w-5xl">
           <div
             v-for="(pkg, idx) in currentPackages"
             :key="idx"
@@ -57,16 +62,16 @@
               Most Popular
             </div>
 
-            <div class="px-8 pt-20 pb-10 flex flex-col gap-8">
+            <div class="px-8 pt-20 pb-10 flex flex-col gap-8 items-start">
               <!-- Icon -->
               <div
-                class="w-16 h-16 rounded-full bg-[#EEF2F6] flex items-center justify-center mx-auto"
+                class="w-16 h-16 rounded-full bg-[#EEF2F6] flex items-center justify-center"
               >
                 <img src="../../../assets/img/icons/Star.svg" class="w-7 h-7" />
               </div>
 
               <!-- Title -->
-              <div class="text-center">
+              <div class="text-left">
                 <h3
                   class="font-outfit font-semibold text-[22px] text-[#0C111D]"
                 >
@@ -78,10 +83,10 @@
               </div>
 
               <!-- Price -->
-              <h2 class="text-center font-outfit">
-                <span class="text-[48px] font-semibold text-black"
-                  >${{ pkg.price }}</span
-                >
+              <h2 class="text-left font-outfit">
+                <span class="text-[48px] font-semibold text-black">
+                  ${{ pkg.price }}
+                </span>
                 <span class="text-[#98A2B3] text-[16px]"> / Month</span>
               </h2>
 
@@ -102,6 +107,12 @@
                   </p>
                 </li>
               </ul>
+              <p
+                class="font-inter font-semibold text-[18px] leading-none text-[#56BEB7]"
+              >
+                {{ pkg.conclusion }}
+              </p>
+
               <!-- Button -->
               <component
                 :is="pkg.popular ? ButtonPackageDark : ButtonPackageLight"
@@ -162,21 +173,22 @@ const packageData = {
         "Advanced SEO Setup",
         "Website Management & Maintenance",
       ],
+      conclusion: "Flexible monthly payment options available.",
     },
   ],
 
   "Media Growth Package": [
     {
       name: "Starter Pack",
-      tagline: "Social Media Growth",
-      price: "200",
+      price: "750",
       popular: false,
       features: [
-        "20 Professionally Edited Shorts",
-        "Platform-Optimised Formatting",
-        "Captions & Hashtags",
-        "Basic Analytics Tracking",
-        "Content Scheduling Support",
+        "Business Assessment & Analysis",
+        "Content Research & Strategy",
+        "Video Shoot – Professional cameraman (4 hours per month, split into 2 shoots per fortnight)",
+        "Video Editing – 8 to 10 videos per shoot",
+        "Custom Graphic Design based on business needs",
+        "Social Media Management (content posting & scheduling)",
       ],
     },
   ],
@@ -194,7 +206,8 @@ const currentPackages = computed(() => {
 <style scoped>
 .gradient-border {
   border: 1px solid transparent;
-  background: linear-gradient(#fff, #fff) padding-box,
+  background:
+    linear-gradient(#fff, #fff) padding-box,
     linear-gradient(45deg, #39a0ff 0%, #8fff85 100%) border-box;
 }
 

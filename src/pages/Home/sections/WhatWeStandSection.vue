@@ -1,5 +1,5 @@
 <script setup>
-import { reactive } from "vue";
+import { reactive, onMounted } from "vue";
 import SectionHeading from "../../../components/headings/SectionHeading.vue";
 import ExcellenceImg from "../../../assets/img/home/WhatWeStand/excellence.png";
 import ResultsDrivenImg from "../../../assets/img/home/WhatWeStand/results.png";
@@ -10,7 +10,7 @@ const repeatedCards = reactive([
   {
     id: 1,
     title: "Excellence",
-    expanded: false,
+    expanded: true,
     description:
       "Delivering top-quality digital work that exceeds expectations for Adelaide businesses.",
     image: ExcellenceImg,
@@ -41,7 +41,17 @@ const repeatedCards = reactive([
   },
 ]);
 
+onMounted(() => {
+  if (window.innerWidth < 768) {
+    repeatedCards.forEach((card) => {
+      card.expanded = true;
+    });
+  }
+});
+
 function toggleCard(index) {
+  if (window.innerWidth < 768) return;
+
   repeatedCards.forEach((card, i) => {
     card.expanded = i === index ? !card.expanded : false;
   });
@@ -50,16 +60,25 @@ function toggleCard(index) {
 
 <template>
   <section>
-    <div class="grid grid-cols-2 container mx-auto gap-8">
+    <div
+      class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8 px-4 md:px-0"
+    >
+      <!-- LEFT COLUMN -->
       <div>
-        <div class="flex flex-col gap-8.5">
+        <div
+          class="flex flex-col gap-0 md:gap-8.5 text-left items-start justify-between"
+        >
           <SectionHeading span1="What We" span2="Stand" />
-          <p class="paragraph-20 paragraph-dark">
-            A blend of creativity, strategy, and integrity that shapes every
-            Adelaide project we bring to life.
-          </p>
+          <div class="flex flex-col gap-5 md:gap-8 pt-2 md:pt-0 lg:pt-0">
+            <p class="paragraph-20 paragraph-dark md:max-w-[520px] items-start">
+              A blend of creativity, strategy, and integrity that shapes every
+              Adelaide project we bring to life.
+            </p>
+          </div>
         </div>
-        <div class="relative overflow-hidden scale-120 mt-6">
+
+        <!-- Decorative Images -->
+        <div class="relative overflow-hidden mt-6 scale-120 hidden md:block">
           <img
             class="w-133 filter grayscale opacity-70"
             src="../../../assets/img/decor/GlobeHands.png"
@@ -73,7 +92,8 @@ function toggleCard(index) {
         </div>
       </div>
 
-      <div class="flex flex-col">
+      <!-- RIGHT COLUMN (CARDS) -->
+      <div class="flex flex-col gap-4">
         <div
           v-for="(item, index) in repeatedCards"
           :key="item.id"
@@ -88,9 +108,10 @@ function toggleCard(index) {
                 : 'border-l-0 border-l-transparent'
             "
           >
+            <!-- INDEX -->
             <div class="p-5">
               <p
-                class="flex gap-2.5 items-center font-inter font-medium text-[15px] transition-colors duration-500"
+                class="flex gap-2.5 items-center font-inter font-medium text-[14px] md:text-[15px] transition-colors duration-500"
                 :class="item.expanded ? 'text-[#56BEB7]' : 'text-black'"
               >
                 <span
@@ -101,6 +122,7 @@ function toggleCard(index) {
               </p>
             </div>
 
+            <!-- IMAGE (ACCORDION) -->
             <div
               class="grid transition-all duration-500 ease-in-out"
               :style="{ gridTemplateRows: item.expanded ? '1fr' : '0fr' }"
@@ -108,7 +130,7 @@ function toggleCard(index) {
               <div class="overflow-hidden">
                 <div class="flex w-full justify-center">
                   <img
-                    class="w-53 h-30 object-cover"
+                    class="w-[180px] md:w-53 h-auto md:h-30 object-cover"
                     :src="item.image"
                     alt=""
                   />
@@ -116,12 +138,13 @@ function toggleCard(index) {
               </div>
             </div>
 
+            <!-- TITLE + DESCRIPTION -->
             <div
-              class="grid grid-cols-2 items-start p-5 transition-colors duration-500"
+              class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-0 items-start p-5 transition-colors duration-500"
               :class="item.expanded ? 'bg-[#F2F4F7]' : 'bg-white'"
             >
               <p
-                class="font-outfit font-semibold text-[24px] uppercase transition-colors duration-500"
+                class="font-outfit font-semibold text-[20px] md:text-[24px] uppercase transition-colors duration-500"
                 :class="item.expanded ? 'text-[#56BEB7]' : 'text-black'"
               >
                 {{ item.title }}

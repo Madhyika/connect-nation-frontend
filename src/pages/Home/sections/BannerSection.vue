@@ -1,31 +1,39 @@
 <template>
   <div class="relative min-h-screen w-full">
-    <img
-      src="../../../assets/img/home/banner.png"
-      alt=""
-      class="absolute inset-0 h-full w-full object-cover"
-    />
+    <div class="absolute inset-0 overflow-hidden">
+      <img
+        src="../../../assets/img/home/banner.png"
+        alt=""
+        class="h-full w-full object-cover scale-150 sm:scale-200 lg:scale-100 translate-x-[20%] sm:translate-x-[30%] lg:translate-x-0 translate-y-[-15%] sm:translate-y-[-30%] lg:translate-y-0 transition-transform duration-500"
+      />
+    </div>
 
-    <div class="absolute inset-0 bg-black/50"></div>
+    <div
+      class="absolute inset-0 bg-black/50 scale-100 sm:scale-200 lg:scale-100"
+    ></div>
 
     <div
       class="container relative mx-auto flex min-h-screen flex-wrap content-end"
     >
       <div
-        class="flex flex-col lg:flex-row w-full justify-end lg:justify-between items-center lg:pt-32 lg:pb-16"
+        class="flex flex-col lg:flex-row w-full justify-end lg:justify-between items-center lg:pt-32 lg:pb-16 mt-[180px] lg:mt-0 md:mb-0 mb-10 gap-12 lg:gap-0"
       >
-        <div
-          class="container mx-auto flex flex-col justify-center lg:justify-between gap-5 sm:gap-6 md:gap-7 lf:gap-8 text-white"
-        >
-          <div class="flex flex-col gap-5 md:gap-8 px-6 sm:px-0">
+        <div class="flex flex-col gap-5 sm:gap-6 md:gap-7 lf:gap-8 text-white">
+          <div
+            class="flex flex-col gap-3 sm:gap-5 md:gap-8 md:max-w-[775px] mx-auto"
+          >
+            <!-- Heading container -->
             <span
-              class="font-outfit font-medium tracking-[-0.02em] text-[32px] leading-[40px] sm:text-[40px] sm:leading-[48px] lg:text-[54px] lg:leading-[60px]"
+              class="font-outfit font-medium tracking-[-0.02em] md:text-[28px] text-[24px] leading-[36px] sm:text-[32px] sm:leading-[40px] md:text-[40px] md:leading-[48px] lg:text-[54px] lg:leading-[60px] text-left sm:text-left"
             >
-              Adelaide Web Design & SEO Agency for Growing Businesses
+              Adelaide’s Trusted
+              <span class="text-[#56BEB7]">Web Design & SEO</span>
+              for Business Growth
             </span>
 
+            <!-- Description container -->
             <span
-              class="font-inter font-light tracking-[0.02em] text-[14px] leading-[22px] sm:text-[16px] sm:leading-[25px] lg:text-[18px] lg:leading-[28px]"
+              class="font-inter font-light tracking-[0.02em] text-[14px] leading-[22px] sm:text-[16px] sm:leading-[25px] lg:text-[18px] lg:leading-[28px] max-w-[554px] text-left sm:text-left"
             >
               Connect Nation delivers expert digital marketing in Adelaide, from
               web design and SEO to video production, photography, and targeted
@@ -34,15 +42,25 @@
             </span>
           </div>
 
-          <div class="flex flex-col sm:flex-row items-center gap-6 sm:gap-12">
-            <ButtonPrimaryDark label="Get Started" to="/" />
-            <ButtonSecondaryLight label="Learn More About Company" to="/" />
+          <div class="flex flex-col sm:flex-row items-left gap-6 sm:gap-12">
+            <a
+              href="https://cal.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ButtonPrimaryDark label="Book a consultation" />
+            </a>
+
+            <ButtonSecondaryLight
+              label="Learn More About Company"
+              to="/about-us"
+            />
           </div>
         </div>
 
-        <div class="p-12">
+        <div class="">
           <div
-            class="flex flex-col gap-3 rounded-lg bg-white/25 p-6 backdrop-blur-sm"
+            class="flex flex-col gap-3 rounded-lg bg-white/25 p-5 backdrop-blur-sm"
           >
             <div class="flex max-h-12 items-center justify-between">
               <img
@@ -56,14 +74,23 @@
                 class="w-6"
               />
             </div>
+            <div class="relative h-[165px] w-[292px] overflow-hidden">
+              <transition-group
+                name="slide"
+                tag="div"
+                class="relative h-full w-full"
+              >
+                <img
+                  v-for="(img, index) in [images[currentIndex]]"
+                  :key="img"
+                  :src="img"
+                  class="absolute inset-0 h-full w-full object-cover"
+                  alt=""
+                />
+              </transition-group>
+            </div>
 
-            <img
-              src="../../../assets/img/home/HomeBannerWork.png"
-              alt=""
-              class="max-h-[165px] max-w-[292px]"
-            />
-
-            <ButtonSecondaryDark label="SEE OUR WORK" to="/" />
+            <ButtonSecondaryDark label="SEE OUR WORK" to="/work" />
           </div>
         </div>
       </div>
@@ -72,7 +99,59 @@
 </template>
 
 <script setup>
+import { ref, onMounted, onUnmounted } from "vue";
+
 import ButtonPrimaryDark from "../../../components/buttons/ButtonPrimaryDark.vue";
 import ButtonSecondaryDark from "../../../components/buttons/ButtonSecondaryDark.vue";
 import ButtonSecondaryLight from "../../../components/buttons/ButtonSecondaryLight.vue";
+
+const images = [
+  "/src/assets/img/home/carousel/carousel1.png",
+  "/src/assets/img/home/carousel/carousel2.png",
+  "/src/assets/img/home/carousel/carousel3.png",
+  "/src/assets/img/home/carousel/carousel4.png",
+  "/src/assets/img/home/carousel/carousel5.png",
+  "/src/assets/img/home/carousel/carousel6.png",
+];
+
+const currentIndex = ref(0);
+let interval;
+
+onMounted(() => {
+  interval = setInterval(() => {
+    currentIndex.value = (currentIndex.value + 1) % images.length;
+  }, 2000); // change slide every 3s
+});
+
+onUnmounted(() => {
+  clearInterval(interval);
+});
 </script>
+
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.6s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.6s ease-in-out;
+  will-change: transform;
+}
+
+.slide-enter-from {
+  transform: translateX(100%);
+}
+
+.slide-leave-to {
+  transform: translateX(-100%);
+}
+.slide-enter-active,
+.slide-leave-active {
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+</style>

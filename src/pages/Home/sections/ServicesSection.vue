@@ -76,18 +76,18 @@ const toggleService = (index) => {
 
 <template>
   <section>
-    <div class="container mx-auto flex flex-col gap-16">
+    <div class="container mx-auto flex flex-col md:gap-16 gap-5">
       <!-- Heading & Description -->
       <div class="grid gap-3 lg:gap-0 lg:grid-cols-2 items-start">
         <SectionHeading span1="Our" span2="Services" />
-        <div class="flex flex-col gap-8">
+        <div class="flex flex-col md:gap-8 gap-5">
           <p class="paragraph-20 paragraph-dark">
             We deliver comprehensive digital solutions designed to drive
             business growth for Adelaide and South Australian brands, creating
             impactful content and strategies that help businesses stand out and
             succeed.
           </p>
-          <ButtonPrimaryLight label="View all Services" to="/" />
+          <ButtonPrimaryLight label="View all Services" to="/services" />
         </div>
       </div>
 
@@ -147,7 +147,7 @@ const toggleService = (index) => {
                   <p class="paragraph-16 paragraph-dark">
                     {{ service.description }}
                   </p>
-                  <ButtonSectionSecondaryDark label="View Services" to="/" />
+                  <!-- <ButtonSectionSecondaryDark label="View Services" to="/" /> -->
                 </div>
               </div>
             </li>

@@ -3,7 +3,7 @@
     class="fixed top-0 left-0 right-0 z-50 transition-all ease-in-out duration-400"
     :class="[isScrolled ? 'bg-white shadow-sm' : 'bg-transparent']"
   >
-    <div class="container mx-auto flex items-center justify-between">
+    <div class="md:px-4 px-4 mx-auto flex items-center justify-between">
       <!-- Logo -->
       <router-link to="/" class="relative w-24">
         <img
@@ -56,21 +56,12 @@ import NavbarMenu from "../components/NavbarMenu.vue";
 import MenuHamburger from "../assets/img/icons/MenuHamburger.svg";
 import CrossIcon from "../assets/img/icons/Cross.svg";
 
-/* --------------------
-   ROUTE
--------------------- */
 const route = useRoute();
 
-/* --------------------
-   STATE
--------------------- */
 const menuOpen = ref(false);
 const time = ref("");
 const scrolled = ref(false);
 
-/* --------------------
-   TIME FORMAT
--------------------- */
 const formatter = new Intl.DateTimeFormat("en-AU", {
   timeZone: "Australia/Adelaide",
   hour: "2-digit",
@@ -81,9 +72,6 @@ const formatter = new Intl.DateTimeFormat("en-AU", {
 
 let timer;
 
-/* --------------------
-   FUNCTIONS
--------------------- */
 const updateTime = () => {
   time.value = formatter.format(new Date());
 };
@@ -96,9 +84,6 @@ const toggleMenu = () => {
   menuOpen.value = !menuOpen.value;
 };
 
-/* --------------------
-   LIFECYCLE
--------------------- */
 onMounted(() => {
   updateTime();
   timer = setInterval(updateTime, 1000);
@@ -110,10 +95,6 @@ onUnmounted(() => {
   window.removeEventListener("scroll", handleScroll);
 });
 
-/* --------------------
-   WRAPPED SCROLL LOGIC
-   (NO TRANSITION CHANGE)
--------------------- */
 const isScrolled = computed(() => {
   return (
     scrolled.value ||
@@ -122,19 +103,16 @@ const isScrolled = computed(() => {
   );
 });
 
-/* --------------------
-   COMPUTED STYLES
--------------------- */
 const logoClass = computed(() => ({
   "filter brightness-0 invert": !menuOpen.value && !isScrolled.value,
 }));
 
 const textClass = computed(() =>
-  menuOpen.value || isScrolled.value ? "text-black" : "text-white"
+  menuOpen.value || isScrolled.value ? "text-black" : "text-white",
 );
 
 const buttonClass = computed(() =>
-  menuOpen.value || isScrolled.value ? "bg-[#F2F4F7]" : "bg-white"
+  menuOpen.value || isScrolled.value ? "bg-[#F2F4F7]" : "bg-white",
 );
 
 const menuIcon = computed(() => (menuOpen.value ? CrossIcon : MenuHamburger));

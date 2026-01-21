@@ -27,6 +27,8 @@ const originalCards = [
     logo: AcheiversCollegeLogo,
     desktopImg: AcheiversDesktop,
     mobileImg: AcheiversMobile,
+    link: "https://achieverscollege.com.au",
+    external: true,
     gradient: {
       background:
         "linear-gradient(45deg, rgba(166, 192, 254, 0.3) 0%, rgba(255, 234, 246, 0.3) 100%), #ffffff",
@@ -42,6 +44,8 @@ const originalCards = [
     logo: DanpheLogo,
     desktopImg: DanpheDesktop,
     mobileImg: DanpheMobile,
+    link: "https://danphestaffing.com.au",
+    external: true,
     gradient: {
       background:
         "linear-gradient(0deg, rgba(186, 228, 89, 0.16) 0%, rgba(168, 237, 234, 0.16) 100%), #ffffff",
@@ -57,6 +61,8 @@ const originalCards = [
     logo: McquelLogo,
     desktopImg: McquelDesktop,
     mobileImg: McquelMobile,
+    link: "https://mcquelhealthcare.com.au",
+    external: true,
     gradient: {
       background:
         "linear-gradient(90deg, rgba(76, 131, 160, 0.16) 35.74%, rgba(246, 164, 77, 0.16) 120.56%), #ffffff",
@@ -72,6 +78,8 @@ const originalCards = [
     logo: BoujeeLogo,
     desktopImg: BoujeeDesktop,
     mobileImg: BoujeeMobile,
+    link: "https://boujeehomeloans.com.au/",
+    external: true,
     gradient: {
       background:
         "linear-gradient(45deg, rgba(255, 108, 108, 0.16) 0%, rgba(221, 123, 255, 0.16) 100%), #ffffff",
@@ -91,7 +99,7 @@ const handleScroll = () => {
   const currentScroll = -rect.top;
   const progress = Math.min(
     Math.max(currentScroll / totalScrollableHeight, 0),
-    1
+    1,
   );
   scrollProgress.value = progress;
 };
@@ -117,17 +125,17 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
     <div class="sticky top-0 flex flex-col justify-center overflow-hidden">
       <div class="container mx-auto flex flex-col gap-18">
         <div
-          class="grid gap-4 lg:gap-0 lg:grid-cols-2 items-start justify-between"
+          class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center justify-between"
         >
           <SectionHeading span1="What We've<br>" span2="Created" />
-          <div class="flex flex-col gap-8">
+          <div class="flex flex-col gap-5 md:gap-8 pt-2 md:pt-0 lg:pt-0">
             <p class="paragraph-20 paragraph-dark">
               Our portfolio demonstrates proven results across video production,
               digital marketing campaigns, and web development projects crafted
               to help Adelaide businesses achieve measurable growth through
               strategic content and data-driven execution.
             </p>
-            <ButtonPrimaryLight label="View all projects" to="/" />
+            <ButtonPrimaryLight label="View all projects" to="/work" />
           </div>
         </div>
 
@@ -140,18 +148,16 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
             v-show="index >= activeIndex"
             class="absolute flex h-full justify-center transition-all ease-in-out duration-700 ease-out"
             :style="{
-              zIndex: 30 - (index - activeIndex),
+              zIndex: 10 - (index - activeIndex),
               width: `${100 - (index - activeIndex) * 4}%`,
-              transform: `translateY(-${
-                Math.pow(Math.abs(index - activeIndex), 0.5) *
-                20 *
-                Math.sign(index - activeIndex)
+              transform: `translateY(${
+                Math.pow(Math.abs(index - activeIndex), 0.6) * 60
               }px)`,
               opacity: index === activeIndex ? 1 : 0.9,
             }"
           >
             <div
-              class="h-full grid grid-cols-1 md:grid-cols-2 rounded-[40px] border border-gray-100 overflow-hidden transition-all duration-700"
+              class="h-full grid grid-cols-1 md:grid-cols-2 md:rounded-[40px] border border-gray-100 overflow-hidden transition-all duration-700"
               :style="card.gradient"
             >
               <div
@@ -181,7 +187,7 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
               </div>
 
               <div
-                class="flex flex-col py-22 px-14 justify-between items-start"
+                class="flex flex-col md:py-22 md:px-14 pb-10 px-4 justify-between items-start"
               >
                 <div class="flex w-full items-center justify-between">
                   <div class="flex flex-col">
@@ -208,7 +214,11 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
                   </p>
                 </div>
 
-                <ButtonSectionSecondaryDark label="View Project" :to="'/'" />
+                <ButtonSectionSecondaryDark
+                  label="View Project"
+                  :to="card.link"
+                  :external="card.external"
+                />
               </div>
             </div>
           </div>

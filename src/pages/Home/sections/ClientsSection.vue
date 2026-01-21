@@ -1,19 +1,22 @@
 <template>
-  <section class="bg-[#FAFAFA] py-16">
-    <div class="container mx-auto flex flex-col gap-12 text-black">
-      <!-- Heading -->
-      <div class="grid w-full grid-cols-1 lg:grid-cols-2 items-center gap-6">
+  <section class="bg-[#FAFAFA]">
+    <div class="container flex flex-col gap-5">
+      <div
+        class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center justify-between"
+      >
         <SectionHeading span1="Our" span2="Clients" />
-        <p class="paragraph-20 paragraph-dark">
-          Collaborate with Adelaide businesses and leading global platforms to
-          deliver results that set new standards
-        </p>
+        <div class="flex flex-col gap-5 md:gap-8 pt-2 md:pt-0 lg:pt-0">
+          <p class="paragraph-20 paragraph-dark">
+            Collaborate with Adelaide businesses and leading global platforms to
+            deliver results that set new standards
+          </p>
+        </div>
       </div>
 
       <!-- Clients -->
       <div class="w-full overflow-hidden">
         <div
-          class="flex gap-5 overflow-x-auto px-6 sm:px-0 scroll-smooth no-scrollbar lg:justify-center"
+          class="flex gap-5 md:pb-[87px] overflow-x-auto md:px-6 scroll-smooth no-scrollbar lg:justify-center"
         >
           <div
             v-for="client in clients"
@@ -23,7 +26,7 @@
             <img
               :src="client.src"
               :alt="client.alt"
-              class="w-32 object-contain py-4"
+              class="w-auto object-contain p-[40px]"
             />
           </div>
         </div>

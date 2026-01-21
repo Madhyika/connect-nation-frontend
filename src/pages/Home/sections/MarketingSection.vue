@@ -32,7 +32,7 @@ const infoCards = [
   <section class="relative overflow-hidden bg-[#FAFAFA]">
     <div class="container mx-auto">
       <div
-        class="flex h-full xl:w-1/2 flex-col items-center justify-center md:items-start md:justify-start gap-26"
+        class="flex h-full xl:w-1/2 flex-col items-center justify-center md:items-start md:justify-start md:gap-26 gap-10"
       >
         <div class="flex w-full flex-col gap-5">
           <SectionHeading
@@ -46,17 +46,22 @@ const infoCards = [
           </p>
         </div>
 
-        <div
-          class="grid grid-cols-1 grid-rows-4 md:grid-cols-2 md:grid-rows-2 gap-5"
-        >
+        <!-- Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <!-- Stats -->
           <div
-            v-for="item in stats"
+            v-for="(item, index) in stats"
             :key="item.title"
-            class="z-10 flex h-[240px] min-w-[294px] items-end justify-start rounded-[8px] bg-white/60 opacity-100 shadow-[0_4px_6px_-2px_rgba(16,24,40,0.03),0_12px_16px_-4px_rgba(16,24,40,0.08)]"
+            class="flex h-auto md:min-h-[200px] h-[170px] items-end rounded-[8px] bg-white/80"
+            :class="
+              index === 0
+                ? 'shadow-[0_4px_6px_-2px_rgba(16,24,40,0.03),0_12px_16px_-4px_rgba(16,24,40,0.08)]'
+                : ''
+            "
           >
-            <div class="flex flex-col gap-3 p-4">
+            <div class="flex flex-col gap-3 p-5">
               <h3
-                class="font-outfit text-[40px] font-semibold leading-[100%] tracking-[-0.02em]"
+                class="font-outfit text-[32px] md:text-[40px] font-semibold leading-[100%] tracking-[-0.02em]"
               >
                 {{ item.title }}
               </h3>
@@ -64,19 +69,20 @@ const infoCards = [
             </div>
           </div>
 
+          <!-- Info Cards -->
           <div
             v-for="card in infoCards"
             :key="card.title"
-            class="z-10 flex h-[240px] min-w-[294px] items-end justify-start rounded-[8px] bg-white/60 opacity-100 shadow-[0_4px_6px_-2px_rgba(16,24,40,0.03),0_12px_16px_-4px_rgba(16,24,40,0.08)]"
+            class="flex h-auto min-h-[200px] items-end rounded-[8px] bg-white/80"
           >
-            <div class="flex flex-col gap-3 p-4">
+            <div class="flex flex-col gap-3 p-5">
               <img :src="card.icon" class="h-5 w-5" alt="" />
               <h3
-                class="font-outfit text-[24px] font-semibold uppercase leading-[100%] tracking-[-0.02em]"
+                class="font-outfit text-[20px] md:text-[24px] font-semibold uppercase tracking-[-0.02em]"
               >
                 {{ card.title }}
               </h3>
-              <p class="paragraph-dark text-[14px]">
+              <p class="text-[14px] paragraph-dark">
                 {{ card.text }}
               </p>
             </div>
@@ -85,7 +91,10 @@ const infoCards = [
       </div>
     </div>
 
-    <div class="absolute inset-0 h-[1284px] w-[744px]">
+    <!-- Background Decorations (hidden on mobile) -->
+    <div
+      class="absolute inset-0 md:h-[1284px] w-[744px] bottom-0 right-0 opacity-50 md:block hidden"
+    >
       <img
         src="../../../assets/img/decor/ellipse.svg"
         class="h-full w-full"
@@ -94,7 +103,7 @@ const infoCards = [
     </div>
 
     <div
-      class="absolute bottom-0 left-200 right-0 top-26 h-[932px] w-[997px] opacity-35"
+      class="absolute hidden md:block bottom-0 left-200 top-26 h-[932px] w-[997px] opacity-35"
     >
       <img
         src="../../../assets/img/decor/pyramid.png"

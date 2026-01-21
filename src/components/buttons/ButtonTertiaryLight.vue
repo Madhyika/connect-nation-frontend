@@ -2,7 +2,7 @@
   <button
     :type="props.to ? 'button' : 'submit'"
     @click="props.to && navigate()"
-    class="button-tertiary button-tertiary-light"
+    class="button-tertiary button-tertiary-light w-auto md:w-auto"
   >
     <span>{{ label }}</span>
     <span class="icon">

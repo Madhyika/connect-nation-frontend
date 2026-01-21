@@ -2,7 +2,6 @@
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import ButtonBlog from "../../../components/buttons/ButtonBlog.vue";
-// import { blogs } from "../../../../stores/blog";
 
 const props = defineProps({
   blog: Object,
@@ -33,8 +32,8 @@ function goToBlog() {
     </div>
 
     <!-- Content -->
-    <div class="p-5 space-y-2">
-      <div class="flex items-left gap-4 mb-4 text-sm">
+    <div class="px-3 py-4 md:p-5 space-y-2">
+      <div class="flex items-left gap-1 md:gap-4 mb-4 text-sm">
         <span class="font-semibold text-base text-[#56BEB7]">
           {{ blog.category }}
         </span>

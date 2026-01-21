@@ -1,14 +1,18 @@
 <template>
-  <section class="py-24 bg-[#FAFAFA]">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
+  <section class="bg-[#FAFAFA]">
+    <div class="container flex flex-col gap-5">
       <!-- LEFT CONTENT -->
-      <div class="flex flex-col gap-6 max-w-[488px]">
+      <div
+        class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center justify-between"
+      >
         <SectionHeading span1="Core Values That<br>" span2="Drive Our Work" />
-
-        <p class="paragraph-20 paragraph-dark">
-          Our core values keep us focused on quality, innovation, and measurable
-          growth, guiding how we build solutions that truly make an impact.
-        </p>
+        <div class="flex flex-col gap-5 md:gap-8 pt-2 md:pt-0 lg:pt-0">
+          <p class="paragraph-20 paragraph-dark">
+            Our core values keep us focused on quality, innovation, and
+            measurable growth, guiding how we build solutions that truly make an
+            impact.
+          </p>
+        </div>
       </div>
 
       <!-- RIGHT GRID -->

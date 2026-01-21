@@ -1,22 +1,28 @@
 <template>
-  <section class="container mx-auto flex flex-col gap-24">
-    <div class="grid grid-cols-2 items-start">
+  <section class="bg-[#FAFAFA] container flex flex-col gap-5">
+    <div
+      class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center justify-between"
+    >
       <SectionHeading span1="Creating<br>" span2="LASTING IMPACT" />
-      <div class="flex flex-col gap-8">
-        <div class="paragraph-20 text-[#667085]">
+      <div class="flex flex-col gap-5 md:gap-8 pt-2 md:pt-0 lg:pt-0">
+        <p class="paragraph-20 paragraph-dark">
           At Connect Nation, we create Adelaide brands with tailored digital
           strategies that deliver measurable results. Explore our creative
           projects and see how we turn ideas into powerful business solutions.
+        </p>
+        <div class="self-start">
+          <ButtonTertiaryDark label="Discuss Your Project" to="/" />
         </div>
-        <ButtonTertiaryDark label="Discuss Your Project" to="/" />
       </div>
     </div>
 
-    <div class="grid grid-cols-3 gap-4">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-4 gap-[30px]"
+    >
       <div
         v-for="(project, index) in projects"
         :key="index"
-        class="flex flex-col gap-5 pb-12 cursor-pointer group"
+        class="flex flex-col gap-5 md:pb-12 cursor-pointer group"
       >
         <div class="relative overflow-hidden">
           <img

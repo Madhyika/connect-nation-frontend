@@ -93,7 +93,11 @@ const faqs = [
 </script>
 
 <template>
-  <PagesBanner title="our works" imageSrc="Banner1.png" />
+  <PagesBanner
+    title="our works"
+    imageSrc="Banner1.png"
+    mobileImageSrc="BannerM1.png"
+  />
   <CreatingImpactSection />
   <ClientStoriesSection />
   <FAQSection :faqs="faqs" />

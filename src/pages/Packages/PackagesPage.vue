@@ -1,5 +1,9 @@
 <template>
-  <PagesBanner title="package plans" imageSrc="PackageBanner.png" />
+  <PagesBanner
+    title="package plans"
+    imageSrc="PackageBanner.png"
+    mobileImageSrc="PackageBannerM.png"
+  />
   <PerfectPackageSection />
   <ClientStoriesSection />
   <FAQSection :faqs="faqs" />
