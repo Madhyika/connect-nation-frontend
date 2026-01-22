@@ -1,0 +1,49 @@
+<svg width="1440" height="440" viewBox="0 0 1440 440" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_1121_9094" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="180" y="-320" width="1080" height="1080">
+<rect width="1080" height="1080" transform="translate(180 -320)" fill="url(#paint0_radial_1121_9094)"/>
+</mask>
+<g mask="url(#mask0_1121_9094)">
+<g clip-path="url(#clip0_1121_9094)">
+<g clip-path="url(#clip1_1121_9094)">
+<line x1="216.375" y1="-320" x2="216.375" y2="760" stroke="#ABDFDB" stroke-width="0.75"/>
+<line x1="288.375" y1="-320" x2="288.375" y2="760" stroke="#ABDFDB" stroke-width="0.75"/>
+<line x1="360.375" y1="-320" x2="360.375" y2="760" stroke="#ABDFDB" stroke-width="0.75"/>
+<line x1="432.375" y1="-320" x2="432.375" y2="760" stroke="#ABDFDB" stroke-width="0.75"/>
+<line x1="504.375" y1="-320" x2="504.375" y2="760" stroke="#ABDFDB" stroke-width="0.75"/>
+<line x1="576.375" y1="-320" x2="576.375" y2="760" stroke="#ABDFDB" stroke-width="0.75"/>
+<line x1="648.375" y1="-320" x2="648.375" y2="760" stroke="#ABDFDB" stroke-width="0.75"/>
+<line x1="720.375" y1="-320" x2="720.375" y2="760" stroke="#ABDFDB" stroke-width="0.75"/>
+<line x1="792.375" y1="-320" x2="792.375" y2="760" stroke="#ABDFDB" stroke-width="0.75"/>
+<line x1="864.375" y1="-320" x2="864.375" y2="760" stroke="#ABDFDB" stroke-width="0.75"/>
+<line x1="936.375" y1="-320" x2="936.375" y2="760" stroke="#ABDFDB" stroke-width="0.75"/>
+<line x1="1008.38" y1="-320" x2="1008.38" y2="760" stroke="#ABDFDB" stroke-width="0.75"/>
+<line x1="1080.38" y1="-320" x2="1080.38" y2="760" stroke="#ABDFDB" stroke-width="0.75"/>
+<line x1="1152.38" y1="-320" x2="1152.38" y2="760" stroke="#ABDFDB" stroke-width="0.75"/>
+<line x1="1224.38" y1="-320" x2="1224.38" y2="760" stroke="#ABDFDB" stroke-width="0.75"/>
+</g>
+<g clip-path="url(#clip2_1121_9094)">
+<line y1="39.625" x2="1440" y2="39.625" stroke="#ABDFDB" stroke-width="0.75"/>
+<line y1="111.625" x2="1440" y2="111.625" stroke="#ABDFDB" stroke-width="0.75"/>
+<line y1="183.625" x2="1440" y2="183.625" stroke="#ABDFDB" stroke-width="0.75"/>
+<line y1="255.625" x2="1440" y2="255.625" stroke="#ABDFDB" stroke-width="0.75"/>
+<line y1="327.625" x2="1440" y2="327.625" stroke="#ABDFDB" stroke-width="0.75"/>
+<line y1="399.625" x2="1440" y2="399.625" stroke="#ABDFDB" stroke-width="0.75"/>
+</g>
+</g>
+</g>
+<defs>
+<radialGradient id="paint0_radial_1121_9094" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(540 -0.000128746) rotate(90) scale(1080 563.691)">
+<stop/>
+<stop offset="0.953125" stop-opacity="0"/>
+</radialGradient>
+<clipPath id="clip0_1121_9094">
+<rect width="1440" height="1080" fill="white" transform="translate(0 -320)"/>
+</clipPath>
+<clipPath id="clip1_1121_9094">
+<rect width="1440" height="1080" fill="white" transform="translate(0 -320)"/>
+</clipPath>
+<clipPath id="clip2_1121_9094">
+<rect width="1440" height="1080" fill="white" transform="translate(0 -320)"/>
+</clipPath>
+</defs>
+</svg>

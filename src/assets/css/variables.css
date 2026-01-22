@@ -1,0 +1,84 @@
+:root {
+  --primary-color: #2b317f;
+  --secondary-color: #d0d5dd;
+}
+section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@media (max-width: 767px) {
+  section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+@media (max-width: 479px) {
+  section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
+/* Base container for mobile-first */
+/* Base container for mobile-first (phones) */
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  /* padding-left: 1rem; */
+  /* padding-right: 1rem; */
+  box-sizing: border-box;
+}
+
+/* Small devices (sm: 576px) */
+@media (min-width: 390px) {
+  .container {
+    max-width: 576px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* Medium devices (md: 768px) */
+@media (min-width: 768px) {
+  .container {
+    max-width: 992px;
+  }
+}
+
+/* Large devices (lg: 992px) */
+@media (min-width: 992px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+/* Extra large devices (xl: 1200px) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1400px;
+    padding-left: 112px; /* Increased padding for desktop */
+    padding-right: 112px;
+  }
+}
+
+/* XXL devices (1400px) */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1920px;
+    padding-left: 112px;
+    padding-right: 112px;
+  }
+}
+
+/* Ultra-wide screens (1920px+) */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1920px;
+    padding-left: 112px;
+    padding-right: 112px;
+  }
+}
