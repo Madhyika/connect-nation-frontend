@@ -397,6 +397,14 @@
           ]
         }
       ]
+    },
+    {
+      "type": "banner",
+      "content": {
+        "title": "Ready to transform your raw footage into viral content?",
+        "sub_title": "Professional video editing services can help you implement these trends effectively, saving you time while maximizing your content's impact. Focus on creating great content while experts handle the editing that makes it shine.",
+        "button_label": "Book a Consultation"
+      }
     }
   ]
 }

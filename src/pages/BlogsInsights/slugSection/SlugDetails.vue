@@ -91,7 +91,7 @@
           <p
             v-for="(text, index) in details?.overview"
             :key="index"
-            class="font-inter font-thin text-[18px] leading-[32px] tracking-[0.02em] text-[#101828]"
+            class="font-inter font-thin text-[18px] leading-[32px] tracking-[0.02em] text-[#101828] text-justify"
           >
             {{ text.p }}
           </p>
@@ -168,7 +168,7 @@
           >
             <div v-for="(paragraph, i) in section.paragraph" :key="i">
               <p
-                class="font-inter font-normal text-[18px] leading-[32px] tracking-[0.02em] text-[#101828]"
+                class="font-inter font-normal text-[18px] leading-[32px] tracking-[0.02em] text-[#101828] text-justify"
                 v-html="paragraph.p"
               ></p>
             </div>
@@ -190,7 +190,7 @@
     </div>
 
     <div
-      class="flex flex-col w-full gap-8 col-span-2 max-w-[600px] xl:max-w-[1000px]"
+      class="flex flex-col w-full gap-8 col-span-2 max-w-[600px] xl:max-w-[1000px] xl:sticky xl:top-24 xl:h-[calc(100vh-6rem)] overflow-y-auto"
     >
       <div class="flex flex-col gap-4">
         <p
@@ -203,7 +203,12 @@
             v-for="(section, index) in sections"
             :key="index"
             @click="scrollToSection(section.title)"
-            class="p-4 cursor-pointer rounded-lg hover:bg-[#F2F4F7]"
+            :class="[
+              'p-4 cursor-pointer rounded-lg hover:bg-[#F2F4F7] transition-all',
+              activeSection === section.title
+                ? 'bg-[#E6EDFF] font-semibold text-[#41468C]'
+                : '',
+            ]"
           >
             {{ section.title }}
           </li>
@@ -249,7 +254,34 @@ import BusinessSection from "../../Home/sections/BusinessSection.vue";
 import ButtonPackageDark from "../../../components/buttons/ButtonPackageDark.vue";
 import SlugBusiness from "./SlugBusiness.vue";
 
-import { ref, computed, onMounted } from "vue";
+import { ref, computed, onMounted, onBeforeUnmount } from "vue";
+const activeSection = ref("");
+function updateActiveSection() {
+  if (!props?.details?.details) return;
+  const sectionElements = props.details.details
+    .filter((d) => d.type === "section")
+    .flatMap((d) => d.content || [])
+    .map((section) => document.getElementById(section.title))
+    .filter(Boolean);
+
+  const scrollPosition = window.scrollY + 600;
+
+  for (let i = sectionElements.length - 1; i >= 0; i--) {
+    const el = sectionElements[i];
+    if (el.offsetTop <= scrollPosition) {
+      activeSection.value = el.id;
+      break;
+    }
+  }
+}
+onMounted(() => {
+  window.addEventListener("scroll", updateActiveSection);
+  updateActiveSection();
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", updateActiveSection);
+});
 const sections = computed(() => {
   if (!props?.details?.details) return [];
   return props?.details.details
@@ -265,7 +297,7 @@ const props = defineProps({
 function scrollToSection(title) {
   const el = document.getElementById(title);
   if (el) {
-    const yOffset = -100;
+    const yOffset = -120;
     const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
     window.scrollTo({ top: y, behavior: "smooth" });
   }

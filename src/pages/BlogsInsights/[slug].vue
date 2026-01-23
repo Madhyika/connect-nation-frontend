@@ -27,7 +27,7 @@ onMounted(async () => {
 
 <template>
   <section class="container mx-auto flex flex-col gap-14 px-6">
-    <SlugUrl :slug="slug" />
+    <SlugUrl :title="blog.title" />
     <SlugBanner :blog="blog" />
     <div v-if="details">
       <SlugDetails :details="details" :blog="blog" />

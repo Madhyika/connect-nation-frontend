@@ -425,13 +425,18 @@
             },
             {
               "p": "For businesses and serious creators, professional editing isn't an expense—it's an investment that multiplies the value of content creation efforts."
-            },
-            {
-              "p": "<h2 style='font-size: 1.5rem; font-weight: 700; color: #0C111D;'>Want Reels that consistently perform?</h2><span style='display: inline-block'>Professional video editing services can help you create scroll-stopping content that drives real results, from increased engagement to explosive follower growth.</span>"
             }
           ]
         }
       ]
+    },
+    {
+      "type": "banner",
+      "content": {
+        "title": "Want Reels that consistently perform?",
+        "sub_title": "Professional video editing services can help you create scroll-stopping content that drives real results, from increased engagement to explosive follower growth.",
+        "button_label": "Book a Consultation"
+      }
     }
   ]
 }

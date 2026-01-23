@@ -99,7 +99,7 @@ const isScrolled = computed(() => {
   return (
     scrolled.value ||
     route.path === "/blogs-insights" ||
-    route.path === "/blog-insights/how-collaboration-makes-us-better-designers"
+    route.path.startsWith("/blogs-insights/")
   );
 });
 
