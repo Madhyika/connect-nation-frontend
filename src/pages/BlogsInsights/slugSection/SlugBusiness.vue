@@ -31,13 +31,9 @@
 <script setup>
 import Mash from "../../../assets/img/blog/Mash.png";
 import ButtonPrimaryLight from "../../../components/buttons/ButtonPrimaryLight.vue";
-import { onMounted } from "vue";
 
 const props = defineProps({
   content: Object,
 });
 
-onMounted(() => {
-  console.log(props.content);
-});
 </script>

@@ -6,11 +6,21 @@ import { ref, computed, nextTick } from "vue";
 const blogsPerPage = 6;
 const currentPage = ref(1);
 
-const totalPages = computed(() => Math.ceil(blogs.length / blogsPerPage));
+const sortedBlogs = computed(() => {
+  return [...blogs].sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateB - dateA;
+  });
+});
+
+const totalPages = computed(() =>
+  Math.ceil(sortedBlogs.value.length / blogsPerPage),
+);
 
 const paginatedBlogs = computed(() => {
   const start = (currentPage.value - 1) * blogsPerPage;
-  return blogs.slice(start, start + blogsPerPage);
+  return sortedBlogs.value.slice(start, start + blogsPerPage);
 });
 
 const visiblePages = computed(() => {

@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-[#FAFAFA]">
+  <section v-if="sortedBlogs" class="bg-[#FAFAFA]">
     <div class="container flex flex-col gap-5">
       <div
         class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center justify-between"
@@ -19,7 +19,7 @@
 
       <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <BlogCard
-          v-for="(blog, index) in blogs.slice(0, 3)"
+          v-for="(blog, index) in sortedBlogs.slice(0, 3)"
           :key="index"
           :blog="blog"
         />
@@ -32,5 +32,16 @@
 import SectionHeading from "../../../components/headings/SectionHeading.vue";
 import ButtonPrimaryLight from "../../../components/buttons/ButtonPrimaryLight.vue";
 import BlogCard from "../../BlogsInsights/sections/BlogCard.vue";
-import { blogs } from "../../../../stores/blog";
+import blogs from "../../BlogsInsights/data/index.json";
+import { ref, computed } from "vue";
+
+// Sort blogs by date descending (newest first)
+const sortedBlogs = computed(() => {
+  return [...blogs].sort((a, b) => {
+    // Convert date strings to Date objects
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateB - dateA; // newest first
+  });
+});
 </script>

@@ -137,7 +137,7 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
       :key="card.id"
       v-show="index >= activeIndex"
       v-for="(card, index) in originalCards"
-      class="sticky top-0 h-screen flex flex-col items-center justify-center transition-all ease-in-out duration-700 ease-out"
+      class="sticky top-0 h-screen z-100 flex flex-col items-center justify-center transition-all ease-in-out duration-700 "
     >
       <div
         class="h-full grid grid-cols-1 sm:grid-cols-2 md:rounded-[40px] border border-gray-100 overflow-hidden transition-all duration-700"
