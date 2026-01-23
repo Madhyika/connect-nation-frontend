@@ -23,7 +23,7 @@
           </transition>
         </div>
 
-        <nav class="flex flex-col justify-center gap-2 md:gap-6 ">
+        <nav class="flex flex-col justify-center gap-2 md:gap-6">
           <router-link
             v-for="item in menuItems"
             :key="item.to"
@@ -46,7 +46,10 @@
       <div
         class="flex w-full flex-col md:flex-row items-center md:items-start gap-10 md:gap-0 justify-between"
       >
-        <a href="https://cal.com/" target="_blank" rel="noopener noreferrer"
+        <a
+          href="https://cal.com/sarin-tamang-o5zp1z/30min"
+          target="_blank"
+          rel="noopener noreferrer"
           ><ButtonTertiaryDark label="Book a Consultation"
         /></a>
         <div

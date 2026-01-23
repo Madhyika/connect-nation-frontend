@@ -8,9 +8,7 @@
       />
     </div>
 
-    <div
-      class="absolute inset-0 bg-black/50 "
-    ></div>
+    <div class="absolute inset-0 bg-black/50"></div>
 
     <div
       class="container relative mx-auto flex min-h-screen flex-wrap content-end sm:py-12"
@@ -44,7 +42,7 @@
 
           <div class="flex flex-col sm:flex-row items-left gap-6 sm:gap-12">
             <a
-              href="https://cal.com/"
+              href="https://cal.com/sarin-tamang-o5zp1z/30min"
               target="_blank"
               rel="noopener noreferrer"
             >

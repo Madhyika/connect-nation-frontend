@@ -20,8 +20,13 @@
               business needs. Book a free consultation today, and let’s create
               something exceptional together.
             </p>
-
-            <ButtonPrimaryLight label="Book a Consultation" to="/" />
+            <a
+              href="https://cal.com/sarin-tamang-o5zp1z/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ButtonPrimaryLight label="Book a Consultation"
+            /></a>
           </div>
 
           <!-- RIGHT VISUAL (DESKTOP ONLY) -->

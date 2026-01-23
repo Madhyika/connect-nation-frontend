@@ -1,10 +1,8 @@
 <template>
   <section class="bg-[#FAFAFA]">
-    <div class="container flex flex-col gap-5">
+    <div class="container grid grid-cols-1 xl:grid-cols-5 gap-16">
       <!-- LEFT CONTENT -->
-      <div
-        class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center justify-between"
-      >
+      <div class="flex flex-col items-start col-span-2 gap-3">
         <SectionHeading span1="Core Values That<br>" span2="Drive Our Work" />
         <div class="flex flex-col gap-5 md:gap-8 pt-2 md:pt-0 lg:pt-0">
           <p class="paragraph-20 paragraph-dark">
@@ -16,7 +14,7 @@
       </div>
 
       <!-- RIGHT GRID -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 col-span-3">
         <div
           v-for="(value, index) in values"
           :key="index"

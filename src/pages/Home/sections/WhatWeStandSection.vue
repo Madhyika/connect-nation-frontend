@@ -5,7 +5,7 @@ import ExcellenceImg from "../../../assets/img/home/WhatWeStand/excellence.png";
 import ResultsDrivenImg from "../../../assets/img/home/WhatWeStand/results.png";
 import ClientFocusedImg from "../../../assets/img/home/WhatWeStand/client.png";
 import LocalExpertiseImg from "../../../assets/img/home/WhatWeStand/local.png";
-
+import WhatWeStand from "../../../assets/img/decor/whatwestand.png";
 const repeatedCards = reactive([
   {
     id: 1,
@@ -78,16 +78,11 @@ function toggleCard(index) {
         </div>
 
         <!-- Decorative Images -->
-        <div class="relative overflow-hidden mt-6 scale-120 hidden md:block">
+        <div class="md:flex justify-center items-center h-full overflow-hidden hidden">
           <img
-            class="w-133 filter grayscale opacity-70"
-            src="../../../assets/img/decor/GlobeHands.png"
-            alt=""
-          />
-          <img
-            class="absolute left-0 bottom-0 opacity-30 translate-y-[42%] xl:-translate-x-[9%]"
-            src="../../../assets/img/logo/logo.png"
-            alt=""
+            class="w-full  "
+            :src="WhatWeStand"
+            alt="whatwestand"
           />
         </div>
       </div>

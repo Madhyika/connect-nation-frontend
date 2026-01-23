@@ -25,7 +25,7 @@
 
 <script setup>
 const stats = [
-  { value: "123+", label: "BUSINESSES WEB SUPPORT" },
+  { value: "132+", label: "BUSINESSES WEB SUPPORT" },
   { value: "02", label: "COUNTRIES WE WORKING" },
   { value: "35+", label: "SUCCESSFUL PROJECTS" },
   { value: "2M+", label: "REACHED OVER $8 MILION" },

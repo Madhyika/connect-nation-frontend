@@ -14,19 +14,22 @@
       </div>
 
       <!-- Clients -->
-      <div class="w-full overflow-hidden">
+      <div class="w-full overflow-hidden ">
         <div
-          class="flex gap-5 md:pb-[87px] overflow-x-auto md:px-6 scroll-smooth no-scrollbar lg:justify-center"
+          ref="carousel"
+          class="flex gap-5  overflow-x-auto scroll-smooth scrollbar-hide"
+          @mouseenter="pause = true"
+          @mouseleave="pause = false"
         >
           <div
-            v-for="client in clients"
-            :key="client.alt"
-            class="flex h-auto min-w-[200px] items-center justify-center rounded-[5px] bg-white transition-shadow hover:shadow-2xl"
+            v-for="(client, i) in duplicatedClients"
+            :key="i"
+            class="flex cursor-pointer items-center justify-center rounded-[5px] bg-white transition-shadow hover:shadow-2xl"
           >
             <img
               :src="client.src"
               :alt="client.alt"
-              class="w-auto object-contain p-[40px]"
+              class="object-contain p-[40px] min-w-[200px]"
             />
           </div>
         </div>
@@ -36,13 +39,22 @@
 </template>
 
 <script setup>
+import { ref, onMounted, onBeforeUnmount, computed } from "vue";
+import SectionHeading from "../../../components/headings/SectionHeading.vue";
+
 import Boujee from "../../../assets/img/logo/clients/boujee.svg";
 import Achievers from "../../../assets/img/logo/clients/achievers.svg";
 import Mcquel from "../../../assets/img/logo/clients/mcquel.svg";
 import Danphe from "../../../assets/img/logo/clients/danphe.svg";
 import Royalhealth from "../../../assets/img/logo/clients/royalhealth.svg";
+import Harcourt from "../../../assets/img/logo/clients/harcourt.jpg";
+import Vital from "../../../assets/img/logo/clients/vital-care.png";
+import Bhoye from "../../../assets/img/logo/clients/bhoye.png";
+import Events from "../../../assets/img/logo/clients/events.png";
+import Quesoft from "../../../assets/img/logo/clients/quesoft.png";
+import Everest from "../../../assets/img/logo/clients/everest.jpg";
+import Everest2 from "../../../assets/img/logo/clients/everest2.jpg";
 import Zeroone from "../../../assets/img/logo/clients/zeroone.svg";
-import SectionHeading from "../../../components/headings/SectionHeading.vue";
 
 const clients = [
   { src: Boujee, alt: "Boujee" },
@@ -51,7 +63,46 @@ const clients = [
   { src: Danphe, alt: "Danphe" },
   { src: Royalhealth, alt: "Royalhealth" },
   { src: Zeroone, alt: "Zeroone" },
+  { src: Harcourt, alt: "Harcourt" },
+  { src: Vital, alt: "Vital" },
+  { src: Bhoye, alt: "Bhoye" },
+  { src: Events, alt: "Events" },
+  { src: Quesoft, alt: "Quesoft" },
+  { src: Everest, alt: "Everest" },
+  { src: Everest2, alt: "Everest2" },
 ];
+
+// Duplicate for infinite scroll
+const duplicatedClients = computed(() => [...clients, ...clients]);
+
+const carousel = ref(null);
+const pause = ref(false);
+
+let animationId;
+
+function autoScroll() {
+  if (!carousel.value || pause.value) {
+    animationId = requestAnimationFrame(autoScroll);
+    return;
+  }
+
+  carousel.value.scrollLeft += 0.5;
+
+  // Reset seamlessly
+  if (carousel.value.scrollLeft >= carousel.value.scrollWidth / 2) {
+    carousel.value.scrollLeft = 0;
+  }
+
+  animationId = requestAnimationFrame(autoScroll);
+}
+
+onMounted(() => {
+  animationId = requestAnimationFrame(autoScroll);
+});
+
+onBeforeUnmount(() => {
+  cancelAnimationFrame(animationId);
+});
 </script>
 
 <style scoped>

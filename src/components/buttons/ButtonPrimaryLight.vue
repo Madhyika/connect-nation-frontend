@@ -1,5 +1,9 @@
 <template>
-  <button @click="navigate" class="button-primary button-primary-light">
+  <button
+    :type="props.to ? 'button' : 'submit'"
+    @click="props.to && navigate()"
+    class="button-primary button-primary-light"
+  >
     <span>{{ label }}</span>
     <span class="icon">
       <img src="../../assets/img/icons/ArrowRight.svg" alt="Arrow" />

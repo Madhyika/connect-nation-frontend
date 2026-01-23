@@ -88,8 +88,8 @@ const contactItems = [
   {
     icon: MailIcon,
     label: "Email",
-    value: "info@elevexadigital.com",
-    url: "mailto:info@elevexadigital.com",
+    value: "info@elevexatech.com",
+    url: "mailto:info@elevexatech.com",
   },
   {
     icon: PhoneIcon,

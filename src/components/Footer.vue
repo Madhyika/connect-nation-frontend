@@ -7,7 +7,7 @@
         class="flex w-full flex-col md:flex-row justify-between items-center gap-8 border-b border-white/50 pb-10"
       >
         <div
-          class="font-outfit font-medium text-[32px] leading-tight text-white text-left "
+          class="font-outfit font-medium text-[32px] leading-tight text-white text-left"
         >
           Subscribe to our <br />
           news later 🔔
@@ -25,10 +25,10 @@
         </form>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-[30%_70%] gap-10 md:gap-10 ">
+      <div class="grid grid-cols-1 md:grid-cols-[30%_70%] justify-between w-full gap-10">
         <!-- Left column: logo + paragraph -->
         <div
-          class="flex flex-col items-center md:items-start text-center md:text-left "
+          class="flex flex-col items-center md:items-start text-center md:text-left"
         >
           <router-link to="/" class="w-24">
             <img
@@ -44,7 +44,9 @@
         </div>
 
         <!-- Right column: nested grid of service columns -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4  gap-10 sm:gap-12">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10 sm:gap-12"
+        >
           <div
             v-for="(column, colIndex) in columns"
             :key="colIndex"
@@ -55,7 +57,9 @@
             >
               {{ column.title }}
             </div>
-            <ul class="flex flex-col items-center sm:items-start gap-4 text-white text-[16px]">
+            <ul
+              class="flex flex-col items-center sm:items-start gap-4 text-white text-[16px]"
+            >
               <li
                 v-for="(item, index) in column.items"
                 :key="index"
@@ -89,7 +93,7 @@
       </div>
 
       <div
-        class="footer-container flex flex-col container mx-auto justify-center items-center"
+        class="footer-container flex flex-col w-full justify-center items-center"
       >
         <h1 class="footer-outline-text footer-outline-text-light">CONNECT</h1>
         <h1 class="footer-outline-text footer-outline-text-dark">NATION</h1>

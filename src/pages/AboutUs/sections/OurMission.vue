@@ -1,5 +1,5 @@
 <script setup>
-import MemberImage from "/src/assets/img/teamMembers/member1.png";
+import MemberImage from "/src/assets/img/teamMembers/Sarin.png";
 import VideoImage from "/src/assets/img/aboutUs/video.png";
 
 const stats = [
@@ -25,11 +25,11 @@ const stats = [
     >
       <!-- LEFT : CEO IMAGE + QUOTE -->
       <div
-        class="flex flex-col md:items-start gap-[10px] md:gap-[24px] w-full md:w-[338px] opacity-100 order-4 lg:order-1"
+        class="flex flex-col items-center  lg:items-start gap-[10px] md:gap-[24px] w-full lg:w-[338px] opacity-100 order-4 lg:order-1"
       >
         <!-- Image -->
         <div
-          class="relative w-full md:max-w-[260px] h-[250px] md:h-[340px] overflow-hidden rounded-md mx-auto md:mx-0"
+          class="relative w-full md:max-w-[260px] h-[475px] overflow-hidden rounded-md mx-auto md:mx-0"
         >
           <img
             :src="MemberImage"
@@ -44,7 +44,7 @@ const stats = [
 
         <!-- Text -->
         <p
-          class="font-inter font-normal text-[18px] leading-[28px] tracking-[0.02em] text-[#475467] text-center md:text-left"
+          class="font-inter font-normal text-[18px] leading-[28px] tracking-[0.02em] text-[#475467] text-center lg:text-left"
         >
           We believe in creating meaningful digital solutions for Adelaide and
           Australian businesses through innovation and excellence.

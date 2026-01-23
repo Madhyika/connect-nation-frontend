@@ -39,7 +39,7 @@
 
       <div
         ref="carousel"
-        class="flex gap-3 overflow-x-auto w-full h-[450px] relative scroll-smooth snap-x snap-mandatory lg:snap-none "
+        class="flex gap-3 overflow-x-auto w-full h-[550px] relative scroll-smooth snap-x snap-mandatory lg:snap-none"
       >
         <div
           v-for="(member, index) in visibleTeam"
@@ -71,7 +71,7 @@
             class="absolute left-1/2 -translate-x-1/2 bottom-0 min-w-full object-cover transition-all duration-700 ease-in-out"
             :class="[
               activeIndex === index
-                ? 'top-[10%] filter grayscale-0 saturate-100'
+                ? 'top-[0%] filter grayscale-0 saturate-100'
                 : 'top-[35%] h-full filter grayscale',
             ]"
           />
@@ -96,11 +96,9 @@ const activeGradient = {
 };
 
 import member1 from "../../../assets/img/teamMembers/member1.png";
-import member2 from "../../../assets/img/teamMembers/member2.png";
 import member3 from "../../../assets/img/teamMembers/member3.png";
-import member4 from "../../../assets/img/teamMembers/member4.png";
 import member5 from "../../../assets/img/teamMembers/member5.png";
-import member6 from "../../../assets/img/teamMembers/member6.png";
+import member7 from "../../../assets/img/teamMembers/member7.png";
 
 const team = [
   {
@@ -108,15 +106,9 @@ const team = [
     role: "Chief Executive Officer (CEO)",
     image: member1,
   },
-  {
-    name: "Anurag Rajkarnikar",
-    role: "Creative Content Producer",
-    image: member2,
-  },
   { name: "Rohit Rajput", role: "IT Analyst", image: member3 },
-  { name: "Sujan Waiba", role: "Operations Manager", image: member4 },
   { name: "Narayan Oli", role: "Marketing Officer", image: member5 },
-  { name: "Rupesh Dahal", role: "Web Developer", image: member6 },
+  { name: "Rupesh Dahal", role: "Web Developer", image: member7 },
 ];
 
 const visibleTeam = ref(team); // show all items, scrolling handles visibility

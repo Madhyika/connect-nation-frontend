@@ -23,7 +23,14 @@
       >
         {{ content.sub_title }}
       </p>
-      <ButtonPrimaryLight :label="content.button_label" />
+      <a
+        href="https://cal.com/sarin-tamang-o5zp1z/30min"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <ButtonPrimaryLight
+          :label="content.button_label"
+      /></a>
     </div>
   </div>
 </template>
@@ -35,5 +42,4 @@ import ButtonPrimaryLight from "../../../components/buttons/ButtonPrimaryLight.v
 const props = defineProps({
   content: Object,
 });
-
 </script>
