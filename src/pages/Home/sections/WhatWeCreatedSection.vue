@@ -137,19 +137,17 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
       :key="card.id"
       v-show="index >= activeIndex"
       v-for="(card, index) in originalCards"
-      class="sticky top-0 h-screen z-100 flex flex-col items-center justify-center transition-all ease-in-out duration-700 "
+      class="sticky top-0 h-screen z-100 flex flex-col items-center justify-center transition-all ease-in-out duration-700"
     >
       <div
         class="h-full grid grid-cols-1 sm:grid-cols-2 md:rounded-[40px] border border-gray-100 overflow-hidden transition-all duration-700"
         :style="card.gradient"
       >
-        <div
-          class="relative flex items-center justify-center scale-75 lg:scale-90"
-        >
+        <div class="relative flex items-center justify-center max-w-[710px] scale-90 lg:scale-100">
           <div class="relative z-10">
             <img
               :src="card.desktopImg"
-              class="absolute top-[11%] left-[13%] w-[74%] h-[78%] z-10 d"
+              class="absolute top-[11%] left-[13%] w-[74%] h-[78%] z-10"
             />
             <img
               src="../../../assets/img/decor/macbook-air.png"
