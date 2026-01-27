@@ -140,74 +140,80 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
       class="sticky top-0 h-screen z-100 xl:z-0 flex flex-col items-center justify-center transition-all ease-in-out duration-700"
     >
       <div
-        class="h-full grid grid-cols-1 sm:grid-cols-2 md:rounded-[40px] border border-gray-100 overflow-hidden transition-all duration-700"
+        class="h-full w-full flex justify-center items-center md:rounded-[40px] border border-gray-100 overflow-hidden transition-all duration-700"
         :style="card.gradient"
       >
         <div
-          class="relative flex items-center justify-center max-w-[710px] scale-90 lg:scale-100"
+          class="grid grid-cols-1 sm:grid-cols-2 items-center justify-center h-full max-w-[1900px]"
         >
-          <div class="relative z-10">
-            <img
-              :src="card.desktopImg"
-              :alt="` ${card.title}`"
-              class="absolute top-[11%] left-[13%] w-[74%] h-[78%] z-10"
-            />
-            <img
-              src="../../../assets/img/decor/macbook-air.png"
-              :alt="` ${card.title}`"
-              class="relative z-20 w-[800px]"
-            />
-          </div>
-
-          <div class="absolute left-[65%] right-0 z-30">
-            <img
-              :src="card.mobileImg"
-              :alt="` ${card.title}`"
-              class="absolute top-[6.5%] left-[4%] w-[90%] xl:w-[80%] h-[87%] z-10 rounded-xl"
-            />
-            <img
-              src="../../../assets/img/decor/galaxy-s9.png"
-              :alt="` ${card.title}`"
-              class="relative z-20 w-[220px]"
-            />
-          </div>
-        </div>
-
-        <div
-          class="flex flex-col md:py-22 md:px-14 pb-10 px-4 justify-center items-start gap-6 lg:gap-16"
-        >
-          <div class="flex w-full items-center justify-between">
-            <div class="flex flex-col">
-              <h6
-                class="font-inter text-[16px] tracking-[0.07em] text-[#475467]"
-              >
-                Year
-              </h6>
-              <h6 class="font-outfit text-[24px] uppercase text-black">
-                {{ card.year }}
-              </h6>
+          <div
+            class="relative flex items-center justify-center max-w-[710px] scale-90 lg:scale-100"
+          >
+            <div class="relative z-10">
+              <img
+                :src="card.desktopImg"
+                :alt="` ${card.title}`"
+                class="absolute top-[11%] left-[13%] w-[74%] h-[78%] z-10"
+              />
+              <img
+                src="../../../assets/img/decor/macbook-air.png"
+                :alt="` ${card.title}`"
+                class="relative z-20 w-[800px]"
+              />
             </div>
-            <img
-              :src="card.logo"
-              :alt="`${card.title}`"
-              class="w-28 h-auto object-contain"
-            />
+
+            <div class="absolute left-[65%] right-0 z-30">
+              <img
+                :src="card.mobileImg"
+                :alt="` ${card.title}`"
+                class="absolute top-[6.5%] left-[4%] w-[90%] xl:w-[80%] h-[87%] z-10 rounded-xl"
+              />
+              <img
+                src="../../../assets/img/decor/galaxy-s9.png"
+                :alt="` ${card.title}`"
+                class="relative z-20 w-[220px]"
+              />
+            </div>
           </div>
 
-          <div>
-            <p class="font-outfit text-[32px] mb-4 text-gray-900 leading-tight">
-              {{ card.title }}
-            </p>
-            <p class="paragraph-16 paragraph-dark max-w-md">
-              {{ card.description }}
-            </p>
-          </div>
+          <div
+            class="flex flex-col md:py-22 md:px-14 pb-10 px-4 justify-center items-start gap-6 lg:gap-16"
+          >
+            <div class="flex w-full items-center justify-between">
+              <div class="flex flex-col">
+                <h6
+                  class="font-inter text-[16px] tracking-[0.07em] text-[#475467]"
+                >
+                  Year
+                </h6>
+                <h6 class="font-outfit text-[24px] uppercase text-black">
+                  {{ card.year }}
+                </h6>
+              </div>
+              <img
+                :src="card.logo"
+                :alt="`${card.title}`"
+                class="w-28 h-auto object-contain"
+              />
+            </div>
 
-          <!-- <ButtonSectionSecondaryDark
+            <div>
+              <p
+                class="font-outfit text-[32px] mb-4 text-gray-900 leading-tight"
+              >
+                {{ card.title }}
+              </p>
+              <p class="paragraph-16 paragraph-dark max-w-md">
+                {{ card.description }}
+              </p>
+            </div>
+
+            <!-- <ButtonSectionSecondaryDark
             label="View Project"
             :to="card.link"
             :external="card.external"
           /> -->
+          </div>
         </div>
       </div>
     </div>

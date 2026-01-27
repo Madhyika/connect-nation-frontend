@@ -25,7 +25,7 @@
               class="font-outfit font-medium tracking-[-0.02em] md:text-[28px] text-[24px] leading-[36px] sm:text-[32px] sm:leading-[40px] md:text-[40px] md:leading-[48px] lg:text-[54px] lg:leading-[60px] text-left sm:text-left"
             >
               Adelaide’s Trusted
-              <h1 class="text-[#56BEB7]">Web Design & SEO</h1>
+              <span class="text-[#56BEB7]">Web Design & SEO</span>
               for Business Growth
             </h1>
 

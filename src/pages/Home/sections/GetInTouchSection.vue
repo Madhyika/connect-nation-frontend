@@ -56,12 +56,30 @@
             </p>
           </div>
 
-          <form class="flex flex-col gap-8" @submit.prevent="submitForm">
+          <form
+            class="flex flex-col gap-8 z-10 transition-all ease-in-out duration-700"
+            method="POST"
+            @submit.prevent="submitForm"
+          >
+            <Transition name="fade">
+              <p
+                v-if="status.message"
+                :class="
+                  status.success
+                    ? 'text-green-600 font-medium'
+                    : 'text-red-600 font-medium'
+                "
+                class="mt-2 transition-all ease-in-out duration-700"
+              >
+                {{ status.message }}
+              </p>
+            </Transition>
             <div class="flex flex-col gap-2">
               <label class="form-label">Name *</label>
               <input
                 v-model="form.name"
                 type="text"
+                name="name"
                 placeholder="Your full name"
                 class="w-full h-[40px] bg-white border border-[#56BEB7] rounded-[8px] shadow-[0_1px_2px_0_#1018280D] px-[12px] py-[8px]"
                 required
@@ -73,6 +91,7 @@
               <input
                 v-model="form.email"
                 type="email"
+                name="email"
                 placeholder="you@example.com"
                 class="w-full h-[40px] bg-white border border-[#56BEB7] rounded-[8px] shadow-[0_1px_2px_0_#1018280D] px-[12px] py-[8px]"
                 required
@@ -84,6 +103,7 @@
               <input
                 v-model="form.subject"
                 type="text"
+                name="subject"
                 placeholder="What can we help you with?"
                 class="w-full h-[40px] bg-white border border-[#56BEB7] rounded-[8px] shadow-[0_1px_2px_0_#1018280D] px-[12px] py-[8px]"
               />
@@ -92,15 +112,22 @@
             <div class="flex flex-col gap-2">
               <label class="form-label">Message *</label>
               <textarea
-                v-model="form.message"
+                v-model="form.body"
                 rows="4"
+                name="message"
                 placeholder="Tell us about your project or ask any questions..."
                 class="w-full bg-white border border-[#56BEB7] rounded-[8px] shadow-[0_1px_2px_0_#1018280D] px-[12px] py-[8px] resize-none"
                 required
               ></textarea>
             </div>
-
-            <ButtonPrimaryLight class="z-100" label="Send Message" to="/" />
+            <span class="transition-all ease-in-out duration-700">{{
+              loading ? "Sending..." : ""
+            }}</span>
+            <ButtonPrimaryLight
+              :disabled="loading"
+              label="Send Message"
+              to="/submit"
+            />
           </form>
         </div>
       </div>
@@ -131,24 +158,57 @@
 </template>
 
 <script setup>
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 import SectionHeading from "../../../components/headings/SectionHeading.vue";
 import ButtonPrimaryLight from "../../../components/buttons/ButtonPrimaryLight.vue";
+
+import MailIcon from "../../../assets/img/icons/mail.svg";
+import PhoneIcon from "../../../assets/img/icons/phone.svg";
+import LocationIcon from "../../../assets/img/icons/location.svg";
+import ClockIcon from "../../../assets/img/icons/clock.svg";
+import { postDataToApi } from "../../../utils/api";
 
 const form = reactive({
   name: "",
   email: "",
   subject: "",
-  message: "",
+  body: "",
 });
 
-const submitForm = () => {
-  console.log("Form submitted:", form);
+const loading = ref(false);
+const status = reactive({
+  message: "",
+  success: false,
+});
+
+const submitForm = async () => {
+  loading.value = true;
+  status.message = "";
+
+  try {
+    const res = await postDataToApi("contact", form);
+
+    if (res.success) {
+      status.message = "Message sent successfully!";
+      status.success = true;
+
+      // reset form
+      form.name = "";
+      form.email = "";
+      form.subject = "";
+      form.body = "";
+    } else {
+      status.message = res.message || "Failed to send message.";
+      status.success = false;
+    }
+  } catch (err) {
+    status.message = err.message || "An error occurred while sending.";
+    status.success = false;
+  } finally {
+    loading.value = false;
+  }
 };
-import MailIcon from "../../../assets/img/icons/mail.svg";
-import PhoneIcon from "../../../assets/img/icons/phone.svg";
-import LocationIcon from "../../../assets/img/icons/location.svg";
-import ClockIcon from "../../../assets/img/icons/clock.svg";
+
 const contactItems = [
   {
     icon: MailIcon,

@@ -28,8 +28,8 @@ section {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  /* padding-left: 1rem; */
-  /* padding-right: 1rem; */
+  padding-left: 1rem;
+  padding-right: 1rem;
   box-sizing: border-box;
 }
 
@@ -80,5 +80,33 @@ section {
     max-width: 1920px;
     padding-left: 112px;
     padding-right: 112px;
+  }
+}
+/* Ultra-wide screens (1920px+) */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1920px;
+    padding-left: 112px;
+    padding-right: 112px;
+  }
+}
+
+@media (min-width: 1921px) and (max-width: 2560px) {
+  .container {
+    max-width: 2560px !important;
+  }
+}
+
+/* 4K monitors */
+@media (min-width: 2561px) and (max-width: 3840px) {
+  .container {
+    max-width: 3200px !important;
+  }
+}
+
+/* Ultra-wide / 5K monitors */
+@media (min-width: 3841px) {
+  .container {
+    max-width: 3840px !important;
   }
 }
