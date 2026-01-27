@@ -41,7 +41,7 @@ function goToBlog() {
         class="flex flex-col xl:flex-row items-start gap-2 sm:gap-4 mb-3 sm:mb-[18px] text-sm"
       >
         <!-- Category -->
-        <span class="font-semibold text-sm sm:text-base text-[#56BEB7]">
+        <span class="font-semibold text-sm sm:text-base text-[#98A2B3]">
           {{ blog.category }}
         </span>
 

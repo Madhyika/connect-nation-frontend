@@ -35,7 +35,7 @@ function goToBlog() {
     <!-- Content -->
     <div class="py-4 px-4 md:p-5 space-y-2">
       <div class="flex flex-col xl:flex-row items-left gap-2 mb-4 text-sm">
-        <span class="font-semibold text-base text-[#56BEB7]">
+        <span class="font-semibold text-base text-[#98A2B3]">
           {{ blog.category }}
         </span>
         <div class="flex items-center gap-1 text-[#475467] text-sm w-full">

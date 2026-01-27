@@ -4,9 +4,9 @@
     <div class="flex flex-col justify-center gap-5 lg:w-2/3">
       <!-- Category -->
       <p
-        class="flex items-center gap-2 text-[#56BEB7] font-medium text-base tracking-widest"
+        class="flex items-center gap-2 text-[#98A2B3] font-medium text-base tracking-widest"
       >
-        <span class="bg-[#56BEB7] w-2 h-2 inline-block rounded-full"></span>
+        <span class="bg-[#98A2B3] w-2 h-2 inline-block rounded-full"></span>
         <span>{{ blog.category }}</span>
       </p>
 
@@ -38,6 +38,4 @@
 const props = defineProps({
   blog: String,
 });
-
-
 </script>
