@@ -3,7 +3,7 @@
     class="bg-[#FAFAFA] gap-6 py-8 flex flex-col items-start sm:grid sm:grid-cols-[48px_4fr_3fr_3fr] sm:gap-12 sm:items-start"
   >
     <p
-      class="font-outfit font-semibold text-[20px] leading-none text-[#D0D5DD] mb-2 sm:text-[24px] sm:leading-none sm:text-[#D0D5DD] sm:group-hover:text-black sm:transition-colors sm:duration-300"
+      class="font-outfit font-semibold text-[20px] leading-none text-[#98A2B3] mb-2 sm:text-[24px] sm:leading-none sm:text-[#98A2B3] sm:group-hover:text-black sm:transition-colors sm:duration-300"
     >
       {{ String(index + 1).padStart(2, "0") }}
     </p>

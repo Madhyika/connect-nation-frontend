@@ -147,15 +147,15 @@ const wrapperClass = computed(() =>
 );
 
 const menuItems = [
-  { label: "Work", to: "/work", image: "/banner/Banner1.png" },
-  { label: "Services", to: "/services", image: "/banner/Banner2.png" },
-  { label: "About", to: "/about-us", image: "/banner/AboutUsBanner.png" },
-  { label: "Contact", to: "/contact-us", image: "/banner/Banner3.png" },
-  { label: "Blogs", to: "/blogs-insights", image: "/banner/BlogBanner.png" },
+  { label: "Work", to: "/work", image: "/banner/Banner1.webp" },
+  { label: "Services", to: "/services", image: "/banner/Banner2.webp" },
+  { label: "About", to: "/about-us", image: "/banner/AboutUsBanner.webp" },
+  { label: "Contact", to: "/contact-us", image: "/banner/Banner3.webp" },
+  { label: "Blogs", to: "/blogs-insights", image: "/banner/BlogBanner.webp" },
   {
     label: "Package Plans",
     to: "/packages",
-    image: "/banner/PackageBanner.png",
+    image: "/banner/PackageBanner.webp",
   },
 ];
 

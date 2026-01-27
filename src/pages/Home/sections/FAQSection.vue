@@ -32,7 +32,7 @@
           >
             <span>{{ faq.question }}</span>
             <span
-              :class="activeIndex === index ? 'text-black' : 'text-[#D0D5DD]'"
+              :class="activeIndex === index ? 'text-black' : 'text-[#98A2B3]'"
             >
               {{ faq.number }}
             </span>

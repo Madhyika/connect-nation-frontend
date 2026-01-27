@@ -4,129 +4,129 @@
     "slug": "blog-1",
     "title": "Video Editing Trends That Will Dominate Social Media in 2026",
     "description": "Discover the top video editing trends shaping social media in 2026. Learn how to create viral content with professional editing techniques that boost engagement and reach.",
-    "image": "1.jpg",
+    "image": "1.webp",
     "category": "Video Editing",
     "readTime": "7-10",
     "date": "1 Jan 2026",
     "views": "50",
     "author": "Narayan Oli",
-    "author_image": "john.png"
+    "author_image": "john.webp"
   },
   {
     "id": 2,
     "slug": "blog-2",
     "title": "How to Create Instagram Reels That Actually Go Viral: A 2026 Guide",
     "description": "Master Instagram Reels with proven strategies that increase views, engagement, and followers. Learn professional editing techniques to make your Reels go viral in 2026.",
-    "image": "2.jpg",
+    "image": "2.webp",
     "category": "Digital Marketing",
     "readTime": "7-10",
     "date": "3 Jan 2026",
     "views": "85",
     "author": "Aryan Shrestha",
-    "author_image": "john.png"
+    "author_image": "john.webp"
   },
   {
     "id": 3,
     "slug": "blog-3",
     "title": "YouTube Shorts Success: How to Get Millions of Views in 2026",
     "description": "Unlock YouTube Shorts' massive potential with proven strategies for viral growth. Learn editing techniques and optimization tactics that generate millions of views.",
-    "image": "3.jpg",
+    "image": "3.webp",
     "category": "Digital Marketing",
     "readTime": "7-10",
     "date": "5 Jan 2026",
     "views": "97",
     "author": "Aryan Shrestha",
-    "author_image": "john.png"
+    "author_image": "john.webp"
   },
   {
     "id": 4,
     "slug": "blog-4",
     "title": "TikTok Marketing in 2026: The Complete Content Creation Strategy",
     "description": "Master TikTok marketing with strategies that actually work. Learn how to create engaging content, go viral, and convert viewers into customers in 2026.",
-    "image": "4.jpg",
+    "image": "4.webp",
     "category": "Digital Marketing",
     "readTime": "7-10",
     "date": "7 Jan 2026",
     "views": "103",
     "author": "Aryan Shrestha",
-    "author_image": "john.png"
+    "author_image": "john.webp"
   },
   {
     "id": 5,
     "slug": "blog-5",
     "title": "Video Marketing for Small Businesses: Your 2026 Playbook",
     "description": "Discover how small businesses can compete with big brands using strategic video marketing. Learn cost-effective strategies that drive real results without huge budgets.",
-    "image": "5.jpg",
+    "image": "5.webp",
     "category": "Video Editing",
     "readTime": "7-10",
     "date": "9 Jan 2026",
     "views": "124",
     "author": "Narayan Oli",
-    "author_image": "john.png"
+    "author_image": "john.webp"
   },
   {
     "id": 6,
     "slug": "blog-6",
     "title": "Content Creator's Guide: Building a Sustainable Video Business in 2026",
     "description": "Learn how content creators can build sustainable video businesses. Discover monetization strategies, content planning, and professional practices that separate successful creators from hobbyists.",
-    "image": "6.jpg",
+    "image": "6.webp",
     "category": "Content Creation",
     "readTime": "7-10",
     "date": "11 Jan 2026",
     "views": "95",
     "author": "Anurag Rajkarnikar",
-    "author_image": "john.png"
+    "author_image": "john.webp"
   },
   {
     "id": 7,
     "slug": "blog-7",
     "title": "Video Marketing ROI: Metrics That Actually Matter in 2026",
     "description": "Understand which video marketing metrics drive real business results. Learn how to measure ROI, optimize performance, and prove video marketing value in 2026.",
-    "image": "7.jpg",
+    "image": "7.webp",
     "category": "SEO",
     "readTime": "7-10",
     "date": "13 Jan 2026",
     "views": "150",
     "author": "Aryan Shrestha",
-    "author_image": "john.png"
+    "author_image": "john.webp"
   },
   {
     "id": 8,
     "slug": "blog-8",
     "title": "The Art of Video Storytelling: Creating Content That Connects in 2026The Art of Video Storytelling: Creating Content That Connects in 2026",
     "description": "Master video storytelling techniques that captivate audiences and drive engagement. Learn how to craft compelling narratives that turn viewers into customers.",
-    "image": "8.jpg",
+    "image": "8.webp",
     "category": "Content Creation",
     "readTime": "7-10",
     "date": "15 Jan 2026",
     "views": "85",
     "author": "Anurag Rajkarnikar",
-    "author_image": "john.png"
+    "author_image": "john.webp"
   },
   {
     "id": 9,
     "slug": "blog-9",
     "title": "Video SEO in 2026: How to Make Your Content Actually Discoverable",
     "description": "Master video SEO strategies that get your content found. Learn optimization techniques for YouTube, Google, and social platforms to maximize organic reach in 2026.",
-    "image": "9.jpg",
+    "image": "9.webp",
     "category": "SEO",
     "readTime": "7-10",
     "date": "17 Jan 2026",
     "views": "94",
     "author": "Aryan Shrestha",
-    "author_image": "john.png"
+    "author_image": "john.webp"
   },
   {
     "id": 10,
     "slug": "blog-10",
     "title": "Should You Outsource Video Editing? The Complete Guide for 2026",
     "description": "Discover whether outsourcing video editing is right for your business or content creation goals. Learn the benefits, costs, and how to find the right editing partner in 2026.",
-    "image": "10.jpg",
+    "image": "10.webp",
     "category": "Video Editing",
     "readTime": "15-18",
     "date": "19 Jan 2026",
     "views": "150",
     "author": "Narayan Oli",
-    "author_image": "john.png"
+    "author_image": "john.webp"
   }
 ]

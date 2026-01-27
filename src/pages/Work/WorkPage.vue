@@ -95,8 +95,8 @@ const faqs = [
 <template>
   <PagesBanner
     title="our works"
-    imageSrc="Banner1.png"
-    mobileImageSrc="BannerM1.png"
+    imageSrc="Banner1.webp"
+    mobileImageSrc="BannerM1.webp"
   />
   <CreatingImpactSection />
   <ClientStoriesSection />

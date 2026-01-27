@@ -1,8 +1,8 @@
 <template>
   <PagesBanner
     title="package plans"
-    imageSrc="PackageBanner.png"
-    mobileImageSrc="PackageBannerM.png"
+    imageSrc="PackageBanner.webp"
+    mobileImageSrc="PackageBannerM.webp"
   />
   <PerfectPackageSection />
   <ClientStoriesSection />

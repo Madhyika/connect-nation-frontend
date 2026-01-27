@@ -1,8 +1,8 @@
 <template>
   <PagesBanner
     title="Contact Us"
-    imageSrc="Banner3.png"
-    mobileImageSrc="BannerM3.png"
+    imageSrc="Banner3.webp"
+    mobileImageSrc="BannerM3.webp"
   />
   <GetInTouchSection />
   <MapSection />

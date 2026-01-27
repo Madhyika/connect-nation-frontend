@@ -45,7 +45,7 @@
             <span class="text-[#344054]">{{ project.client }}</span>
             <span class="text-[#344054]">-</span>
             <span
-              class="text-[#D0D5DD] group-hover:text-[#56BEB7] transition-all ease-in-out duration-800"
+              class="text-[#98A2B3] group-hover:text-[#56BEB7] transition-all ease-in-out duration-800"
             >
               {{ project.projectName }}
             </span>

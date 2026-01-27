@@ -12,8 +12,8 @@ import OurMission from "./sections/OurMission.vue";
 <template>
   <PagesBanner
     title="About Us"
-    imageSrc="AboutUsBanner.png"
-    mobileImageSrc="AboutUsBannerM.png"
+    imageSrc="AboutUsBanner.webp"
+    mobileImageSrc="AboutUsBannerM.webp"
   />
   <OurMission />
   <ClientsSection />

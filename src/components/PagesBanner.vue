@@ -3,7 +3,7 @@
     <!-- Desktop Banner -->
     <img
       v-if="!isMobile"
-      :src="`/banner/${props.imageSrc || 'Banner2.png'}`"
+      :src="`/banner/${props.imageSrc || 'Banner2.webp'}`"
       :alt="`${title} Banner`"
       class="absolute inset-0 h-full w-full object-cover"
     />
@@ -11,7 +11,7 @@
     <!-- Mobile Banner -->
     <img
       v-else
-      :src="`/banner/${props.mobileImageSrc || 'BannerM2.png'}`"
+      :src="`/banner/${props.mobileImageSrc || 'BannerM2.webp'}`"
       :alt="altText"
       class="absolute inset-0 h-full w-full object-cover"
     />
