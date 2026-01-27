@@ -67,7 +67,11 @@
               <div
                 class="w-16 h-16 rounded-full bg-[#EEF2F6] flex items-center justify-center"
               >
-                <img src="../../../assets/img/icons/Star.svg" class="w-7 h-7" />
+                <img
+                  src="../../../assets/img/icons/Star.svg"
+                  alt="Star Icon"
+                  class="w-7 h-7"
+                />
               </div>
 
               <!-- Title -->
@@ -100,7 +104,7 @@
                   <div
                     class="w-8 h-8 rounded-full bg-[#EAEBF3] flex items-center justify-center"
                   >
-                    <img :src="tickIcon" />
+                    <img :src="tickIcon" alt="Tick Icon" />
                   </div>
                   <p class="text-[#0C111D] text-[16px] font-medium">
                     {{ feature }}

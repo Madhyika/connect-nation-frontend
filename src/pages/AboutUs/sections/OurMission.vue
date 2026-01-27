@@ -25,7 +25,7 @@ const stats = [
     >
       <!-- LEFT : CEO IMAGE + QUOTE -->
       <div
-        class="flex flex-col items-center  lg:items-start gap-[10px] md:gap-[24px] w-full lg:w-[338px] opacity-100 order-4 lg:order-1"
+        class="flex flex-col items-center lg:items-start gap-[10px] md:gap-[24px] w-full lg:w-[338px] opacity-100 order-4 lg:order-1"
       >
         <!-- Image -->
         <div
@@ -33,7 +33,7 @@ const stats = [
         >
           <img
             :src="MemberImage"
-            alt="Team Member"
+            alt="CEO, Sarin Tamang"
             class="absolute w-auto min-w-full min-h-full translate-x-[-5%] sm:translate-x-[12%] lg:translate-x-1 translate-y-[-10%] sm:translate-y-[-10%] lg:translate-y-[15%] object-cover transform scale-100"
           />
           <!-- Bottom gradient overlay -->

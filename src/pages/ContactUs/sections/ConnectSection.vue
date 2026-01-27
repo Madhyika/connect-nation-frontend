@@ -24,7 +24,7 @@
         <img
           class="w-full h-full object-cover"
           src="../../../assets/img/other/Boudha.png"
-          alt=""
+          alt="Kathmandu"
         />
 
         <!-- Gradient overlay (desktop only) -->

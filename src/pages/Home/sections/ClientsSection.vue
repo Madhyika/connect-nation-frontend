@@ -1,6 +1,6 @@
 <template>
-  <section class="bg-[#FAFAFA]">
-    <div class="container flex flex-col gap-5">
+  <div class="bg-[#FAFAFA]">
+    <div class="md:pt-24 pt-10 flex flex-col gap-5 container bg-[#FAFAFA]">
       <div
         class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center justify-between"
       >
@@ -14,28 +14,37 @@
       </div>
 
       <!-- Clients -->
-      <div class="w-full overflow-hidden ">
+      <div
+        class="w-full overflow-hidden"
+        @mouseover="pause = true"
+        @mouseleave="pause = false"
+      >
+        <!-- Carousel wrapper -->
         <div
-          ref="carousel"
-          class="flex gap-5  overflow-x-auto scroll-smooth scrollbar-hide"
-          @mouseenter="pause = true"
-          @mouseleave="pause = false"
+          ref="carouselWrapper"
+          class="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black 100%,transparent)]"
         >
-          <div
-            v-for="(client, i) in duplicatedClients"
-            :key="i"
-            class="flex cursor-pointer items-center justify-center rounded-[5px] bg-white transition-shadow hover:shadow-2xl"
+          <!-- Carousel list -->
+          <ul
+            ref="carousel"
+            class="flex items-center gap-5 animate-scroll whitespace-nowrap md:mb-24 mb-10"
           >
-            <img
-              :src="client.src"
-              :alt="client.alt"
-              class="object-contain p-[40px] min-w-[200px]"
-            />
-          </div>
+            <li
+              v-for="(client, i) in duplicatedClients"
+              :key="i"
+              class="flex items-center justify-center bg-white rounded-[5px] p-[40px] min-w-[200px] transition-shadow hover:shadow-2xl"
+            >
+              <img
+                :src="client.src"
+                :alt="client.alt"
+                class="object-contain max-h-24p"
+              />
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup>
@@ -73,7 +82,7 @@ const clients = [
 ];
 
 // Duplicate for infinite scroll
-const duplicatedClients = computed(() => [...clients, ...clients]);
+const duplicatedClients = [...clients, ...clients];
 
 const carousel = ref(null);
 const pause = ref(false);
@@ -106,12 +115,16 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
-/* Hide scrollbar but keep scroll functionality */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
 }
 </style>

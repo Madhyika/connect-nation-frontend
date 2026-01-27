@@ -6,7 +6,10 @@
   >
     <span>{{ label }}</span>
     <span class="icon">
-      <img src="../../assets/img/icons/ArrowRight.svg" alt="Arrow" />
+      <img
+        src="../../assets/img/icons/ArrowRight.svg"
+        :alt="`Go To ${label}`"
+      />
     </span>
   </button>
 </template>

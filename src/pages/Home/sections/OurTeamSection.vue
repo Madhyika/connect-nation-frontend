@@ -18,7 +18,7 @@
               >
                 <img
                   src="../../../assets/img/icons/LeftArrow.svg"
-                  alt=""
+                  alt="Previous"
                   class="transition-all duration-300 ease-in-out group-hover:invert"
                 />
               </button>
@@ -28,7 +28,7 @@
               >
                 <img
                   src="../../../assets/img/icons/RightArrow.svg"
-                  alt=""
+                  alt="Next"
                   class="filter invert transition-all duration-300 ease-in-out group-hover:invert-0"
                 />
               </button>
@@ -67,7 +67,7 @@
 
           <img
             :src="member.image"
-            alt="Team Member"
+            :alt="member.name"
             class="absolute left-1/2 -translate-x-1/2 bottom-0 min-w-full object-cover transition-all duration-700 ease-in-out"
             :class="[
               activeIndex === index

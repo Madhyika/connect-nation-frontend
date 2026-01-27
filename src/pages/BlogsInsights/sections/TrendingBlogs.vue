@@ -94,13 +94,21 @@ function scrollRight() {
           @click="scrollLeft"
           class="p-2 border rounded-full shrink-0 transition-colors duration-300 hover:bg-gray-100 hover:border-gray-300"
         >
-          ‹
+          <img
+            src="../../../assets/img/icons/LeftArrow.svg"
+            alt="Previous"
+            class="transition-all duration-300 ease-in-out group-hover:invert"
+          />
         </button>
         <button
           @click="scrollRight"
           class="p-2 border rounded-full shrink-0 transition-colors duration-300 hover:bg-gray-100 hover:border-gray-300"
         >
-          ›
+          <img
+            src="../../../assets/img/icons/RightArrow.svg"
+            alt="Next"
+            class="filter invert transition-all duration-300 ease-in-out group-hover:invert-0"
+          />
         </button>
         <!-- <button
           class="p-2 border rounded-full shrink-0 transition-colors duration-300 hover:bg-gray-100 hover:border-gray-300"

@@ -95,8 +95,7 @@
                   <img
                     :src="testimonial.logo"
                     class="w-[62px] h-auto"
-                    alt="company logo"
-                  />
+                    :alt="`${testimonial.name}'s company logo`"
                 </div>
               </div>
             </div>
@@ -121,7 +120,7 @@
         >
           <img
             src="../../../assets/img/icons/LeftArrow.svg"
-            alt=""
+            alt="Previous"
             class="transition-all duration-300 ease-in-out group-hover:invert"
           />
         </button>
@@ -145,7 +144,7 @@
         >
           <img
             src="../../../assets/img/icons/RightArrow.svg"
-            alt=""
+            alt="Next"
             class="filter invert transition-all duration-300 ease-in-out group-hover:invert-0"
           />
         </button>

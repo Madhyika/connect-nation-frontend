@@ -71,7 +71,7 @@ const infoCards = [
             class="flex h-auto min-h-[200px] items-end rounded-[8px] bg-white/80 p-5 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:bg-white cursor-pointer"
           >
             <div class="flex flex-col gap-3">
-              <img :src="card.icon" class="h-5 w-5" alt="" />
+              <img :src="card.icon" class="h-5 w-5" :alt="` ${card.title}`" />
               <h3
                 class="font-outfit text-[20px] md:text-[24px] font-semibold uppercase tracking-[-0.02em]"
               >
@@ -93,7 +93,7 @@ const infoCards = [
       <img
         src="../../../assets/img/decor/ellipse.svg"
         class="h-full w-full"
-        alt=""
+        alt="ellipse"
       />
     </div>
 
@@ -103,7 +103,7 @@ const infoCards = [
       <img
         src="../../../assets/img/decor/pyramid.png"
         class="h-full w-full scale-x-[-1]"
-        alt=""
+        alt="decorative pyramid"
       />
     </div>
   </section>

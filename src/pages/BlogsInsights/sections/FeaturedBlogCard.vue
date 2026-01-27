@@ -26,7 +26,7 @@ function goToBlog() {
     <div class="overflow-hidden">
       <img
         :src="`/blogs/` + blog.image"
-        alt=""
+        :alt="`Blog image: ${blog.title}`"
         class="w-full h-[220px] sm:h-[280px] md:h-[360px] lg:h-[420px] object-cover transition-transform duration-300"
         :class="isHovered ? 'scale-105' : 'scale-100'"
       />

@@ -78,12 +78,10 @@ function toggleCard(index) {
         </div>
 
         <!-- Decorative Images -->
-        <div class="md:flex justify-center items-center h-full overflow-hidden hidden">
-          <img
-            class="w-full  "
-            :src="WhatWeStand"
-            alt="whatwestand"
-          />
+        <div
+          class="md:flex justify-center items-center h-full overflow-hidden hidden"
+        >
+          <img class="w-full" :src="WhatWeStand" alt="whatwestand" />
         </div>
       </div>
 
@@ -127,7 +125,7 @@ function toggleCard(index) {
                   <img
                     class="w-[180px] md:w-53 h-auto md:h-30 object-cover"
                     :src="item.image"
-                    alt=""
+                    :alt="` ${item.title}`"
                   />
                 </div>
               </div>

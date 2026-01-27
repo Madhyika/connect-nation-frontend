@@ -3,7 +3,7 @@
     <div class="absolute inset-0 overflow-hidden">
       <img
         src="../../../assets/img/home/banner.png"
-        alt=""
+        alt="Home Banner Background"
         class="h-full w-full object-cover scale-150"
       />
     </div>
@@ -21,13 +21,13 @@
             class="flex flex-col gap-3 sm:gap-5 md:gap-8 md:max-w-[775px] mx-auto"
           >
             <!-- Heading container -->
-            <span
+            <h1
               class="font-outfit font-medium tracking-[-0.02em] md:text-[28px] text-[24px] leading-[36px] sm:text-[32px] sm:leading-[40px] md:text-[40px] md:leading-[48px] lg:text-[54px] lg:leading-[60px] text-left sm:text-left"
             >
               Adelaide’s Trusted
-              <span class="text-[#56BEB7]">Web Design & SEO</span>
+              <h1 class="text-[#56BEB7]">Web Design & SEO</h1>
               for Business Growth
-            </span>
+            </h1>
 
             <!-- Description container -->
             <span
@@ -63,12 +63,12 @@
             <div class="flex max-h-12 items-center justify-between">
               <img
                 src="../../../assets/img/logo/logo.png"
-                alt=""
+                alt="connect nation logo"
                 class="h-full max-w-12 scale-150"
               />
               <img
                 src="../../../assets/img/icons/DotsHorizontal.svg"
-                alt=""
+                alt="dots horizontal icon"
                 class="w-6"
               />
             </div>
@@ -81,9 +81,9 @@
                 <img
                   v-for="(img, index) in [images[currentIndex]]"
                   :key="img"
-                  :src="img"
+                  :src="img.src"
                   class="absolute inset-0 h-full w-full object-cover"
-                  alt=""
+                  :alt="img.alt"
                 />
               </transition-group>
             </div>
@@ -111,12 +111,12 @@ import carousel5 from "../../../assets/img/home/carousel/carousel5.png";
 import carousel6 from "../../../assets/img/home/carousel/carousel6.png";
 
 const images = [
-  carousel1,
-  carousel2,
-  carousel3,
-  carousel4,
-  carousel5,
-  carousel6,
+  { src: carousel1, alt: "Client 1" },
+  { src: carousel2, alt: "Client 2" },
+  { src: carousel3, alt: "Client 3" },
+  { src: carousel4, alt: "Client 4" },
+  { src: carousel5, alt: "Client 5" },
+  { src: carousel6, alt: "Client 6" },
 ];
 
 const currentIndex = ref(0);

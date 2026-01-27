@@ -19,15 +19,18 @@
     <div
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-4 gap-[30px]"
     >
-      <div
+      <a
         v-for="(project, index) in projects"
         :key="index"
+        :href="project.url"
+        target="_blank"
+        rel="noopener noreferrer"
         class="flex flex-col gap-5 md:pb-12 cursor-pointer group"
       >
         <div class="relative overflow-hidden">
           <img
             :src="project.image"
-            :alt="project.title"
+            :alt="project.projectName"
             class="w-full h-[344px] object-cover transition-transform duration-800 ease-in-out group-hover:scale-110"
           />
           <div
@@ -53,7 +56,7 @@
             {{ project.services }}
           </p>
         </div>
-      </div>
+      </a>
     </div>
   </section>
 </template>
@@ -76,36 +79,42 @@ const projects = [
     client: "Project Name-",
     projectName: "Achievers College",
     services: "Website & SEO",
+    url: "https://achieverscollege.com.au/",
   },
   {
     image: Danphe,
     client: "Danphe Staffing",
     projectName: "Danphe Staffing",
     services: "Website & SEO",
+    url: "https://danphestaffing.com.au/",
   },
   {
     image: Royal,
     client: "Project Name-",
     projectName: "Royal Healthcare",
     services: "Branding & Website",
+    // url: "https://royalhealthcare.com.au/",
   },
   {
     image: Boujee,
     client: "Project Name-",
     projectName: "Boujee Home Loan",
     services: "Website & Digital Strategy",
+    url: "https://boujeehomeloans.com.au/",
   },
   {
     image: Mcquel,
     client: "Project Name-",
     projectName: "McQuel Healthcare",
     services: "Marketing, Website & SEO",
+    url: "https://mcquelhealthcare.com.au/",
   },
   {
     image: ZeroOne,
     client: "Project Name-",
     projectName: "Zero One Advisory",
     services: "Website & Consulting",
+    // url: "https://zerooneadvisory.com.au/",
   },
 ];
 </script>

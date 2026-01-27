@@ -1,7 +1,7 @@
 <template>
   <button @click="navigate" class="button-primary button-primary-dark">
     <span>{{ label }}</span>
-    <img src="../../assets/img/icons/ArrowRight.svg" alt="" />
+    <img src="../../assets/img/icons/ArrowRight.svg" :alt="`Go To ${label}`" />
   </button>
 </template>
 

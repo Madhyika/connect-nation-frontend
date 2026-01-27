@@ -29,7 +29,7 @@ function goToBlog() {
     >
       <img
         :src="`/blogs/` + blog.image"
-        alt=""
+        :alt="`Blog image: ${blog.title}`"
         class="w-full h-full object-cover transition-transform duration-300"
         :class="isHovered ? 'scale-105' : 'scale-100'"
       />

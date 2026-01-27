@@ -143,14 +143,18 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
         class="h-full grid grid-cols-1 sm:grid-cols-2 md:rounded-[40px] border border-gray-100 overflow-hidden transition-all duration-700"
         :style="card.gradient"
       >
-        <div class="relative flex items-center justify-center max-w-[710px] scale-90 lg:scale-100">
+        <div
+          class="relative flex items-center justify-center max-w-[710px] scale-90 lg:scale-100"
+        >
           <div class="relative z-10">
             <img
               :src="card.desktopImg"
+              :alt="` ${card.title}`"
               class="absolute top-[11%] left-[13%] w-[74%] h-[78%] z-10"
             />
             <img
               src="../../../assets/img/decor/macbook-air.png"
+              :alt="` ${card.title}`"
               class="relative z-20 w-[800px]"
             />
           </div>
@@ -158,10 +162,12 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
           <div class="absolute left-[65%] right-0 z-30">
             <img
               :src="card.mobileImg"
+              :alt="` ${card.title}`"
               class="absolute top-[6.5%] left-[4%] w-[90%] xl:w-[80%] h-[87%] z-10 rounded-xl"
             />
             <img
               src="../../../assets/img/decor/galaxy-s9.png"
+              :alt="` ${card.title}`"
               class="relative z-20 w-[220px]"
             />
           </div>
@@ -181,7 +187,11 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
                 {{ card.year }}
               </h6>
             </div>
-            <img :src="card.logo" class="w-28 h-auto object-contain" />
+            <img
+              :src="card.logo"
+              :alt="`${card.title}`"
+              class="w-28 h-auto object-contain"
+            />
           </div>
 
           <div>
@@ -193,11 +203,11 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
             </p>
           </div>
 
-          <ButtonSectionSecondaryDark
+          <!-- <ButtonSectionSecondaryDark
             label="View Project"
             :to="card.link"
             :external="card.external"
-          />
+          /> -->
         </div>
       </div>
     </div>

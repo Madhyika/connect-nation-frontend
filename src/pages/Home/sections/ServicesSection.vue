@@ -6,6 +6,7 @@ import ButtonSectionSecondaryDark from "../../../components/buttons/ButtonSectio
 
 import PlusIcon from "../../../assets/img/icons/Plus.svg";
 import MinusIcon from "../../../assets/img/icons/Minus.svg";
+
 import Website from "../../../assets/img/home/service/website.png";
 import Saas from "../../../assets/img/home/service/saas.png";
 import Mobile from "../../../assets/img/home/service/mobile.png";
@@ -136,7 +137,7 @@ const toggleService = (index) => {
                 </h2>
                 <img
                   :src="service.open ? MinusIcon : PlusIcon"
-                  alt=""
+                  alt="Expand Collapse Icon"
                   class="w-[14px] transition-all duration-300"
                 />
               </button>

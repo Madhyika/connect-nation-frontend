@@ -51,7 +51,7 @@
       <img
         src="../../../assets/img/decor/ellipse.svg"
         class="w-full h-full md:opacity-100 opacity-40"
-        alt=""
+        alt="decorative ellipse"
       />
     </div>
   </section>

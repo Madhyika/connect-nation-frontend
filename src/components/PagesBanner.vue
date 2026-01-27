@@ -4,7 +4,7 @@
     <img
       v-if="!isMobile"
       :src="`/banner/${props.imageSrc || 'Banner2.png'}`"
-      :alt="altText"
+      :alt="`${title} Banner`"
       class="absolute inset-0 h-full w-full object-cover"
     />
 

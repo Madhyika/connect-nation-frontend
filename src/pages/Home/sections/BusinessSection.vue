@@ -1,5 +1,11 @@
 <template>
-  <section :style="backgroundStyle" class="bg-[#FAFAFA]">
+  <section
+    :style="backgroundStyle"
+    class="bg-[#FAFAFA]"
+    role="img"
+    aria-roledescription="background image"
+    aria-label="Abstract business themed background"
+  >
     <div class="container mx-auto px-4 md:px-0">
       <div class="relative overflow-hidden">
         <div

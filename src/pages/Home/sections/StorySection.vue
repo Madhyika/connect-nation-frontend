@@ -38,7 +38,7 @@ import SectionHeading from "../../../components/headings/SectionHeading.vue";
             <img
               class="w-full h-auto order-1 md:order-none"
               src="../../../assets/img/home/strategic.svg"
-              alt=""
+              alt="Strategic growth"
             />
             <!-- <img
               class="rounded-[5px] w-[384px] h-[450px] object-cover"
@@ -65,12 +65,12 @@ import SectionHeading from "../../../components/headings/SectionHeading.vue";
           <img
             class="w-18 scale-150"
             src="../../../assets/img/logo/logo.png"
-            alt=""
+            alt="Connect Nation Logo"
           />
           <img
             class="w-[461px] h-[346px]"
             src="../../../assets/img/home/story2.png"
-            alt=""
+            alt="Story Section Image"
           />
         </div>
       </div>

@@ -35,6 +35,10 @@ function navigate() {
       {{ label }}
     </span>
 
-    <img src="../../assets/img/icons/ArrowRight.svg" alt="arrow" class="ml-4" />
+    <img
+      src="../../assets/img/icons/ArrowRight.svg"
+      alt="Explore Blog"
+      class="ml-4"
+    />
   </button>
 </template>

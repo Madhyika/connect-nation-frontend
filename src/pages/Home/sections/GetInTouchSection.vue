@@ -111,7 +111,7 @@
     >
       <img
         src="../../../assets/img/decor/sky.png"
-        alt=""
+        alt="decorative sky"
         class="w-full h-full object-cover"
         style="
           mask-image: linear-gradient(

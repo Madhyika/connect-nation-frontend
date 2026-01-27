@@ -40,7 +40,7 @@
       <img
         class="w-full h-auto max-h-[250px] object-cover rounded-[7px]"
         :src="service.image"
-        alt="Service Image"
+        :alt="service.title"
       />
     </div>
   </div>
